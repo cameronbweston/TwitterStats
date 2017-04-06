@@ -10,4 +10,6 @@
 
 @interface FetchTweetsWebService : NSObject
 
+- (void)fetchTweets:(void (^)(NSDictionary *data))callback;
+
 @end
