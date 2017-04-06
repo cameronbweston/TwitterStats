@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  FetchTweetsWebService.m
 //  TwitterStats
 //
 //  Created by Cameron Weston on 4/5/17.
 //  Copyright © 2017 cameron weston personal. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FetchTweetsWebService.h"
 
-@interface ViewController : UIViewController
-
+@implementation FetchTweetsWebService
 
 @end
-
