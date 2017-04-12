@@ -12,35 +12,35 @@
 @interface TweetHandler ()
 
 @property (nonatomic, strong) FetchTweetsWebService *tweetWebService;
-@property (nonatomic) NSInteger *tweetCount;
+@property (nonatomic, strong) NSManagedObjectContext *context;
 
 @end
 
 @implementation TweetHandler
 
-- (id)initWithWebService:(FetchTweetsWebService *)webservice
-{
+- (instancetype)initWithContext:(NSManagedObjectContext *)context tweetWebservice:(FetchTweetsWebService *)tweetWebservice {
     self = [super init];
     if (self) {
-        self.tweetWebService = webservice;
+        self.context = context;
+        self.tweetWebService = tweetWebservice;
     }
     return self;
 }
 
-- (void)getTweetCount {
-    self.tweetCount = 0;
-
-    [self.tweetWebService fetchTweets:^(NSDictionary *dataDictionary)
-    {
-        for(NSDictionary *tweet in dataDictionary) {
-            if (tweet){
-                self.tweetCount += 1;
+- (void)storeTweets {
+    [self.tweetWebService fetchTweets:^(NSDictionary *data) {
+        [self.context performBlock:^ {
+            for (NSDictionary *tweet in data) {
+                //NSString *identifier = tweet[@"id"];
+                //find or create tweet with identifier
+                //tweet load from dictionary
             }
-        }
-        NSError *error = nil;
-        if (error) {
-            NSLog(@"Error in TweetHandler: %@", error.localizedDescription);
-        }
+            NSError *error;
+            [self.context save:&error];
+            if (error) {
+                NSLog(@"Error in store tweets: %@", error.localizedDescription);
+            }
+        }];
     }];
 }
 
