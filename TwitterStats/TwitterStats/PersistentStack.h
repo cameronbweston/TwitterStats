@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @interface PersistentStack : NSObject
+
+@property (nonatomic, strong, readonly) NSManagedObjectContext *context;
 
 @end
