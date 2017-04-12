@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface ManagedTweet : NSObject
+@interface ManagedTweet : NSManagedObject
+
+- (void)loadFromDictionary:(NSDictionary *)dictionary;
++ (ManagedTweet *)findOrCreateTweetWithIdentifier:(NSString *)identifier
+                                        inContext:(NSManagedObjectContext *)context;
 
 @end
