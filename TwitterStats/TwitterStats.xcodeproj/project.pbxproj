@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1318346C1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1318346A1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodeld */; };
+		1318346F1E9E8AEC001D50DF /* PersistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318346E1E9E8AEC001D50DF /* PersistentStack.m */; };
+		131834701E9E8AEC001D50DF /* PersistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318346E1E9E8AEC001D50DF /* PersistentStack.m */; };
 		137A26571E97258C003E6ECA /* TweetHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 137A26561E97258C003E6ECA /* TweetHandler.m */; };
 		137A26581E97258C003E6ECA /* TweetHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 137A26561E97258C003E6ECA /* TweetHandler.m */; };
 		139F30FF1E95C254007A85A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 139F30FE1E95C254007A85A5 /* main.m */; };
@@ -30,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1318346B1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwitterStatsModel.xcdatamodel; sourceTree = "<group>"; };
+		1318346D1E9E8AEC001D50DF /* PersistentStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentStack.h; sourceTree = "<group>"; };
+		1318346E1E9E8AEC001D50DF /* PersistentStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentStack.m; sourceTree = "<group>"; };
 		137A26551E97258C003E6ECA /* TweetHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetHandler.h; sourceTree = "<group>"; };
 		137A26561E97258C003E6ECA /* TweetHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetHandler.m; sourceTree = "<group>"; };
 		139F30FA1E95C254007A85A5 /* TwitterStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				139F31221E95C286007A85A5 /* Default-568h@2x.png */,
+				1318346A1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodeld */,
 				139F30FC1E95C254007A85A5 /* TwitterStats */,
 				139F31161E95C254007A85A5 /* TwitterStatsTests */,
 				139F30FB1E95C254007A85A5 /* Products */,
@@ -96,6 +103,8 @@
 				139F31041E95C254007A85A5 /* MasterViewController.m */,
 				137A26551E97258C003E6ECA /* TweetHandler.h */,
 				137A26561E97258C003E6ECA /* TweetHandler.m */,
+				1318346D1E9E8AEC001D50DF /* PersistentStack.h */,
+				1318346E1E9E8AEC001D50DF /* PersistentStack.m */,
 				139F31091E95C254007A85A5 /* Assets.xcassets */,
 				139F310E1E95C254007A85A5 /* Info.plist */,
 				139F30FD1E95C254007A85A5 /* Supporting Files */,
@@ -170,6 +179,7 @@
 					139F30F91E95C254007A85A5 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 46YH3KR4UA;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					139F31121E95C254007A85A5 = {
@@ -224,7 +234,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				139F31051E95C254007A85A5 /* MasterViewController.m in Sources */,
+				1318346C1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodeld in Sources */,
 				139F31021E95C254007A85A5 /* AppDelegate.m in Sources */,
+				1318346F1E9E8AEC001D50DF /* PersistentStack.m in Sources */,
 				137A26571E97258C003E6ECA /* TweetHandler.m in Sources */,
 				139F30FF1E95C254007A85A5 /* main.m in Sources */,
 				13B89E931E96013800866AC7 /* FetchTweetsWebService.m in Sources */,
@@ -238,6 +250,7 @@
 				139F31181E95C254007A85A5 /* TwitterStatsTests.m in Sources */,
 				137A26581E97258C003E6ECA /* TweetHandler.m in Sources */,
 				13B89E941E96013800866AC7 /* FetchTweetsWebService.m in Sources */,
+				131834701E9E8AEC001D50DF /* PersistentStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +364,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronwestonpersonal.TwitterStats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -364,6 +378,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronwestonpersonal.TwitterStats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -425,6 +440,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1318346A1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1318346B1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodel */,
+			);
+			currentVersion = 1318346B1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodel */;
+			name = TwitterStatsModel.xcdatamodeld;
+			path = TwitterStats/TwitterStatsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 139F30F21E95C254007A85A5 /* Project object */;
 }

@@ -14,17 +14,16 @@
 
 @implementation FetchTweetsWebService
 
-static NSString *const token = @"Bearer d61095e0ae01a59d2e7738ed137c18f349b96cbc";
+static NSString *const token = @"342813334-jegG0hcgPklD54EwIxJAgFVKikb3etzmB5NijRt3";
 
 - (void)fetchTweets:(void (^)(NSDictionary *))callback {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
         NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        [sessionConfiguration setHTTPAdditionalHeaders:@{@"Authorization": token}];
-
         NSString *urlString = [self buildURLString];
         NSURL *remoteURL = [NSURL URLWithString:urlString];
-        NSURLRequest *request = [[NSURLRequest alloc]  initWithURL:remoteURL];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc]  initWithURL:remoteURL];
+        [request addValue:token forHTTPHeaderField:@"Authorization"];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:nil];
         
         [[session dataTaskWithRequest:request completionHandler:
@@ -46,7 +45,7 @@ static NSString *const token = @"Bearer d61095e0ae01a59d2e7738ed137c18f349b96cbc
 }
 
 - (NSString *)buildURLString {
-    return [NSString stringWithFormat:@"https://stream.twitter.com/1.1/statuses/sample.json"];
+    return [NSString stringWithFormat:@"https://api.twitter.com/1.1/statuses/home_timeline.json"];
 }
 
 @end
