@@ -8,8 +8,13 @@
 
 #import "AppDelegate.h"
 #import "MasterViewController.h"
+#import "PersistentStack.h"
+#import "FetchTweetsWebService.h"
+#import "TweetHandler.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) TweetHandler *tweetHandler;
 
 @end
 
@@ -18,6 +23,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    self.persistentStack = [[PersistentStack alloc] init];
+    self.tweetWebservice = [[FetchTweetsWebService alloc] init];
+    self.tweetHandler = [[TweetHandler alloc] initWithContext:self.persistentStack.context
+                                              tweetWebservice:self.tweetWebservice];
+    [self.tweetHandler storeTweets];
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     MasterViewController *masterViewController = [MasterViewController new];
     UINavigationController *rootNavController = [[UINavigationController alloc] initWithRootViewController:masterViewController];

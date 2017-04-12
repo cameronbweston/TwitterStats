@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PersistentStack;
+@class FetchTweetsWebService;
+@class TweetHandler;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) PersistentStack *persistentStack;
+@property (strong, nonatomic) FetchTweetsWebService *tweetWebservice;
 
 @end
 
