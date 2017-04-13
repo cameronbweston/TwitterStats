@@ -7,6 +7,7 @@
 //
 
 #import "FetchTweetsWebService.h"
+#import "PromiseKit/PromiseKit.h"
 
 @interface FetchTweetsWebService () <NSURLSessionDelegate>
 
@@ -50,18 +51,6 @@ static NSString *const consumerSecret = @"QIhalU4lXFu3OBldrFX9FhhqoqFHakk8ZNiCu4
       }] resume];
 }
 
-- (NSString *)encodeConsumerKeyAndSecret {
-    NSCharacterSet *allowedCharacters = [NSCharacterSet URLFragmentAllowedCharacterSet];
-    NSString *encodedConsumerKey = [consumerKey stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
-    NSString *encodedConsumerSecret = [consumerSecret stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
-    NSString *concatenatedCredentials = [NSString stringWithFormat:@"%@:%@",encodedConsumerKey, encodedConsumerSecret];
-    NSData *data = [concatenatedCredentials dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *base64EncodedKey = [data base64EncodedStringWithOptions:0];
-    
-    NSString *encodedAuthToken = [NSString stringWithFormat:@"Basic %@", base64EncodedKey];
-    return encodedAuthToken;
-}
-
 - (void)fetchTweets:(void (^)(NSDictionary *))callback {
     
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -87,6 +76,18 @@ static NSString *const consumerSecret = @"QIhalU4lXFu3OBldrFX9FhhqoqFHakk8ZNiCu4
               NSLog(@"Error with json: %@", jsonError.localizedDescription);
           }
       }] resume];
+}
+
+- (NSString *)encodeConsumerKeyAndSecret {
+    NSCharacterSet *allowedCharacters = [NSCharacterSet URLFragmentAllowedCharacterSet];
+    NSString *encodedConsumerKey = [consumerKey stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
+    NSString *encodedConsumerSecret = [consumerSecret stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
+    NSString *concatenatedCredentials = [NSString stringWithFormat:@"%@:%@",encodedConsumerKey, encodedConsumerSecret];
+    NSData *data = [concatenatedCredentials dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *base64EncodedKey = [data base64EncodedStringWithOptions:0];
+    
+    NSString *encodedAuthToken = [NSString stringWithFormat:@"Basic %@", base64EncodedKey];
+    return encodedAuthToken;
 }
 
 - (NSString *)buildURLStringForFetchTweets {

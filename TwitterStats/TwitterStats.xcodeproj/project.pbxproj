@@ -22,8 +22,8 @@
 		139F31231E95C286007A85A5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 139F31221E95C286007A85A5 /* Default-568h@2x.png */; };
 		13B89E931E96013800866AC7 /* FetchTweetsWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B89E921E96013800866AC7 /* FetchTweetsWebService.m */; };
 		13B89E941E96013800866AC7 /* FetchTweetsWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B89E921E96013800866AC7 /* FetchTweetsWebService.m */; };
-		20012B01F786E74CDD80B043 /* libPods-TwitterStatsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DF11104518503D5C2C2E3E /* libPods-TwitterStatsTests.a */; };
-		5A7787043ACD9FC1D2F06057 /* libPods-TwitterStats.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE405CDB5E60F43A6458424 /* libPods-TwitterStats.a */; };
+		7B3934C4DA34157990CB15ED /* Pods_TwitterStats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EBB4EEF4F157A970EAAC8F /* Pods_TwitterStats.framework */; };
+		BCD816516E899583F8AE26F8 /* Pods_TwitterStatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694375312971F5B035102AB5 /* Pods_TwitterStatsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0EE405CDB5E60F43A6458424 /* libPods-TwitterStats.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TwitterStats.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E8ABDFBDCB1F05F82AF264 /* Pods-TwitterStatsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterStatsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterStatsTests/Pods-TwitterStatsTests.release.xcconfig"; sourceTree = "<group>"; };
 		1318346B1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwitterStatsModel.xcdatamodel; sourceTree = "<group>"; };
 		1318346D1E9E8AEC001D50DF /* PersistentStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentStack.h; sourceTree = "<group>"; };
@@ -62,8 +61,9 @@
 		13B89E921E96013800866AC7 /* FetchTweetsWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTweetsWebService.m; sourceTree = "<group>"; };
 		273C39DAF9620BFED4C312C2 /* Pods-TwitterStatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterStatsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterStatsTests/Pods-TwitterStatsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C71744DDE68126A08BDC7F0 /* Pods-TwitterStats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterStats.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterStats/Pods-TwitterStats.debug.xcconfig"; sourceTree = "<group>"; };
+		694375312971F5B035102AB5 /* Pods_TwitterStatsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterStatsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5467971D87AFA76E74BF88A /* Pods-TwitterStats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterStats.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterStats/Pods-TwitterStats.release.xcconfig"; sourceTree = "<group>"; };
-		D9DF11104518503D5C2C2E3E /* libPods-TwitterStatsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TwitterStatsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7EBB4EEF4F157A970EAAC8F /* Pods_TwitterStats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterStats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A7787043ACD9FC1D2F06057 /* libPods-TwitterStats.a in Frameworks */,
+				7B3934C4DA34157990CB15ED /* Pods_TwitterStats.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20012B01F786E74CDD80B043 /* libPods-TwitterStatsTests.a in Frameworks */,
+				BCD816516E899583F8AE26F8 /* Pods_TwitterStatsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,8 +150,8 @@
 		7509F36F3029524F786F9907 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0EE405CDB5E60F43A6458424 /* libPods-TwitterStats.a */,
-				D9DF11104518503D5C2C2E3E /* libPods-TwitterStatsTests.a */,
+				F7EBB4EEF4F157A970EAAC8F /* Pods_TwitterStats.framework */,
+				694375312971F5B035102AB5 /* Pods_TwitterStatsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
