@@ -22,12 +22,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
     self.persistentStack = [[PersistentStack alloc] init];
     self.tweetWebservice = [[FetchTweetsWebService alloc] init];
     self.tweetHandler = [[TweetHandler alloc] initWithContext:self.persistentStack.context
                                               tweetWebservice:self.tweetWebservice];
-    [self.tweetHandler storeTweets];
+    [self.tweetWebservice fetchBearerToken];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     MasterViewController *masterViewController = [MasterViewController new];
