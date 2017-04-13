@@ -8,6 +8,7 @@
 
 #import "TweetHandler.h"
 #import "FetchTweetsWebService.h"
+#import "PromiseKit/PromiseKit.h"
 
 @interface TweetHandler ()
 
@@ -29,9 +30,8 @@
 
 - (void)storeTweets {
     
-    [self.tweetWebService fetchBearerToken];
-    
-        [self.tweetWebService fetchTweets:^(NSDictionary *data) {
+    [self.tweetWebService fetchBearerToken].then(^(NSString *bearerToken){
+        [self.tweetWebService fetchTweetsUsingToken:bearerToken callBlock:^(NSDictionary *data) {
             [self.context performBlock:^ {
                 for (NSDictionary *tweet in data) {
                     //NSString *identifier = tweet[@"id"];
@@ -45,6 +45,10 @@
                 }
             }];
         }];
+    });
+
+    
+    
 }
 
 @end
