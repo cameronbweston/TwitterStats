@@ -10,7 +10,6 @@
 
 @interface FetchTweetsWebService : NSObject
 
-@property (nonatomic, strong, readwrite) NSString *oAuthToken;
 - (void)fetchBearerToken;
 - (void)fetchTweets:(void (^)(NSDictionary *data))callback;
 

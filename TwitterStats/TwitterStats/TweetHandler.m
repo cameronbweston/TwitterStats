@@ -28,6 +28,9 @@
 }
 
 - (void)storeTweets {
+    
+    [self.tweetWebService fetchBearerToken];
+    
         [self.tweetWebService fetchTweets:^(NSDictionary *data) {
             [self.context performBlock:^ {
                 for (NSDictionary *tweet in data) {
