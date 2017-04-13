@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@class AnyPromise;
 
 @interface FetchTweetsWebService : NSObject
 
-- (void)fetchBearerToken;
-- (void)fetchTweets:(void (^)(NSDictionary *data))callback;
+- (AnyPromise *)fetchBearerToken;
+- (void)fetchTweetsUsingToken:(NSString *)token callBlock:(void (^)(NSDictionary *))callback;
 
 @end

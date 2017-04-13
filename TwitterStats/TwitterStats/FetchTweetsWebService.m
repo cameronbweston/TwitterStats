@@ -20,45 +20,51 @@
 static NSString *const consumerKey = @"R6B31mzHrhqBMC6gWGUVGz4NR";
 static NSString *const consumerSecret = @"QIhalU4lXFu3OBldrFX9FhhqoqFHakk8ZNiCu4H0ewvvDwFnia";
 
-- (void)fetchBearerToken {
-    NSString *grantTypeString = @"grant_type=client_credentials";
-    
-    NSString *post = [NSString stringWithString:[self buildURLStringForRetrieveToken]];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
-    
-    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURL *remoteURL = [NSURL URLWithString:[self buildURLStringForRetrieveToken]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:remoteURL];
-    [request setValue:[self encodeConsumerKeyAndSecret] forHTTPHeaderField:@"Authorization"];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:[NSData dataWithBytes:[grantTypeString UTF8String] length:[grantTypeString length]]];
-    
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:self delegateQueue:nil];
-    
-    [[session dataTaskWithRequest:request completionHandler:
-      ^(NSData *data, NSURLResponse *response, NSError *error) {
-          NSError *jsonError = error;
-          NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-          self.oAuthToken =  [NSString stringWithFormat:@"Bearer %@", result[@"access_token"]];
-          
-          if (jsonError) {
-              NSLog(@"Error with JSON: %@", jsonError.localizedDescription);
-          }
-      }] resume];
+- (AnyPromise *)fetchBearerToken {
+    return [AnyPromise promiseWithResolverBlock:^(void (^ resolver)(id _Nullable)) {
+        NSString *grantTypeString = @"grant_type=client_credentials";
+        
+        NSString *post = [NSString stringWithString:[self buildURLStringForRetrieveToken]];
+        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+        
+        NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+        NSURL *remoteURL = [NSURL URLWithString:[self buildURLStringForRetrieveToken]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        [request setURL:remoteURL];
+        [request setValue:[self encodeConsumerKeyAndSecret] forHTTPHeaderField:@"Authorization"];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:[NSData dataWithBytes:[grantTypeString UTF8String] length:[grantTypeString length]]];
+        
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:self delegateQueue:nil];
+        
+        [[session dataTaskWithRequest:request completionHandler:
+          ^(NSData *data, NSURLResponse *response, NSError *error) {
+              NSError *jsonError = error;
+              NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+              NSString *bearerToken =  [NSString stringWithFormat:@"Bearer %@", result[@"access_token"]];
+              
+              if (jsonError) {
+                  resolver(jsonError);
+                  NSLog(@"Error with JSON: %@", jsonError.localizedDescription);
+              }
+              else {
+                  resolver(bearerToken);
+              }
+          }] resume];
+    }];
 }
 
-- (void)fetchTweets:(void (^)(NSDictionary *))callback {
+- (void)fetchTweetsUsingToken:(NSString *)token callBlock:(void (^)(NSDictionary *))callback {
     
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSString *urlString = [self buildURLStringForFetchTweets];
     NSURL *remoteURL = [NSURL URLWithString:urlString];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]  initWithURL:remoteURL];
-    [request addValue:self.oAuthToken forHTTPHeaderField:@"Authorization"];
+    [request addValue:token forHTTPHeaderField:@"Authorization"];
     
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:nil];
     [[session dataTaskWithRequest:request completionHandler:
@@ -91,7 +97,8 @@ static NSString *const consumerSecret = @"QIhalU4lXFu3OBldrFX9FhhqoqFHakk8ZNiCu4
 }
 
 - (NSString *)buildURLStringForFetchTweets {
-    return [NSString stringWithFormat:@"https://api.twitter.com/1.1/statuses/home_timeline.json"];
+    NSString *urlString = @"http://twitter.com/search?q=place%3A07d9cd6afd884001";
+     return [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 }
 
 - (NSString *)buildURLStringForRetrieveToken {
