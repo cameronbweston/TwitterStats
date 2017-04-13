@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "MasterViewController.h"
 #import "PersistentStack.h"
-#import "FetchTweetsWebService.h"
 #import "TweetHandler.h"
 
 @interface AppDelegate ()
@@ -20,13 +19,18 @@
 
 @implementation AppDelegate
 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.persistentStack = [[PersistentStack alloc] init];
     self.tweetWebservice = [[FetchTweetsWebService alloc] init];
     self.tweetHandler = [[TweetHandler alloc] initWithContext:self.persistentStack.context
                                               tweetWebservice:self.tweetWebservice];
+
     [self.tweetWebservice fetchBearerToken];
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self.tweetHandler storeTweets];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     MasterViewController *masterViewController = [MasterViewController new];

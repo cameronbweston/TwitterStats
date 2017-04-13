@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 @class PersistentStack;
 @class FetchTweetsWebService;
-@class TweetHandler;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
