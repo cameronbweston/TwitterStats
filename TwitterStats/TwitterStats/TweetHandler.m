@@ -28,20 +28,20 @@
 }
 
 - (void)storeTweets {
-    [self.tweetWebService fetchTweets:^(NSDictionary *data) {
-        [self.context performBlock:^ {
-            for (NSDictionary *tweet in data) {
-                //NSString *identifier = tweet[@"id"];
-                //find or create tweet with identifier
-                //tweet load from dictionary
-            }
-            NSError *error;
-            [self.context save:&error];
-            if (error) {
-                NSLog(@"Error in store tweets: %@", error.localizedDescription);
-            }
+        [self.tweetWebService fetchTweets:^(NSDictionary *data) {
+            [self.context performBlock:^ {
+                for (NSDictionary *tweet in data) {
+                    //NSString *identifier = tweet[@"id"];
+                    //find or create tweet with identifier
+                    //tweet load from dictionary
+                }
+                NSError *error;
+                [self.context save:&error];
+                if (error) {
+                    NSLog(@"Error in store tweets: %@", error.localizedDescription);
+                }
+            }];
         }];
-    }];
 }
 
 @end
