@@ -536,6 +536,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 273C39DAF9620BFED4C312C2 /* Pods-TwitterStatsTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = MYPL73A9KM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -554,6 +555,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 11E8ABDFBDCB1F05F82AF264 /* Pods-TwitterStatsTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = MYPL73A9KM;
 				FRAMEWORK_SEARCH_PATHS = (

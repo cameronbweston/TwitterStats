@@ -58,7 +58,6 @@ static NSString *const consumerSecret = @"QIhalU4lXFu3OBldrFX9FhhqoqFHakk8ZNiCu4
 }
 
 - (void)fetchTweetsUsingToken:(NSString *)token callBlock:(void (^)(NSDictionary *))callback {
-    
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSString *urlString = [self buildURLStringForFetchTweets];
     NSURL *remoteURL = [NSURL URLWithString:urlString];
@@ -76,7 +75,7 @@ static NSString *const consumerSecret = @"QIhalU4lXFu3OBldrFX9FhhqoqFHakk8ZNiCu4
           }
           NSError *jsonError = nil;
           NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-          callback(result);
+          //callback(result);
           NSLog(@"HERE IS THE RESULT: %@", result);
           if (jsonError) {
               NSLog(@"Error with json: %@", jsonError.localizedDescription);
@@ -97,11 +96,11 @@ static NSString *const consumerSecret = @"QIhalU4lXFu3OBldrFX9FhhqoqFHakk8ZNiCu4
 }
 
 - (NSString *)buildURLStringForFetchTweets {
-    NSString *urlString = @"http://twitter.com/search?q=place%3A07d9cd6afd884001";
-     return [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    return [NSString stringWithFormat:@"https://stream.twitter.com/1.1/statuses/sample.json"];
 }
 
 - (NSString *)buildURLStringForRetrieveToken {
     return [NSString stringWithFormat:@"https://api.twitter.com/oauth2/token"];
 }
+
 @end
