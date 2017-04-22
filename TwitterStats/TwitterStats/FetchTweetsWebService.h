@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-@class AnyPromise;
+#import "STTwitterAPI.h"
 
 @interface FetchTweetsWebService : NSObject
 
-- (AnyPromise *)fetchBearerToken;
-- (void)fetchTweetsUsingToken:(NSString *)token callBlock:(void (^)(NSDictionary *))callback;
+- (void)fetchTweetsWithProgressBlock:(void(^)(NSDictionary *json, STTwitterStreamJSONType type))progressBlock errorBlock:(void(^)(NSError *))errorBlock;
+- (void)closeStream;
 
 @end
