@@ -19,20 +19,30 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>STTwitter.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7047BA2DB546EC8957CA6AF286EBA000</key>
+		<key>3D2ABFE45F1704D960AD7E3FA82ED897</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7666D234994679043FB7A66C7648A1B2</key>
+		<key>77643A39B9A35194D392F3E19CD0538D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C95791EBF990EEC4C47D5FDB21C4C8EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D6CC28994D552393D1A0A45DB6BEF51C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

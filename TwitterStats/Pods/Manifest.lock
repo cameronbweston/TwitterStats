@@ -10,13 +10,16 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.1.7):
     - PromiseKit/CorePromise
+  - STTwitter (0.2.6)
 
 DEPENDENCIES:
   - PromiseKit (~> 4.0)
+  - STTwitter
 
 SPEC CHECKSUMS:
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
+  STTwitter: 30ee2f79eff78c3d633a1edc869e97db9c9ead59
 
-PODFILE CHECKSUM: d9dd093adafb8188e2f15e6b1ccb79dc18aef2a5
+PODFILE CHECKSUM: e87ff8126c5b9623901b325510ef8b30613323e9
 
 COCOAPODS: 1.2.1
