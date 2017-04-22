@@ -33,7 +33,7 @@
 }
 
 - (void)loadFromDictionary:(NSDictionary *)dictionary {
-    
+    //
 }
 
 @end

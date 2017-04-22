@@ -14,7 +14,8 @@
 @interface TweetHandler : NSObject
 
 - (instancetype)initWithContext:(NSManagedObjectContext *)context
-      tweetWebservice:(FetchTweetsWebService *)tweetWebservice;
-- (void)storeTweets;
+                tweetWebservice:(FetchTweetsWebService *)tweetWebservice;
+- (void)fetchAndSaveTweets;
+- (void)closeStream;
 
 @end
