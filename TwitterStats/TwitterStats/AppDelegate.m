@@ -25,7 +25,7 @@
     self.tweetHandler = [[TweetHandler alloc] initWithContext:self.persistentStack.context
                                               tweetWebservice:self.tweetWebservice];
     
-    [self.tweetHandler storeTweets];
+    [self.tweetHandler fetchAndSaveTweets];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     MasterViewController *masterViewController = [MasterViewController new];
@@ -34,11 +34,10 @@
     self.window.rootViewController = rootNavController;
     [self.window makeKeyAndVisible];
     return YES;
-    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [self.tweetHandler closeStream];
 }
 
 
