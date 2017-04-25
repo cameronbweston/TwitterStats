@@ -11,6 +11,7 @@
 #import "TweetHandler.h"
 #import "PromiseKit/PromiseKit.h"
 #import "ManagedTweet.h"
+#import "JSONTweetObject.h"
 
 @interface TweetHandler ()
 
@@ -35,12 +36,11 @@
     
     dispatch_async(getTweetsQueue, ^{
         [self.tweetWebService fetchTweetsWithProgressBlock:^(NSDictionary *json, STTwitterStreamJSONType type) {
-            NSLog(@"fetched tweets:%@", json);
-                 for(NSDictionary *tweet in json) {
-                     //NSString *identifier = tweet[@"id"];
-                     //ManagedTweet *managedTweet = [ManagedTweet findOrCreateTweetWithIdentifier:identifier inContext:self.context];
-                     //[managedTweet loadFromDictionary:tweet];
-                 }
+
+                NSLog(@"Fetched tweets: %@", json);
+                JSONTweetObject *jsonTweet = [[JSONTweetObject alloc] initWithJSONObject:json];
+                [ManagedTweet loadFromJSONTweetObject:jsonTweet context:self.context];
+            
         } errorBlock:^(NSError *error) {
             if (error) {
                 [self.context save:&error];
@@ -58,7 +58,5 @@
         NSLog(@"Failed to save Core Data: %@", error.localizedDescription);
     }
 }
-// Make a new object that knows how to parse json into individual TWEET json objects -> returns an array of Tweet JSON
-// Pass in each json object in Managed TWEET -> Turns it into core data
 
 @end
