@@ -22,6 +22,8 @@
 		139F31231E95C286007A85A5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 139F31221E95C286007A85A5 /* Default-568h@2x.png */; };
 		13B89E931E96013800866AC7 /* FetchTweetsWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B89E921E96013800866AC7 /* FetchTweetsWebService.m */; };
 		13B89E941E96013800866AC7 /* FetchTweetsWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B89E921E96013800866AC7 /* FetchTweetsWebService.m */; };
+		13F284751EAFB25D00D89B7F /* JSONTweetObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F284741EAFB25D00D89B7F /* JSONTweetObject.m */; };
+		13F284761EAFB25D00D89B7F /* JSONTweetObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F284741EAFB25D00D89B7F /* JSONTweetObject.m */; };
 		7B3934C4DA34157990CB15ED /* Pods_TwitterStats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EBB4EEF4F157A970EAAC8F /* Pods_TwitterStats.framework */; };
 		BCD816516E899583F8AE26F8 /* Pods_TwitterStatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694375312971F5B035102AB5 /* Pods_TwitterStatsTests.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		139F31221E95C286007A85A5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		13B89E911E96013800866AC7 /* FetchTweetsWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchTweetsWebService.h; sourceTree = "<group>"; };
 		13B89E921E96013800866AC7 /* FetchTweetsWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTweetsWebService.m; sourceTree = "<group>"; };
+		13F284731EAFB25D00D89B7F /* JSONTweetObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTweetObject.h; sourceTree = "<group>"; };
+		13F284741EAFB25D00D89B7F /* JSONTweetObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTweetObject.m; sourceTree = "<group>"; };
 		273C39DAF9620BFED4C312C2 /* Pods-TwitterStatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterStatsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterStatsTests/Pods-TwitterStatsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C71744DDE68126A08BDC7F0 /* Pods-TwitterStats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterStats.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterStats/Pods-TwitterStats.debug.xcconfig"; sourceTree = "<group>"; };
 		694375312971F5B035102AB5 /* Pods_TwitterStatsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterStatsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +123,8 @@
 				139F31041E95C254007A85A5 /* MasterViewController.m */,
 				137A26551E97258C003E6ECA /* TweetHandler.h */,
 				137A26561E97258C003E6ECA /* TweetHandler.m */,
+				13F284731EAFB25D00D89B7F /* JSONTweetObject.h */,
+				13F284741EAFB25D00D89B7F /* JSONTweetObject.m */,
 				1390E0F41E9EB67F00212A03 /* ManagedTweet.h */,
 				1390E0F51E9EB67F00212A03 /* ManagedTweet.m */,
 				1318346D1E9E8AEC001D50DF /* PersistentStack.h */,
@@ -373,6 +379,7 @@
 				139F31051E95C254007A85A5 /* MasterViewController.m in Sources */,
 				1318346C1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodeld in Sources */,
 				139F31021E95C254007A85A5 /* AppDelegate.m in Sources */,
+				13F284751EAFB25D00D89B7F /* JSONTweetObject.m in Sources */,
 				1318346F1E9E8AEC001D50DF /* PersistentStack.m in Sources */,
 				137A26571E97258C003E6ECA /* TweetHandler.m in Sources */,
 				139F30FF1E95C254007A85A5 /* main.m in Sources */,
@@ -385,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13F284761EAFB25D00D89B7F /* JSONTweetObject.m in Sources */,
 				139F31181E95C254007A85A5 /* TwitterStatsTests.m in Sources */,
 				137A26581E97258C003E6ECA /* TweetHandler.m in Sources */,
 				13B89E941E96013800866AC7 /* FetchTweetsWebService.m in Sources */,
