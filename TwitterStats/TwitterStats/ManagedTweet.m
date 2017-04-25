@@ -10,30 +10,26 @@
 
 @implementation ManagedTweet
 
-+ (ManagedTweet *)findOrCreateTweetWithIdentifier:(NSString *)identifier
-                                        inContext:(NSManagedObjectContext *)context {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Tweet"];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"tweetId = %@", identifier];
-    
-    NSError *error;
-    NSArray *result = [context executeFetchRequest:fetchRequest
-                                             error:&error];
-    if (error) {
-        NSLog(@"Error in fetch request: %@", error.localizedDescription);
-    }
-    if (result.lastObject) {
-        return result.lastObject;
-    }
-    else {
-        ManagedTweet *tweet = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet"
-                                                            inManagedObjectContext:context];
-        //tweet.tweetId = identifier;
-        return tweet;
-    }
-}
+@dynamic dateCreated;
+@dynamic tweetID;
+@dynamic hashtags;
+@dynamic symbols;
+@dynamic text;
+@dynamic urls;
+@dynamic emojis;
 
-- (void)loadFromDictionary:(NSDictionary *)dictionary {
-    //
++ (ManagedTweet *)loadFromJSONTweetObject:(JSONTweetObject *)jsonTweet context:(NSManagedObjectContext *)context {
+    ManagedTweet *tweet = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet"
+                                                        inManagedObjectContext:context];
+    tweet.tweetID = jsonTweet.tweetID;
+    //tweet.dateCreated = jsonTweet.dateCreated;
+    tweet.hashtags = jsonTweet.hashtags;
+    tweet.symbols = jsonTweet.symbols;
+    tweet.text = jsonTweet.text;
+    tweet.urls = jsonTweet.urls;
+    tweet.emojis = jsonTweet.emojis;
+
+    return tweet;
 }
 
 @end

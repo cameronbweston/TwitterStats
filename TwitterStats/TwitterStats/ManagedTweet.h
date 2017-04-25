@@ -8,11 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "JSONTweetObject.h"
 
 @interface ManagedTweet : NSManagedObject
 
-- (void)loadFromDictionary:(NSDictionary *)dictionary;
-+ (ManagedTweet *)findOrCreateTweetWithIdentifier:(NSString *)identifier
-                                        inContext:(NSManagedObjectContext *)context;
++ (ManagedTweet *)loadFromJSONTweetObject:(JSONTweetObject *)jsonTweet context:(NSManagedObjectContext *)context;
+
+@property (nonatomic, strong) NSString *dateCreated;
+@property (nonatomic, strong) NSString *tweetID;
+@property (nonatomic, strong) NSString *hashtags;
+@property (nonatomic, strong) NSString *symbols;
+@property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *urls;
+@property (nonatomic, strong) NSString *emojis;
 
 @end
