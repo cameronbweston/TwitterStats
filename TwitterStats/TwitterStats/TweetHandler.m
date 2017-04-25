@@ -10,6 +10,7 @@
 
 #import "TweetHandler.h"
 #import "PromiseKit/PromiseKit.h"
+#import "ManagedTweet.h"
 
 @interface TweetHandler ()
 
@@ -34,17 +35,16 @@
     
     dispatch_async(getTweetsQueue, ^{
         [self.tweetWebService fetchTweetsWithProgressBlock:^(NSDictionary *json, STTwitterStreamJSONType type) {
-            NSLog(@"Fetched Tweets: %@", json);
-            if ([NSThread isMainThread]) {
-                
-            };
-            // Safe to do core data as you are on the main thread
-
-            //save json somehow for later
-            //save to core data on main thread
+            NSLog(@"fetched tweets:%@", json);
+                 for(NSDictionary *tweet in json) {
+                     //NSString *identifier = tweet[@"id"];
+                     //ManagedTweet *managedTweet = [ManagedTweet findOrCreateTweetWithIdentifier:identifier inContext:self.context];
+                     //[managedTweet loadFromDictionary:tweet];
+                 }
         } errorBlock:^(NSError *error) {
             if (error) {
-                NSLog(@"Error in fetching tweets: %@", error.localizedDescription);
+                [self.context save:&error];
+                NSLog(@"Error in TweetHandler: %@", error.localizedDescription);
             }
         }];
     });
