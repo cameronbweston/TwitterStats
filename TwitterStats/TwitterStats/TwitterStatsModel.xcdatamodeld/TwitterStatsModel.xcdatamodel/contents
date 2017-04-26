@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Tweet" representedClassName="Tweet" syncable="YES" codeGenerationType="class">
-        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="emojis" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="hashtags" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="symbols" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateCreated" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hashtags" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="symbols" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tweetID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="urls" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urls" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Tweet" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Tweet" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>
