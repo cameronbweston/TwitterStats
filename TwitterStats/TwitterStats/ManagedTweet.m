@@ -16,18 +16,16 @@
 @dynamic symbols;
 @dynamic text;
 @dynamic urls;
-@dynamic emojis;
 
 + (ManagedTweet *)loadFromJSONTweetObject:(JSONTweetObject *)jsonTweet context:(NSManagedObjectContext *)context {
     ManagedTweet *tweet = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet"
                                                         inManagedObjectContext:context];
     tweet.tweetID = jsonTweet.tweetID;
-    //tweet.dateCreated = jsonTweet.dateCreated;
+    tweet.dateCreated = jsonTweet.dateCreated;
     tweet.hashtags = jsonTweet.hashtags;
     tweet.symbols = jsonTweet.symbols;
     tweet.text = jsonTweet.text;
     tweet.urls = jsonTweet.urls;
-    tweet.emojis = jsonTweet.emojis;
 
     return tweet;
 }
