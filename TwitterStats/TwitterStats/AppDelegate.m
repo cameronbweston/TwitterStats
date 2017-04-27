@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MasterViewController.h"
+#import "CollectionViewController.h"
 #import "PersistentStack.h"
 #import "TweetHandler.h"
 
@@ -28,8 +28,8 @@
     [self.tweetHandler fetchAndSaveTweets];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    MasterViewController *masterViewController = [MasterViewController new];
-    UINavigationController *rootNavController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+    CollectionViewController *collectionViewController = [CollectionViewController new];
+    UINavigationController *rootNavController = [[UINavigationController alloc] initWithRootViewController:collectionViewController];
     
     self.window.rootViewController = rootNavController;
     [self.window makeKeyAndVisible];
