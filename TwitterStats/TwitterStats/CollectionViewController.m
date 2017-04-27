@@ -6,13 +6,13 @@
 //  Copyright © 2017 cameron weston personal. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "CollectionViewController.h"
 
-@interface MasterViewController ()
+@interface CollectionViewController ()
 
 @end
 
-@implementation MasterViewController
+@implementation CollectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
