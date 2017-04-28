@@ -68,9 +68,15 @@ static NSString *const identifier = @"CollectionViewCell";
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    const CGFloat width = self.view.frame.size.width / 2 - 5;
+    float marginWidth = (self.view.frame.size.width) - (self.collectionView.frame.size.width);
+    float offset = marginWidth/4;
+    const CGFloat width = self.collectionView.frame.size.width / 2 - offset;
     const CGFloat height = width;
     return CGSizeMake(width, height);
 }
+
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+//    return 5f;
+//}
 
 @end
