@@ -28,7 +28,7 @@
     [self.tweetHandler fetchAndSaveTweets];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    CollectionViewController *collectionViewController = [CollectionViewController new];
+    CollectionViewController *collectionViewController = [[CollectionViewController alloc] initWithNibName:@"CollectionViewController" bundle:nil];
     UINavigationController *rootNavController = [[UINavigationController alloc] initWithRootViewController:collectionViewController];
     
     self.window.rootViewController = rootNavController;
