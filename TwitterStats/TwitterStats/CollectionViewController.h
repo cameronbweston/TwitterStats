@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CollectionViewController.h
 //  TwitterStats
 //
 //  Created by Cameron Weston on 4/5/17.
