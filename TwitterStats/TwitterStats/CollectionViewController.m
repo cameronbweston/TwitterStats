@@ -45,12 +45,15 @@ static NSString *const identifier = @"CollectionViewCell";
         case 1:
             cell.cellImageView.image = [UIImage imageNamed:@"hashtagSymbol"];
             cell.cellTextLabel.text = @"Top Hashtags";
+            break;
         case 2:
             cell.cellImageView.image = [UIImage imageNamed:@"urlSymbol"];
             cell.cellTextLabel.text = @"Top URLs";
+            break;
         case 3:
             cell.cellImageView.image = [UIImage imageNamed:@"photoUrlSymbol"];
             cell.cellTextLabel.text = @"Top Photo URLs";
+            break;
         case 4:
             cell.cellImageView.image = [UIImage imageNamed:@"timeSymbol"];
             cell.cellTextLabel.text = @"Tweets Today";
@@ -69,11 +72,5 @@ static NSString *const identifier = @"CollectionViewCell";
     const CGFloat height = width;
     return CGSizeMake(width, height);
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end
