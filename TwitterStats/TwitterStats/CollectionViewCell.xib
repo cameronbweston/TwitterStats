@@ -25,8 +25,8 @@
                             <constraint firstAttribute="width" constant="60" id="kEU-VD-d9j"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AS7-v2-kEe">
-                        <rect key="frame" x="20" y="72" width="60" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AS7-v2-kEe">
+                        <rect key="frame" x="0.0" y="72" width="100" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -35,10 +35,10 @@
             </view>
             <constraints>
                 <constraint firstItem="AS7-v2-kEe" firstAttribute="top" secondItem="7Ai-Kd-zi3" secondAttribute="bottom" constant="6" id="9oh-WI-wvJ"/>
-                <constraint firstItem="AS7-v2-kEe" firstAttribute="leading" secondItem="2hl-mw-bt6" secondAttribute="leading" constant="20" id="CIz-0c-R4M"/>
+                <constraint firstItem="AS7-v2-kEe" firstAttribute="leading" secondItem="2hl-mw-bt6" secondAttribute="leading" id="CIz-0c-R4M"/>
                 <constraint firstItem="7Ai-Kd-zi3" firstAttribute="top" secondItem="2hl-mw-bt6" secondAttribute="top" constant="6" id="Ka3-No-IkM"/>
                 <constraint firstAttribute="bottom" secondItem="7Ai-Kd-zi3" secondAttribute="bottom" constant="34" id="V7y-dp-Hxq"/>
-                <constraint firstAttribute="trailing" secondItem="AS7-v2-kEe" secondAttribute="trailing" constant="20" id="hPY-QP-mID"/>
+                <constraint firstAttribute="trailing" secondItem="AS7-v2-kEe" secondAttribute="trailing" id="hPY-QP-mID"/>
                 <constraint firstAttribute="trailing" secondItem="7Ai-Kd-zi3" secondAttribute="trailing" constant="20" id="i9A-el-znQ"/>
                 <constraint firstItem="AS7-v2-kEe" firstAttribute="top" secondItem="7Ai-Kd-zi3" secondAttribute="bottom" constant="6" id="rDy-NE-d9U"/>
                 <constraint firstItem="7Ai-Kd-zi3" firstAttribute="leading" secondItem="2hl-mw-bt6" secondAttribute="leading" constant="20" id="ybg-yV-68a"/>
