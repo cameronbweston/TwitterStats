@@ -27,7 +27,8 @@ static NSString *const identifier = @"CollectionViewCell";
 - (void)configureCollectionView {
     UINib *collectionViewCellNib = [UINib nibWithNibName:@"CollectionViewCell" bundle:nil];
     [self.collectionView registerNib:collectionViewCellNib forCellWithReuseIdentifier:identifier];
-    
+    self.collectionView.backgroundColor = [UIColor colorWithRed:0.753 green:0.871 blue:0.929 alpha:1.0];
+    self.view.backgroundColor = [UIColor colorWithRed:0.753 green:0.871 blue:0.929 alpha:1.0];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -47,11 +48,11 @@ static NSString *const identifier = @"CollectionViewCell";
             cell.cellTextLabel.text = @"Top Hashtags";
             break;
         case 2:
-            cell.cellImageView.image = [UIImage imageNamed:@"urlSymbol"];
+            cell.cellImageView.image = [UIImage imageNamed:@"URLSymbol"];
             cell.cellTextLabel.text = @"Top URLs";
             break;
         case 3:
-            cell.cellImageView.image = [UIImage imageNamed:@"photoUrlSymbol"];
+            cell.cellImageView.image = [UIImage imageNamed:@"photoURLSymbol"];
             cell.cellTextLabel.text = @"Top Photo URLs";
             break;
         case 4:
@@ -60,7 +61,8 @@ static NSString *const identifier = @"CollectionViewCell";
         default:
             break;
     }
-    cell.backgroundColor = [UIColor lightGrayColor];
+    cell.backgroundColor = [UIColor colorWithRed:0.0 green:0.675 blue:0.929 alpha:1];
+    cell.cellTextLabel.textColor = [UIColor whiteColor];
     cell.layer.masksToBounds = YES;
     cell.layer.cornerRadius = 20;
     

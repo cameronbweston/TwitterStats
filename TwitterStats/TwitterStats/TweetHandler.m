@@ -36,11 +36,9 @@
     
     dispatch_async(getTweetsQueue, ^{
         [self.tweetWebService fetchTweetsWithProgressBlock:^(NSDictionary *json, STTwitterStreamJSONType type) {
-
                 NSLog(@"Fetched tweets: %@", json);
                 JSONTweetObject *jsonTweet = [[JSONTweetObject alloc] initWithJSONObject:json];
                 [ManagedTweet loadFromJSONTweetObject:jsonTweet context:self.context];
-            
         } errorBlock:^(NSError *error) {
             if (error) {
                 [self.context save:&error];
