@@ -22,6 +22,7 @@ static NSString *const identifier = @"CollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureCollectionView];
+    self.title = @"Stat(Twitt)stics";
 }
 
 - (void)configureCollectionView {
@@ -32,7 +33,7 @@ static NSString *const identifier = @"CollectionViewCell";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return 6;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -58,6 +59,11 @@ static NSString *const identifier = @"CollectionViewCell";
         case 4:
             cell.cellImageView.image = [UIImage imageNamed:@"timeSymbol"];
             cell.cellTextLabel.text = @"Tweets Today";
+            break;
+        case 5:
+            cell.cellImageView.image = [UIImage imageNamed:@"percentSymbol"];
+            cell.cellTextLabel.text = @"Top Percent";
+            break;
         default:
             break;
     }

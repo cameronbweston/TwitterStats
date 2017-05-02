@@ -31,6 +31,11 @@
     CollectionViewController *collectionViewController = [[CollectionViewController alloc] initWithNibName:@"CollectionViewController" bundle:nil];
     UINavigationController *rootNavController = [[UINavigationController alloc] initWithRootViewController:collectionViewController];
     
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:0.0 green:0.675 blue:0.929 alpha:1], NSForegroundColorAttributeName,
+                                                           [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+    
     self.window.rootViewController = rootNavController;
     [self.window makeKeyAndVisible];
     return YES;
