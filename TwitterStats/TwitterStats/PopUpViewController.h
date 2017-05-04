@@ -10,4 +10,6 @@
 
 @interface PopUpViewController : UIViewController
 
+- (void)showInView:(UIViewController *)aViewController animated:(BOOL)animated;
+
 @end

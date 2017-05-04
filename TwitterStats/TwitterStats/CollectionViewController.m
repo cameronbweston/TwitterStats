@@ -8,6 +8,7 @@
 
 #import "CollectionViewController.h"
 #import "CollectionViewCell.h"
+#import "PopUpViewController.h"
 
 @interface CollectionViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -23,7 +24,10 @@ static NSString *const identifier = @"CollectionViewCell";
     [super viewDidLoad];
     [self configureCollectionView];
     self.title = @"Stat(Twitt)stics";
+    PopUpViewController *popUpViewController = [[PopUpViewController alloc] init];
+    [popUpViewController showInView:self animated:YES];
 }
+
 
 - (void)configureCollectionView {
     UINib *collectionViewCellNib = [UINib nibWithNibName:@"CollectionViewCell" bundle:nil];
@@ -82,9 +86,5 @@ static NSString *const identifier = @"CollectionViewCell";
     const CGFloat height = width;
     return CGSizeMake(width, height);
 }
-
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-//    return 5f;
-//}
 
 @end

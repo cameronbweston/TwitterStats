@@ -11,9 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpViewController">
             <connections>
-                <outlet property="closeButton" destination="olV-42-xMq" id="nhw-b4-RrV"/>
-                <outlet property="popUpView" destination="mKL-o3-9i2" id="DCX-ef-3Mc"/>
-                <outlet property="view" destination="mKL-o3-9i2" id="kCj-uF-E3L"/>
+                <outlet property="popUpView" destination="mKL-o3-9i2" id="gRE-LF-QgG"/>
+                <outlet property="view" destination="ej4-Zb-Q45" id="a5u-lX-I1A"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,23 +21,23 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKL-o3-9i2">
-                    <rect key="frame" x="67" y="169" width="240" height="330"/>
+                    <rect key="frame" x="67" y="169" width="240" height="329"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl6-Xj-d5e">
-                            <rect key="frame" x="8" y="105" width="224" height="120"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl6-Xj-d5e">
+                            <rect key="frame" x="8" y="8" width="224" height="275"/>
                             <string key="text">Welcome to Sta(Twitt)stics 
 This app 
 collects important data 
 from tweets around the world </string>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olV-42-xMq">
-                            <rect key="frame" x="49" y="233" width="142" height="30"/>
+                            <rect key="frame" x="8" y="291" width="224" height="30"/>
                             <state key="normal" title="See What's Trending"/>
                             <connections>
-                                <action selector="closePopup:" destination="-1" eventType="touchUpInside" id="lko-xb-XBm"/>
+                                <action selector="closePopup:" destination="-1" eventType="touchUpInside" id="yv3-Vs-qUU"/>
                             </connections>
                         </button>
                     </subviews>
@@ -46,20 +45,21 @@ from tweets around the world </string>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="nl6-Xj-d5e" secondAttribute="trailing" constant="8" id="Hct-ZJ-uok"/>
                         <constraint firstItem="nl6-Xj-d5e" firstAttribute="leading" secondItem="mKL-o3-9i2" secondAttribute="leading" constant="8" id="VxB-E7-3Ie"/>
-                        <constraint firstItem="nl6-Xj-d5e" firstAttribute="top" secondItem="mKL-o3-9i2" secondAttribute="top" constant="105" id="X2Z-5p-sCp"/>
-                        <constraint firstAttribute="bottom" secondItem="nl6-Xj-d5e" secondAttribute="bottom" constant="105" id="XWW-mF-XuU"/>
+                        <constraint firstItem="nl6-Xj-d5e" firstAttribute="top" secondItem="mKL-o3-9i2" secondAttribute="top" constant="8" id="X2Z-5p-sCp"/>
+                        <constraint firstAttribute="bottom" secondItem="nl6-Xj-d5e" secondAttribute="bottom" constant="46" id="XWW-mF-XuU"/>
                         <constraint firstItem="olV-42-xMq" firstAttribute="top" secondItem="nl6-Xj-d5e" secondAttribute="bottom" constant="8" id="i5u-Gl-lpn"/>
-                        <constraint firstAttribute="trailing" secondItem="olV-42-xMq" secondAttribute="trailing" constant="49" id="jjN-fQ-paP"/>
-                        <constraint firstItem="olV-42-xMq" firstAttribute="leading" secondItem="mKL-o3-9i2" secondAttribute="leading" constant="49" id="zOX-2c-nCk"/>
+                        <constraint firstAttribute="trailing" secondItem="olV-42-xMq" secondAttribute="trailing" constant="8" id="jjN-fQ-paP"/>
+                        <constraint firstItem="olV-42-xMq" firstAttribute="leading" secondItem="mKL-o3-9i2" secondAttribute="leading" constant="8" id="zOX-2c-nCk"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="mKL-o3-9i2" firstAttribute="top" secondItem="ej4-Zb-Q45" secondAttribute="top" constant="169" id="3xF-8T-gQD"/>
-                <constraint firstAttribute="trailing" secondItem="mKL-o3-9i2" secondAttribute="trailing" constant="68" id="gzq-l3-9sl"/>
-                <constraint firstItem="mKL-o3-9i2" firstAttribute="leading" secondItem="ej4-Zb-Q45" secondAttribute="leading" constant="67" id="mUk-hg-8gT"/>
-                <constraint firstAttribute="bottom" secondItem="mKL-o3-9i2" secondAttribute="bottom" constant="168" id="swZ-2S-Ize"/>
+                <constraint firstItem="mKL-o3-9i2" firstAttribute="leading" secondItem="ej4-Zb-Q45" secondAttribute="leading" constant="67" id="FtG-oq-Xn4"/>
+                <constraint firstItem="mKL-o3-9i2" firstAttribute="centerY" secondItem="ej4-Zb-Q45" secondAttribute="centerY" id="adz-c3-ngL"/>
+                <constraint firstAttribute="trailing" secondItem="mKL-o3-9i2" secondAttribute="trailing" constant="68" id="aeu-c5-H95"/>
+                <constraint firstAttribute="bottom" secondItem="mKL-o3-9i2" secondAttribute="bottom" constant="169" id="f5s-ew-8rl"/>
+                <constraint firstItem="mKL-o3-9i2" firstAttribute="top" secondItem="ej4-Zb-Q45" secondAttribute="top" constant="169" id="hSs-Tu-aIM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="88.5" y="48.5"/>
