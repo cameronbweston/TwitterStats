@@ -1,4 +1,5 @@
 PODS:
+  - FLKAutoLayout (1.0.1)
   - PromiseKit (4.1.7):
     - PromiseKit/Foundation (= 4.1.7)
     - PromiseKit/QuartzCore (= 4.1.7)
@@ -13,13 +14,15 @@ PODS:
   - STTwitter (0.2.6)
 
 DEPENDENCIES:
+  - FLKAutoLayout
   - PromiseKit (~> 4.0)
   - STTwitter
 
 SPEC CHECKSUMS:
+  FLKAutoLayout: 37e1e09de6411dbee5526860d9f55d9063323ea8
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
   STTwitter: 30ee2f79eff78c3d633a1edc869e97db9c9ead59
 
-PODFILE CHECKSUM: e87ff8126c5b9623901b325510ef8b30613323e9
+PODFILE CHECKSUM: a18c7059f35f4790f67e386902ccbf4b4695b34d
 
 COCOAPODS: 1.2.1
