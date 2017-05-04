@@ -10,6 +10,9 @@
 		1318346C1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1318346A1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodeld */; };
 		1318346F1E9E8AEC001D50DF /* PersistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318346E1E9E8AEC001D50DF /* PersistentStack.m */; };
 		131834701E9E8AEC001D50DF /* PersistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318346E1E9E8AEC001D50DF /* PersistentStack.m */; };
+		1337AE7D1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */; };
+		1337AE7E1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */; };
+		133866581EBBA9250029B4E0 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133866561EBBA9250029B4E0 /* PopUpViewController.xib */; };
 		137029D01EB17AF70079585B /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137029CF1EB17AF70079585B /* CollectionViewController.xib */; };
 		137A26571E97258C003E6ECA /* TweetHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 137A26561E97258C003E6ECA /* TweetHandler.m */; };
 		137A26581E97258C003E6ECA /* TweetHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 137A26561E97258C003E6ECA /* TweetHandler.m */; };
@@ -46,6 +49,9 @@
 		1318346B1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwitterStatsModel.xcdatamodel; sourceTree = "<group>"; };
 		1318346D1E9E8AEC001D50DF /* PersistentStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentStack.h; sourceTree = "<group>"; };
 		1318346E1E9E8AEC001D50DF /* PersistentStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentStack.m; sourceTree = "<group>"; };
+		1337AE7B1EBBB0C1004F93A2 /* PopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpViewController.h; sourceTree = "<group>"; };
+		1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpViewController.m; sourceTree = "<group>"; };
+		133866561EBBA9250029B4E0 /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
 		137029CF1EB17AF70079585B /* CollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
 		137A26551E97258C003E6ECA /* TweetHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetHandler.h; sourceTree = "<group>"; };
 		137A26561E97258C003E6ECA /* TweetHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetHandler.m; sourceTree = "<group>"; };
@@ -140,6 +146,9 @@
 				1390E0F51E9EB67F00212A03 /* ManagedTweet.m */,
 				1318346D1E9E8AEC001D50DF /* PersistentStack.h */,
 				1318346E1E9E8AEC001D50DF /* PersistentStack.m */,
+				1337AE7B1EBBB0C1004F93A2 /* PopUpViewController.h */,
+				1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */,
+				133866561EBBA9250029B4E0 /* PopUpViewController.xib */,
 				139F31091E95C254007A85A5 /* Assets.xcassets */,
 				139F310E1E95C254007A85A5 /* Info.plist */,
 				139F30FD1E95C254007A85A5 /* Supporting Files */,
@@ -276,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				139F310A1E95C254007A85A5 /* Assets.xcassets in Resources */,
+				133866581EBBA9250029B4E0 /* PopUpViewController.xib in Resources */,
 				139F31231E95C286007A85A5 /* Default-568h@2x.png in Resources */,
 				1397C09A1EB3AEC300E88A91 /* CollectionViewCell.xib in Resources */,
 				137029D01EB17AF70079585B /* CollectionViewController.xib in Resources */,
@@ -397,6 +407,7 @@
 				137A26571E97258C003E6ECA /* TweetHandler.m in Sources */,
 				1397C0991EB3AEC300E88A91 /* CollectionViewCell.m in Sources */,
 				139F30FF1E95C254007A85A5 /* main.m in Sources */,
+				1337AE7D1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */,
 				13B89E931E96013800866AC7 /* FetchTweetsWebService.m in Sources */,
 				1390E0F61E9EB67F00212A03 /* ManagedTweet.m in Sources */,
 			);
@@ -409,6 +420,7 @@
 				13F284761EAFB25D00D89B7F /* JSONTweetObject.m in Sources */,
 				139F31181E95C254007A85A5 /* TwitterStatsTests.m in Sources */,
 				137A26581E97258C003E6ECA /* TweetHandler.m in Sources */,
+				1337AE7E1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */,
 				13B89E941E96013800866AC7 /* FetchTweetsWebService.m in Sources */,
 				131834701E9E8AEC001D50DF /* PersistentStack.m in Sources */,
 				1390E0F71E9EB67F00212A03 /* ManagedTweet.m in Sources */,
