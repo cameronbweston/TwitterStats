@@ -28,6 +28,10 @@
 		139F31231E95C286007A85A5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 139F31221E95C286007A85A5 /* Default-568h@2x.png */; };
 		13B89E931E96013800866AC7 /* FetchTweetsWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B89E921E96013800866AC7 /* FetchTweetsWebService.m */; };
 		13B89E941E96013800866AC7 /* FetchTweetsWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B89E921E96013800866AC7 /* FetchTweetsWebService.m */; };
+		13D918DD1EBBC61F00FB9473 /* EmojiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D918DB1EBBC61F00FB9473 /* EmojiTableViewController.m */; };
+		13D918DE1EBBC61F00FB9473 /* EmojiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D918DB1EBBC61F00FB9473 /* EmojiTableViewController.m */; };
+		13D918DF1EBBC61F00FB9473 /* EmojiTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D918DC1EBBC61F00FB9473 /* EmojiTableViewController.xib */; };
+		13D918E01EBBC61F00FB9473 /* EmojiTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D918DC1EBBC61F00FB9473 /* EmojiTableViewController.xib */; };
 		13F284751EAFB25D00D89B7F /* JSONTweetObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F284741EAFB25D00D89B7F /* JSONTweetObject.m */; };
 		13F284761EAFB25D00D89B7F /* JSONTweetObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F284741EAFB25D00D89B7F /* JSONTweetObject.m */; };
 		7B3934C4DA34157990CB15ED /* Pods_TwitterStats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EBB4EEF4F157A970EAAC8F /* Pods_TwitterStats.framework */; };
@@ -74,6 +78,9 @@
 		139F31221E95C286007A85A5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		13B89E911E96013800866AC7 /* FetchTweetsWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchTweetsWebService.h; sourceTree = "<group>"; };
 		13B89E921E96013800866AC7 /* FetchTweetsWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTweetsWebService.m; sourceTree = "<group>"; };
+		13D918DA1EBBC61F00FB9473 /* EmojiTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiTableViewController.h; sourceTree = "<group>"; };
+		13D918DB1EBBC61F00FB9473 /* EmojiTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiTableViewController.m; sourceTree = "<group>"; };
+		13D918DC1EBBC61F00FB9473 /* EmojiTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiTableViewController.xib; sourceTree = "<group>"; };
 		13F284731EAFB25D00D89B7F /* JSONTweetObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTweetObject.h; sourceTree = "<group>"; };
 		13F284741EAFB25D00D89B7F /* JSONTweetObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTweetObject.m; sourceTree = "<group>"; };
 		273C39DAF9620BFED4C312C2 /* Pods-TwitterStatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterStatsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterStatsTests/Pods-TwitterStatsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,14 +137,17 @@
 			children = (
 				139F31001E95C254007A85A5 /* AppDelegate.h */,
 				139F31011E95C254007A85A5 /* AppDelegate.m */,
-				13B89E911E96013800866AC7 /* FetchTweetsWebService.h */,
-				13B89E921E96013800866AC7 /* FetchTweetsWebService.m */,
 				139F31031E95C254007A85A5 /* CollectionViewController.h */,
 				139F31041E95C254007A85A5 /* CollectionViewController.m */,
 				137029CF1EB17AF70079585B /* CollectionViewController.xib */,
 				1397C0961EB3AEC300E88A91 /* CollectionViewCell.h */,
 				1397C0971EB3AEC300E88A91 /* CollectionViewCell.m */,
 				1397C0981EB3AEC300E88A91 /* CollectionViewCell.xib */,
+				13D918DA1EBBC61F00FB9473 /* EmojiTableViewController.h */,
+				13D918DB1EBBC61F00FB9473 /* EmojiTableViewController.m */,
+				13D918DC1EBBC61F00FB9473 /* EmojiTableViewController.xib */,
+				13B89E911E96013800866AC7 /* FetchTweetsWebService.h */,
+				13B89E921E96013800866AC7 /* FetchTweetsWebService.m */,
 				137A26551E97258C003E6ECA /* TweetHandler.h */,
 				137A26561E97258C003E6ECA /* TweetHandler.m */,
 				13F284731EAFB25D00D89B7F /* JSONTweetObject.h */,
@@ -288,6 +298,7 @@
 				133866581EBBA9250029B4E0 /* PopUpViewController.xib in Resources */,
 				139F31231E95C286007A85A5 /* Default-568h@2x.png in Resources */,
 				1397C09A1EB3AEC300E88A91 /* CollectionViewCell.xib in Resources */,
+				13D918DF1EBBC61F00FB9473 /* EmojiTableViewController.xib in Resources */,
 				137029D01EB17AF70079585B /* CollectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D918E01EBBC61F00FB9473 /* EmojiTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D918DD1EBBC61F00FB9473 /* EmojiTableViewController.m in Sources */,
 				139F31051E95C254007A85A5 /* CollectionViewController.m in Sources */,
 				1318346C1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodeld in Sources */,
 				139F31021E95C254007A85A5 /* AppDelegate.m in Sources */,
@@ -417,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D918DE1EBBC61F00FB9473 /* EmojiTableViewController.m in Sources */,
 				13F284761EAFB25D00D89B7F /* JSONTweetObject.m in Sources */,
 				139F31181E95C254007A85A5 /* TwitterStatsTests.m in Sources */,
 				137A26581E97258C003E6ECA /* TweetHandler.m in Sources */,
