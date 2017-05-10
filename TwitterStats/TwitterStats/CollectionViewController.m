@@ -9,6 +9,7 @@
 #import "CollectionViewController.h"
 #import "CollectionViewCell.h"
 #import "PopUpViewController.h"
+#import "EmojiTableViewController.h"
 
 @interface CollectionViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -77,6 +78,47 @@ static NSString *const identifier = @"CollectionViewCell";
     cell.layer.cornerRadius = 20;
     
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell  *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    [UIView animateWithDuration:0.3
+                          delay:0
+                        options:(UIViewAnimationOptionAllowUserInteraction)
+                     animations:^{
+                         [cell setBackgroundColor:[UIColor whiteColor]];
+                     }
+                     completion:^(BOOL finished){
+                         [cell setBackgroundColor:[UIColor lightGrayColor]];
+                     }
+     ];
+    EmojiTableViewController *const emojiTableViewController = [EmojiTableViewController new];
+
+    switch ([indexPath row]) {
+        case 0:
+            //emoji view controller
+            [[self navigationController] pushViewController:emojiTableViewController animated:YES];
+            [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+            break;
+        case 1:
+            //hashtag view controller
+            break;
+        case 2:
+            //url view controller
+            break;
+        case 3:
+            //photo url view controller
+            break;
+        case 4:
+            //tweets today view controller
+            break;
+        case 5:
+            //percent view controller
+            break;
+        default:
+            break;
+    }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
