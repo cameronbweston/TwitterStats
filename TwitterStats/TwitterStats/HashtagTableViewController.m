@@ -7,8 +7,12 @@
 //
 
 #import "HashtagTableViewController.h"
+#import "CentralDataProcessorController.h"
 
-@interface HashtagTableViewController ()
+@interface HashtagTableViewController () <FetchedResultsControllerDataSourceDelegate, UITableViewDelegate>
+
+@property (nonatomic, strong) CentralDataProcessorController *DataProcessorControllerDataSource;
+@property (nonatomic, strong) NSManagedObjectContext *context;
 
 @end
 
@@ -17,11 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.DataProcessorControllerDataSource =
+    [[CentralDataProcessorController alloc] initWithManagedObjectContext:self.context andTableView:self.tableView];
+    self.DataProcessorControllerDataSource.delegate = self;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.delegate = self.DataProcessorControllerDataSource;
+    self.tableView.dataSource = self.DataProcessorControllerDataSource;
+    
+    self.navigationItem.title = @"Top Hashtags";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,13 +39,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 10;
 }
 
 /*

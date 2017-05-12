@@ -12,6 +12,7 @@
 @interface EmojiTableViewController () <FetchedResultsControllerDataSourceDelegate, UITableViewDelegate>
 
 @property (nonatomic, strong) CentralDataProcessorController *DataProcessorControllerDataSource;
+@property (nonatomic, strong) NSManagedObjectContext *context;
 
 @end
 

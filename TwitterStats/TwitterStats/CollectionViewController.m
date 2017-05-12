@@ -10,6 +10,11 @@
 #import "CollectionViewCell.h"
 #import "PopUpViewController.h"
 #import "EmojiTableViewController.h"
+#import "HashtagTableViewController.h"
+#import "URLTableViewController.h"
+#import "PhotoURLTableViewController.h"
+#import "TweetsTodayTableViewController.h"
+#import "PercentageTableViewController.h"
 
 @interface CollectionViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -89,27 +94,31 @@ static NSString *const identifier = @"CollectionViewCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     EmojiTableViewController *const emojiTableViewController = [EmojiTableViewController new];
-
+    HashtagTableViewController *const hashtagTableViewController = [HashtagTableViewController new];
+    URLTableViewController *const urlTableViewController = [URLTableViewController new];
+    PhotoURLTableViewController *const photoURLTableViewController = [PhotoURLTableViewController new];
+    TweetsTodayTableViewController *const tweetsTodayTableViewController = [TweetsTodayTableViewController new];
+    PercentageTableViewController *const percentageTableViewController = [PercentageTableViewController new];
+    
     switch ([indexPath row]) {
         case 0:
-            //emoji view controller
             [[self navigationController] pushViewController:emojiTableViewController animated:YES];
             [collectionView deselectItemAtIndexPath:indexPath animated:YES];
             break;
         case 1:
-            //hashtag view controller
+            [[self navigationController] pushViewController:hashtagTableViewController animated:YES];
             break;
         case 2:
-            //url view controller
+            [[self navigationController] pushViewController:urlTableViewController animated:YES];
             break;
         case 3:
-            //photo url view controller
+            [[self navigationController] pushViewController:photoURLTableViewController animated:YES];
             break;
         case 4:
-            //tweets today view controller
+            [[self navigationController] pushViewController:tweetsTodayTableViewController animated:YES];
             break;
         case 5:
-            //percent view controller
+            [[self navigationController] pushViewController:percentageTableViewController animated:YES];
             break;
         default:
             break;
