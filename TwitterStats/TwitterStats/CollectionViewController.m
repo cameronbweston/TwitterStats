@@ -24,11 +24,17 @@ static NSString *const identifier = @"CollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureCollectionView];
-    self.title = @"Stat(Twitt)stics";
     PopUpViewController *popUpViewController = [[PopUpViewController alloc] init];
     [popUpViewController showInView:self animated:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.title = @"Stat(Twitt)stics";
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.title = @"";
+}
 
 - (void)configureCollectionView {
     UINib *collectionViewCellNib = [UINib nibWithNibName:@"CollectionViewCell" bundle:nil];
@@ -82,17 +88,6 @@ static NSString *const identifier = @"CollectionViewCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell  *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    [UIView animateWithDuration:0.3
-                          delay:0
-                        options:(UIViewAnimationOptionAllowUserInteraction)
-                     animations:^{
-                         [cell setBackgroundColor:[UIColor whiteColor]];
-                     }
-                     completion:^(BOOL finished){
-                         [cell setBackgroundColor:[UIColor lightGrayColor]];
-                     }
-     ];
     EmojiTableViewController *const emojiTableViewController = [EmojiTableViewController new];
 
     switch ([indexPath row]) {
