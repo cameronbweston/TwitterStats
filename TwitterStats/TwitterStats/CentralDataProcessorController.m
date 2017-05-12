@@ -26,14 +26,13 @@
                                                                           managedObjectContext:moc
                                                                             sectionNameKeyPath:nil
                                                                                      cacheName:nil]];
-    [[self fetchedResultsController] setDelegate:self];
-    
     NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {
         NSLog(@"Failed to fetchResults: %@\n%@", [error localizedDescription], [error userInfo]);
         abort();
     }
     
+    [[self fetchedResultsController] setDelegate:self];
     [self.tableView reloadData];
 }
 
