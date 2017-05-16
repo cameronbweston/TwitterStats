@@ -14,16 +14,22 @@
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)context andTableView:(UITableView *)tableView {
     self.managedObjectContext = context;
     self.tableView = tableView;
+    
+    [self performFetchForEmoji];
     return self;
 }
 
-- (void)performFetch {
-    NSString *tweetEntityName = [[ManagedTweet entity] name];
+- (void)performFetchForEmoji {
+    NSString *tweetEntityName = @"Tweet";
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:tweetEntityName];
-    NSManagedObjectContext *moc = self.managedObjectContext;
+    NSSortDescriptor *tweetInfoSort = [NSSortDescriptor sortDescriptorWithKey:@"text" ascending:YES];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"text != nil"];
+
+    [request setPredicate:predicate];
+    [request setSortDescriptors:@[tweetInfoSort]];
     
     [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                          managedObjectContext:moc
+                                                                          managedObjectContext:self.managedObjectContext
                                                                             sectionNameKeyPath:nil
                                                                                      cacheName:nil]];
     NSError *error = nil;
