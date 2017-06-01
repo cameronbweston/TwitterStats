@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ManagedTweet;
 @class ManagedURL;
 @class FetchedResultsDataProcessor;
 @import CoreData;

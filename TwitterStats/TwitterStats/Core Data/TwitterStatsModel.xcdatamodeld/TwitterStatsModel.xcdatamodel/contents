@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="Hashtag" representedClassName="ManagedHashtag" syncable="YES" codeGenerationType="class">
+    <entity name="Hashtag" representedClassName="ManagedHashtag" syncable="YES">
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tweet" inverseName="relationshipHashtag" inverseEntity="Tweet" syncable="YES"/>
     </entity>
-    <entity name="PhotoURL" representedClassName="ManagedPhotoURL" syncable="YES" codeGenerationType="class">
+    <entity name="PhotoURL" representedClassName="ManagedPhotoURL" syncable="YES">
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tweet" inverseName="relationshipPhotoURL" inverseEntity="Tweet" syncable="YES"/>
     </entity>
-    <entity name="Tweet" representedClassName="ManagedTweet" syncable="YES" codeGenerationType="class">
+    <entity name="Tweet" representedClassName="Tweet" syncable="YES">
         <attribute name="dateCreated" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tweetID" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,7 +16,7 @@
         <relationship name="relationshipPhotoURL" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PhotoURL" inverseName="relationship" inverseEntity="PhotoURL" syncable="YES"/>
         <relationship name="relationshipURL" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="URL" inverseName="relationship" inverseEntity="URL" syncable="YES"/>
     </entity>
-    <entity name="URL" representedClassName="ManagedURL" syncable="YES" codeGenerationType="class">
+    <entity name="URL" representedClassName="ManagedURL" syncable="YES">
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tweet" inverseName="relationshipURL" inverseEntity="Tweet" syncable="YES"/>
     </entity>

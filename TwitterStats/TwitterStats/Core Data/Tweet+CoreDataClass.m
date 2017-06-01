@@ -1,24 +1,21 @@
 //
-//  ManagedTweet.m
+//  Tweet+CoreDataClass.m
 //  TwitterStats
 //
-//  Created by Cameron Weston on 4/12/17.
+//  Created by Cameron Weston on 6/1/17.
 //  Copyright © 2017 cameron weston personal. All rights reserved.
 //
 
-#import "ManagedTweet.h"
+#import "Tweet+CoreDataClass.h"
+#import "ManagedHashtag+CoreDataClass.h"
+#import "ManagedPhotoURL+CoreDataClass.h"
+#import "ManagedURL+CoreDataClass.h"
+#import "JSONTweetObject.h"
 
-@implementation ManagedTweet
+@implementation Tweet
 
-@dynamic dateCreated;
-@dynamic tweetID;
-@dynamic text;
-@dynamic hashtags;
-@dynamic urls;
-@dynamic photoUrls;
-
-+ (ManagedTweet *)loadFromJSONTweetObject:(JSONTweetObject *)jsonTweet context:(NSManagedObjectContext *)context {
-    ManagedTweet *tweet = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet"
++ (Tweet *)loadFromJSONTweetObject:(JSONTweetObject *)jsonTweet context:(NSManagedObjectContext *)context {
+    Tweet *tweet = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet"
                                                         inManagedObjectContext:context];
     tweet.tweetID = jsonTweet.tweetID;
     tweet.dateCreated = jsonTweet.dateCreated;
@@ -30,23 +27,23 @@
                                                                            inManagedObjectContext:context];
             //set relationship
             managedHashtag.text = hashtag;
-            [tweet.hashtags addObject:managedHashtag];
+            [tweet addRelationshipHashtagObject:managedHashtag];
         }
     }
     for (NSString *url in jsonTweet.urls) {
         if (url != [NSNull null]) {
             ManagedURL *managedURL = [NSEntityDescription insertNewObjectForEntityForName:@"URL"
-                                                               inManagedObjectContext:context];
+                                                                   inManagedObjectContext:context];
             //set relationship somehow
             managedURL.text = url;
-            [tweet.urls addObject:managedURL];
+            [tweet addRelationshipURLObject:managedURL];
         }
     }
-//    for (NSString *photoUrl in jsonTweet.photoUrls) {
-//        tweet.photoUrls = [[NSMutableSet alloc] init];
-//        if (photoUrl != [NSNull null]) {
-//        }
-//    }
+    //    for (NSString *photoUrl in jsonTweet.photoUrls) {
+    //        tweet.photoUrls = [[NSMutableSet alloc] init];
+    //        if (photoUrl != [NSNull null]) {
+    //        }
+    //    }
     return tweet;
 }
 
