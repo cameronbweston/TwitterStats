@@ -10,7 +10,7 @@
 
 #import "TweetHandler.h"
 #import "PromiseKit/PromiseKit.h"
-#import "Tweet+CoreDataClass.h"
+#import "ManagedTweet+CoreDataClass.h"
 #import "JSONTweetObject.h"
 
 @interface TweetHandler ()
@@ -39,7 +39,7 @@
             if (type == STTwitterStreamJSONTypeTweet) {
                 NSLog(@"Fetched tweets: %@", json);
                 JSONTweetObject *jsonTweet = [[JSONTweetObject alloc] initWithJSONObject:json];
-                [Tweet loadFromJSONTweetObject:jsonTweet context:self.context];
+                [ManagedTweet loadFromJSONTweetObject:jsonTweet context:self.context];
             }
         } errorBlock:^(NSError *error) {
             if (error) {

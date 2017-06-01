@@ -7,7 +7,7 @@
 //
 
 #import "ManagedURL+CoreDataClass.h"
-#import "Tweet+CoreDataClass.h"
+#import "ManagedTweet+CoreDataClass.h"
 
 @implementation ManagedURL
 

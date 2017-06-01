@@ -1,22 +1,22 @@
 //
-//  Tweet+CoreDataClass.m
+//  ManagedTweet+CoreDataClass.m
 //  TwitterStats
 //
 //  Created by Cameron Weston on 6/1/17.
 //  Copyright © 2017 cameron weston personal. All rights reserved.
 //
 
-#import "Tweet+CoreDataClass.h"
+#import "ManagedTweet+CoreDataClass.h"
 #import "ManagedHashtag+CoreDataClass.h"
 #import "ManagedPhotoURL+CoreDataClass.h"
 #import "ManagedURL+CoreDataClass.h"
 #import "JSONTweetObject.h"
 
-@implementation Tweet
+@implementation ManagedTweet
 
-+ (Tweet *)loadFromJSONTweetObject:(JSONTweetObject *)jsonTweet context:(NSManagedObjectContext *)context {
-    Tweet *tweet = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet"
-                                                        inManagedObjectContext:context];
++ (ManagedTweet *)loadFromJSONTweetObject:(JSONTweetObject *)jsonTweet context:(NSManagedObjectContext *)context {
+    ManagedTweet *tweet = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet"
+                                                 inManagedObjectContext:context];
     tweet.tweetID = jsonTweet.tweetID;
     tweet.dateCreated = jsonTweet.dateCreated;
     tweet.text = jsonTweet.text;
@@ -27,7 +27,7 @@
                                                                            inManagedObjectContext:context];
             //set relationship
             managedHashtag.text = hashtag;
-            [tweet addRelationshipHashtagObject:managedHashtag];
+            [tweet addHashtagsObject:managedHashtag];
         }
     }
     for (NSString *url in jsonTweet.urls) {
@@ -36,7 +36,7 @@
                                                                    inManagedObjectContext:context];
             //set relationship somehow
             managedURL.text = url;
-            [tweet addRelationshipURLObject:managedURL];
+            [tweet addUrlsObject:managedURL];
         }
     }
     //    for (NSString *photoUrl in jsonTweet.photoUrls) {

@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<ManagedPhotoURL *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSString *text;
-@property (nullable, nonatomic, retain) Tweet *relationship;
+@property (nullable, nonatomic, retain) Tweet *tweet;
 
 @end
 

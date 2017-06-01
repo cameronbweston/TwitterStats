@@ -15,6 +15,6 @@
 }
 
 @dynamic text;
-@dynamic relationship;
+@dynamic tweet;
 
 @end

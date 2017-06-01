@@ -1,5 +1,5 @@
 //
-//  Tweet+CoreDataClass.h
+//  ManagedTweet+CoreDataClass.h
 //  TwitterStats
 //
 //  Created by Cameron Weston on 6/1/17.
@@ -13,12 +13,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Tweet : NSManagedObject
+@interface ManagedTweet : NSManagedObject
 
-+ (Tweet *)loadFromJSONTweetObject:(JSONTweetObject *)jsonTweet context:(NSManagedObjectContext *)context;
++ (ManagedTweet *)loadFromJSONTweetObject:(JSONTweetObject *)jsonTweet context:(NSManagedObjectContext *)context;
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "Tweet+CoreDataProperties.h"
+#import "ManagedTweet+CoreDataProperties.h"

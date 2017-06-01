@@ -7,7 +7,7 @@
 //
 
 #import "FetchedResultsDataProcessor.h"
-#import "Tweet+CoreDataClass.h"
+#import "ManagedTweet+CoreDataClass.h"
 
 @interface FetchedResultsDataProcessor () <NSFetchedResultsControllerDelegate>
 
@@ -88,8 +88,8 @@
     NSArray *allTweets = self.fetchedResultsController.fetchedObjects;
     NSMutableArray *allURLs = [NSMutableArray new];
     
-    for (Tweet *tweet in allTweets) {
-        [allURLs addObjectsFromArray:tweet.relationshipURL.allObjects];
+    for (ManagedTweet *tweet in allTweets) {
+        [allURLs addObjectsFromArray:tweet.urls.allObjects];
     }
     
     return allURLs.copy;

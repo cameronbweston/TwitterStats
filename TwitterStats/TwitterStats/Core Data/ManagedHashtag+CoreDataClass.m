@@ -7,7 +7,7 @@
 //
 
 #import "ManagedHashtag+CoreDataClass.h"
-#import "Tweet+CoreDataClass.h"
+#import "ManagedTweet+CoreDataClass.h"
 
 @implementation ManagedHashtag
 
