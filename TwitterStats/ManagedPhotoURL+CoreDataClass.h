@@ -1,5 +1,5 @@
 //
-//  ManagedHashtag+CoreDataClass.h
+//  ManagedPhotoURL+CoreDataClass.h
 //  
 //
 //  Created by Cameron Weston on 6/1/17.
@@ -13,10 +13,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ManagedHashtag : NSManagedObject
+@interface ManagedPhotoURL : NSManagedObject
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "ManagedHashtag+CoreDataProperties.h"
+#import "ManagedPhotoURL+CoreDataProperties.h"

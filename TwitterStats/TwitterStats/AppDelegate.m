@@ -29,6 +29,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     CollectionViewController *collectionViewController = [[CollectionViewController alloc] initWithNibName:@"CollectionViewController" bundle:nil];
+    collectionViewController.context = self.persistentStack.context;
     UINavigationController *rootNavController = [[UINavigationController alloc] initWithRootViewController:collectionViewController];
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];

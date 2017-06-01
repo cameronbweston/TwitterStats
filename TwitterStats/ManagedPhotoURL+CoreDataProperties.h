@@ -1,19 +1,19 @@
 //
-//  ManagedHashtag+CoreDataProperties.h
+//  ManagedPhotoURL+CoreDataProperties.h
 //  
 //
 //  Created by Cameron Weston on 6/1/17.
 //
 //
 
-#import "ManagedHashtag+CoreDataClass.h"
+#import "ManagedPhotoURL+CoreDataClass.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ManagedHashtag (CoreDataProperties)
+@interface ManagedPhotoURL (CoreDataProperties)
 
-+ (NSFetchRequest<ManagedHashtag *> *)fetchRequest;
++ (NSFetchRequest<ManagedPhotoURL *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSString *text;
 @property (nullable, nonatomic, retain) Tweet *relationship;

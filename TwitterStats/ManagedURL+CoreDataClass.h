@@ -2,7 +2,7 @@
 //  ManagedURL+CoreDataClass.h
 //  
 //
-//  Created by Cameron Weston on 5/16/17.
+//  Created by Cameron Weston on 6/1/17.
 //
 //
 

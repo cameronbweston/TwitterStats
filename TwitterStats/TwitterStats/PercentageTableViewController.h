@@ -10,4 +10,6 @@
 
 @interface PercentageTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSManagedObjectContext *context;
+
 @end

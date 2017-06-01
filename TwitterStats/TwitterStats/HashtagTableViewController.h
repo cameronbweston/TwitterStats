@@ -10,4 +10,6 @@
 
 @interface HashtagTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSManagedObjectContext *context;
+
 @end

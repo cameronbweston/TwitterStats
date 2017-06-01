@@ -17,8 +17,8 @@
 @property (nonatomic, strong) NSString *dateCreated;
 @property (nonatomic, strong) NSString *tweetID;
 @property (nonatomic, strong) NSString *text;
-@property (nonatomic, strong) NSArray *hashtags;
-@property (nonatomic, strong) NSArray *symbols;
-@property (nonatomic, strong) NSArray *urls;
+@property (nonatomic, strong) NSMutableArray *hashtags;
+@property (nonatomic, strong) NSMutableArray *urls;
+@property (nonatomic, strong) NSMutableArray *photoUrls;
 
 @end

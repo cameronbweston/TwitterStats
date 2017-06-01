@@ -2,7 +2,7 @@
 //  ManagedHashtag+CoreDataClass.m
 //  
 //
-//  Created by Cameron Weston on 5/30/17.
+//  Created by Cameron Weston on 6/1/17.
 //
 //
 

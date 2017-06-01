@@ -10,4 +10,6 @@
 
 @interface URLTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSManagedObjectContext *context;
+
 @end

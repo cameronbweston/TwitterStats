@@ -7,12 +7,12 @@
 //
 
 #import "URLTableViewController.h"
-#import "CentralDataProcessorController.h"
+#import "FetchedResultsDataProcessor.h"
+#import "ManagedURL+CoreDataClass.h"
 
-@interface URLTableViewController () <FetchedResultsControllerDataSourceDelegate, UITableViewDelegate>
+@interface URLTableViewController () <CentralDataProcessorControllerDelegate, UITableViewDelegate>
 
-@property (nonatomic, strong) CentralDataProcessorController *DataProcessorControllerDataSource;
-@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (strong, nonatomic) FetchedResultsDataProcessor *processor;
 
 @end
 
@@ -20,100 +20,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.processor = [[FetchedResultsDataProcessor alloc] initWithManagedObjectContext:self.context];
+    self.processor.delegate = self;
+    self.processor.resultSize = 10;
     
-    self.DataProcessorControllerDataSource =
-    [[CentralDataProcessorController alloc] initWithManagedObjectContext:self.context andTableView:self.tableView];
-    self.DataProcessorControllerDataSource.delegate = self;
-    
-    self.tableView.delegate = self.DataProcessorControllerDataSource;
-    self.tableView.dataSource = self.DataProcessorControllerDataSource;
-    
-    self.navigationItem.title = @"Top URL";
+    self.tableView.dataSource = self;
+    self.tableView.alwaysBounceVertical = YES;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)didUpdateTopURLs {
+    [self.tableView reloadData];
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
-}
-
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell = [UITableViewCell new];
+    ManagedURL *url = self.processor.topURLs[indexPath.row];
+    cell.textLabel.text = url.text;
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.processor.topURLs.count;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

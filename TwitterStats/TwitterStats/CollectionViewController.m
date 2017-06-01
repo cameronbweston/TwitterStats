@@ -20,6 +20,13 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+@property (nonatomic, strong) EmojiTableViewController *const emojiTableViewController;
+@property (nonatomic, strong) HashtagTableViewController *const hashtagTableViewController;
+@property (nonatomic, strong) URLTableViewController *const urlTableViewController;
+@property (nonatomic, strong) PhotoURLTableViewController *const photoURLTableViewController;
+@property (nonatomic, strong) TweetsTodayTableViewController *const tweetsTodayTableViewController;
+@property (nonatomic, strong) PercentageTableViewController *const percentageTableViewController;
+
 @end
 
 @implementation CollectionViewController
@@ -91,34 +98,43 @@ static NSString *const identifier = @"CollectionViewCell";
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    EmojiTableViewController *const emojiTableViewController = [EmojiTableViewController new];
-    HashtagTableViewController *const hashtagTableViewController = [HashtagTableViewController new];
-    URLTableViewController *const urlTableViewController = [URLTableViewController new];
-    PhotoURLTableViewController *const photoURLTableViewController = [PhotoURLTableViewController new];
-    TweetsTodayTableViewController *const tweetsTodayTableViewController = [TweetsTodayTableViewController new];
-    PercentageTableViewController *const percentageTableViewController = [PercentageTableViewController new];
-    
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     switch ([indexPath row]) {
         case 0:
-            [[self navigationController] pushViewController:emojiTableViewController animated:YES];
+            self.emojiTableViewController = [EmojiTableViewController new];
+            self.emojiTableViewController.context = self.context;
+            [[self navigationController] pushViewController:self.emojiTableViewController animated:YES];
             [collectionView deselectItemAtIndexPath:indexPath animated:YES];
             break;
         case 1:
-            [[self navigationController] pushViewController:hashtagTableViewController animated:YES];
+            self.hashtagTableViewController = [HashtagTableViewController new];
+            self.hashtagTableViewController.context = self.context;
+            [[self navigationController] pushViewController:self.hashtagTableViewController animated:YES];
+            [collectionView deselectItemAtIndexPath:indexPath animated:YES];
             break;
         case 2:
-            [[self navigationController] pushViewController:urlTableViewController animated:YES];
+            self.urlTableViewController = [URLTableViewController new];
+            self.urlTableViewController.context = self.context;
+            [[self navigationController] pushViewController:self.urlTableViewController animated:YES];
+            [collectionView deselectItemAtIndexPath:indexPath animated:YES];
             break;
         case 3:
-            [[self navigationController] pushViewController:photoURLTableViewController animated:YES];
+            self.photoURLTableViewController = [PhotoURLTableViewController new];
+            self.photoURLTableViewController.context = self.context;
+            [[self navigationController] pushViewController:self.photoURLTableViewController animated:YES];
+            [collectionView deselectItemAtIndexPath:indexPath animated:YES];
             break;
         case 4:
-            [[self navigationController] pushViewController:tweetsTodayTableViewController animated:YES];
+            self.tweetsTodayTableViewController = [TweetsTodayTableViewController new];
+            self.tweetsTodayTableViewController.context = self.context;
+            [[self navigationController] pushViewController:self.tweetsTodayTableViewController animated:YES];
+            [collectionView deselectItemAtIndexPath:indexPath animated:YES];
             break;
         case 5:
-            [[self navigationController] pushViewController:percentageTableViewController animated:YES];
+            self.percentageTableViewController = [PercentageTableViewController new];
+            self.percentageTableViewController.context = self.context;
+            [[self navigationController] pushViewController:self.percentageTableViewController animated:YES];
+            [collectionView deselectItemAtIndexPath:indexPath animated:YES];
             break;
         default:
             break;

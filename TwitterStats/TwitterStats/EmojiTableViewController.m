@@ -7,38 +7,20 @@
 //
 
 #import "EmojiTableViewController.h"
-#import "CentralDataProcessorController.h"
+#import "FetchedResultsDataProcessor.h"
 
-@interface EmojiTableViewController () <FetchedResultsControllerDataSourceDelegate, UITableViewDelegate>
 
-@property (nonatomic, strong) CentralDataProcessorController *DataProcessorControllerDataSource;
-@property (nonatomic, strong) NSManagedObjectContext *context;
-
+@interface EmojiTableViewController ()
+@property (strong, nonatomic) FetchedResultsDataProcessor *processor;
 @end
 
 @implementation EmojiTableViewController
 
+#pragma mark - Overrides
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
-    self.DataProcessorControllerDataSource =
-    [[CentralDataProcessorController alloc] initWithManagedObjectContext:self.context andTableView:self.tableView];
-    self.DataProcessorControllerDataSource.delegate = self;
-    
-    self.tableView.delegate = self.DataProcessorControllerDataSource;
-    self.tableView.dataSource = self.DataProcessorControllerDataSource;
-    
-    self.navigationItem.title = @"Top Emojis";
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    self.processor = [[FetchedResultsDataProcessor alloc] initWithManagedObjectContext:self.context];
 }
 
 @end

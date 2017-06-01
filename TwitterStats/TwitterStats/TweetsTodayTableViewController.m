@@ -7,34 +7,14 @@
 //
 
 #import "TweetsTodayTableViewController.h"
-#import "CentralDataProcessorController.h"
+#import "FetchedResultsDataProcessor.h"
 
-@interface TweetsTodayTableViewController () <FetchedResultsControllerDataSourceDelegate, UITableViewDelegate>
-
-@property (nonatomic, strong) CentralDataProcessorController *DataProcessorControllerDataSource;
-@property (nonatomic, strong) NSManagedObjectContext *context;
+@interface TweetsTodayTableViewController () 
 
 @end
 
 @implementation TweetsTodayTableViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.DataProcessorControllerDataSource =
-    [[CentralDataProcessorController alloc] initWithManagedObjectContext:self.context andTableView:self.tableView];
-    self.DataProcessorControllerDataSource.delegate = self;
-    
-    self.tableView.delegate = self.DataProcessorControllerDataSource;
-    self.tableView.dataSource = self.DataProcessorControllerDataSource;
-    
-    self.navigationItem.title = @"Top Tweets Today";
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 

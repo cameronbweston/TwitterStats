@@ -30,8 +30,8 @@
 		1318346C1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1318346A1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodeld */; };
 		1318346F1E9E8AEC001D50DF /* PersistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318346E1E9E8AEC001D50DF /* PersistentStack.m */; };
 		131834701E9E8AEC001D50DF /* PersistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318346E1E9E8AEC001D50DF /* PersistentStack.m */; };
-		1333935C1EC256160025D31F /* CentralDataProcessorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1333935B1EC256160025D31F /* CentralDataProcessorController.m */; };
-		1333935D1EC256160025D31F /* CentralDataProcessorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1333935B1EC256160025D31F /* CentralDataProcessorController.m */; };
+		1333935C1EC256160025D31F /* FetchedResultsDataProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1333935B1EC256160025D31F /* FetchedResultsDataProcessor.m */; };
+		1333935D1EC256160025D31F /* FetchedResultsDataProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1333935B1EC256160025D31F /* FetchedResultsDataProcessor.m */; };
 		1337AE7D1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */; };
 		1337AE7E1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */; };
 		133866581EBBA9250029B4E0 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133866561EBBA9250029B4E0 /* PopUpViewController.xib */; };
@@ -90,8 +90,8 @@
 		1318346B1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwitterStatsModel.xcdatamodel; sourceTree = "<group>"; };
 		1318346D1E9E8AEC001D50DF /* PersistentStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentStack.h; sourceTree = "<group>"; };
 		1318346E1E9E8AEC001D50DF /* PersistentStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentStack.m; sourceTree = "<group>"; };
-		1333935A1EC256160025D31F /* CentralDataProcessorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CentralDataProcessorController.h; sourceTree = "<group>"; };
-		1333935B1EC256160025D31F /* CentralDataProcessorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CentralDataProcessorController.m; sourceTree = "<group>"; };
+		1333935A1EC256160025D31F /* FetchedResultsDataProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsDataProcessor.h; sourceTree = "<group>"; };
+		1333935B1EC256160025D31F /* FetchedResultsDataProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataProcessor.m; sourceTree = "<group>"; };
 		1337AE7B1EBBB0C1004F93A2 /* PopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpViewController.h; sourceTree = "<group>"; };
 		1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpViewController.m; sourceTree = "<group>"; };
 		133866561EBBA9250029B4E0 /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
@@ -201,8 +201,8 @@
 			children = (
 				139F31001E95C254007A85A5 /* AppDelegate.h */,
 				139F31011E95C254007A85A5 /* AppDelegate.m */,
-				1333935A1EC256160025D31F /* CentralDataProcessorController.h */,
-				1333935B1EC256160025D31F /* CentralDataProcessorController.m */,
+				1333935A1EC256160025D31F /* FetchedResultsDataProcessor.h */,
+				1333935B1EC256160025D31F /* FetchedResultsDataProcessor.m */,
 				13154CBA1EC62BF20089B3A7 /* Table View Controllers */,
 				139F31031E95C254007A85A5 /* CollectionViewController.h */,
 				139F31041E95C254007A85A5 /* CollectionViewController.m */,
@@ -488,7 +488,7 @@
 				13D918DD1EBBC61F00FB9473 /* EmojiTableViewController.m in Sources */,
 				139F31051E95C254007A85A5 /* CollectionViewController.m in Sources */,
 				1318346C1E9E88D4001D50DF /* TwitterStatsModel.xcdatamodeld in Sources */,
-				1333935C1EC256160025D31F /* CentralDataProcessorController.m in Sources */,
+				1333935C1EC256160025D31F /* FetchedResultsDataProcessor.m in Sources */,
 				139F31021E95C254007A85A5 /* AppDelegate.m in Sources */,
 				13154CC51EC62C7F0089B3A7 /* URLTableViewController.m in Sources */,
 				13F284751EAFB25D00D89B7F /* JSONTweetObject.m in Sources */,
@@ -518,7 +518,7 @@
 				13154CDB1EC62F1F0089B3A7 /* PercentageTableViewController.m in Sources */,
 				1337AE7E1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */,
 				13B89E941E96013800866AC7 /* FetchTweetsWebService.m in Sources */,
-				1333935D1EC256160025D31F /* CentralDataProcessorController.m in Sources */,
+				1333935D1EC256160025D31F /* FetchedResultsDataProcessor.m in Sources */,
 				13154CCD1EC62CC00089B3A7 /* PhotoURLTableViewController.m in Sources */,
 				13154CD41EC62E3C0089B3A7 /* TweetsTodayTableViewController.m in Sources */,
 				13154CC61EC62C7F0089B3A7 /* URLTableViewController.m in Sources */,

@@ -10,4 +10,6 @@
 
 @interface EmojiTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSManagedObjectContext *context;
+
 @end

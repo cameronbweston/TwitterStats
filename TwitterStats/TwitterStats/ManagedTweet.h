@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "JSONTweetObject.h"
+#import "ManagedURL+CoreDataClass.h"
+#import "ManagedPhotoURL+CoreDataClass.h"
+#import "ManagedHashtag+CoreDataClass.h"
 
 @interface ManagedTweet : NSManagedObject
 
@@ -17,8 +20,8 @@
 @property (nonatomic, strong) NSString *dateCreated;
 @property (nonatomic, strong) NSString *tweetID;
 @property (nonatomic, strong) NSString *text;
-@property (nonatomic, strong) NSArray *hashtags;
-@property (nonatomic, strong) NSArray *symbols;
-@property (nonatomic, strong) NSArray *urls;
+@property (nonatomic, strong) NSMutableSet<ManagedHashtag*> *hashtags;
+@property (nonatomic, strong) NSMutableSet<ManagedURL*> *urls;
+@property (nonatomic, strong) NSMutableSet<ManagedPhotoURL*> *photoUrls;
 
 @end

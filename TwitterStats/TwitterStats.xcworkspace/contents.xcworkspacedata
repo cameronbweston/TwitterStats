@@ -2,6 +2,42 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ManagedURL+CoreDataClass.h">
+   </FileRef>
+   <FileRef
+      location = "group:ManagedURL+CoreDataClass.m">
+   </FileRef>
+   <FileRef
+      location = "group:ManagedURL+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:ManagedURL+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
+      location = "group:ManagedPhotoURL+CoreDataClass.h">
+   </FileRef>
+   <FileRef
+      location = "group:ManagedPhotoURL+CoreDataClass.m">
+   </FileRef>
+   <FileRef
+      location = "group:ManagedPhotoURL+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:ManagedPhotoURL+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
+      location = "group:ManagedHashtag+CoreDataClass.h">
+   </FileRef>
+   <FileRef
+      location = "group:ManagedHashtag+CoreDataClass.m">
+   </FileRef>
+   <FileRef
+      location = "group:ManagedHashtag+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:ManagedHashtag+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
       location = "group:TwitterStats.xcodeproj">
    </FileRef>
    <FileRef

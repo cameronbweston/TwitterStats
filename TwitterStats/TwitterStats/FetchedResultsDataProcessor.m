@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong, readwrite) NSArray<ManagedURL *> *topURLs;
 
 @end
 
@@ -23,7 +24,6 @@
         self.managedObjectContext = context;
         [self performFetch];
     }
-    
     return self;
 }
 
@@ -54,47 +54,49 @@
 
 #pragma mark - FetchedResultsControler Delegate 
 
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-    [self.tableView beginUpdates];
-}
-
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath {
-    
-    UITableView *tableView = self.tableView;
-    
-    switch(type) {
-            
-        case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
-                             withRowAnimation:UITableViewRowAnimationFade];
-            break;
-            
-        case NSFetchedResultsChangeDelete:
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                             withRowAnimation:UITableViewRowAnimationFade];
-            break;
-            
-        case NSFetchedResultsChangeUpdate:
-        {
-            ManagedTweet *tweet = [self.fetchedResultsController objectAtIndexPath:indexPath];
-            UITableViewCell *cell = [self tableView:self.tableView cellForRowAtIndexPath:indexPath];
-            [self.delegate configureCell:cell forTweet:tweet];
-        }
-            break;
-            
-        case NSFetchedResultsChangeMove:
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                             withRowAnimation:UITableViewRowAnimationFade];
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
-                             withRowAnimation:UITableViewRowAnimationFade];
-            break;
-    }
+
+    self.topURLs = [self findTopURLs];
+    [self.delegate didUpdateTopURLs];
 }
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    [self.tableView endUpdates];
+- (NSArray<ManagedURL*> *)findTopURLs {
+    NSMutableArray *allURLs = [self allURLs];
+
+    NSCountedSet * __block countedSet = [[NSCountedSet alloc] initWithArray:allURLs];
+    
+    [allURLs sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        NSUInteger obj1Count = [countedSet countForObject:obj1];
+        NSUInteger obj2Count = [countedSet countForObject:obj2];
+        
+        if (obj1Count > obj2Count) {
+            return NSOrderedAscending;
+        }
+        else if (obj1Count < obj2Count) {
+            return NSOrderedDescending;
+        }
+        else {
+            return NSOrderedSame;
+        }
+    }];
+    return allURLs;
+}
+
+- (NSMutableArray *)allURLs {
+    NSArray *allTweets = self.fetchedResultsController.fetchedObjects;
+    NSMutableArray *allURLs = [NSMutableArray new];
+    
+    for (ManagedTweet *tweet in allTweets) {
+        [allURLs addObjectsFromArray:tweet.urls.allObjects];
+    }
+    
+    return allURLs.copy;
+}
+
+- (NSArray<ManagedURL *> *)topURLs {
+    return [_topURLs subarrayWithRange:NSMakeRange(0, self.resultSize)];
 }
 
 @end

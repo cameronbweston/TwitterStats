@@ -8,19 +8,23 @@
 
 #import <UIKit/UIKit.h>
 @class ManagedTweet;
+@class ManagedURL;
 @class FetchedResultsDataProcessor;
 @import CoreData;
 
 @protocol CentralDataProcessorControllerDelegate <NSObject>
-- (void)configureCell:(UITableViewCell *)cell forTweet:(ManagedTweet *)tweet;
-- (void)processor:(FetchedResultsDataProcessor *)processor didChangeTopTweet:(ManagedTweet *)tweet
-      atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
-     newIndexPath:(NSIndexPath *)newIndexPath;
+
+- (void)didUpdateTopURLs;
+
 @end
 
 @interface FetchedResultsDataProcessor : NSObject
 
 @property (weak, nonatomic) id <CentralDataProcessorControllerDelegate> delegate;
+
+@property (strong, nonatomic, readonly) NSArray<ManagedURL *> *topURLs;
+
+@property (assign, nonatomic) NSInteger resultSize;
 
 - (instancetype)init NS_UNAVAILABLE;
 

@@ -10,6 +10,7 @@
 
 @interface CollectionViewController : UIViewController
 
+@property (strong, nonatomic) NSManagedObjectContext *context;
 
 @end
 

@@ -7,34 +7,14 @@
 //
 
 #import "PhotoURLTableViewController.h"
-#import "CentralDataProcessorController.h"
+#import "FetchedResultsDataProcessor.h"
 
-@interface PhotoURLTableViewController () <FetchedResultsControllerDataSourceDelegate, UITableViewDelegate>
-
-@property (nonatomic, strong) CentralDataProcessorController *DataProcessorControllerDataSource;
-@property (nonatomic, strong) NSManagedObjectContext *context;
+@interface PhotoURLTableViewController () <CentralDataProcessorControllerDelegate>
 
 @end
 
 @implementation PhotoURLTableViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.DataProcessorControllerDataSource =
-    [[CentralDataProcessorController alloc] initWithManagedObjectContext:self.context andTableView:self.tableView];
-    self.DataProcessorControllerDataSource.delegate = self;
-    
-    self.tableView.delegate = self.DataProcessorControllerDataSource;
-    self.tableView.dataSource = self.DataProcessorControllerDataSource;
-    
-    self.navigationItem.title = @"Top Photo URL";
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
