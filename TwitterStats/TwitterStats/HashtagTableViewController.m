@@ -9,7 +9,7 @@
 #import "HashtagTableViewController.h"
 #import "FetchedResultsDataProcessor.h"
 
-@interface HashtagTableViewController () <CentralDataProcessorControllerDelegate>
+@interface HashtagTableViewController () 
 
 @property (strong, nonatomic) FetchedResultsDataProcessor *processor;
 

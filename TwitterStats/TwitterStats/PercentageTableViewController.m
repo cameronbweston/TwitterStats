@@ -9,7 +9,7 @@
 #import "PercentageTableViewController.h"
 #import "FetchedResultsDataProcessor.h"
 
-@interface PercentageTableViewController () <CentralDataProcessorControllerDelegate>
+@interface PercentageTableViewController () 
 
 
 @end

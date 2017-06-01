@@ -22,7 +22,7 @@
     tweet.text = jsonTweet.text;
     
     for (NSString *hashtag in jsonTweet.hashtags) {
-        if (hashtag != [NSNull null]) {
+        if (![hashtag isEqual:[NSNull null]]) {
             ManagedHashtag *managedHashtag = [NSEntityDescription insertNewObjectForEntityForName:@"Hashtag"
                                                                            inManagedObjectContext:context];
             //set relationship
@@ -31,7 +31,7 @@
         }
     }
     for (NSString *url in jsonTweet.urls) {
-        if (url != [NSNull null]) {
+        if (![url isEqual:[NSNull null]]) {
             ManagedURL *managedURL = [NSEntityDescription insertNewObjectForEntityForName:@"URL"
                                                                    inManagedObjectContext:context];
             //set relationship somehow
