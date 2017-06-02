@@ -25,7 +25,6 @@
         if (![hashtag isEqual:[NSNull null]]) {
             ManagedHashtag *managedHashtag = [NSEntityDescription insertNewObjectForEntityForName:@"Hashtag"
                                                                            inManagedObjectContext:context];
-            //set relationship
             managedHashtag.text = hashtag;
             [tweet addHashtagsObject:managedHashtag];
         }
@@ -34,16 +33,18 @@
         if (![url isEqual:[NSNull null]]) {
             ManagedURL *managedURL = [NSEntityDescription insertNewObjectForEntityForName:@"URL"
                                                                    inManagedObjectContext:context];
-            //set relationship somehow
             managedURL.text = url;
             [tweet addUrlsObject:managedURL];
         }
     }
-    //    for (NSString *photoUrl in jsonTweet.photoUrls) {
-    //        tweet.photoUrls = [[NSMutableSet alloc] init];
-    //        if (photoUrl != [NSNull null]) {
-    //        }
-    //    }
+    for (NSString *photoUrl in jsonTweet.photoUrls) {
+        if (![photoUrl isEqual:[NSNull null]]) {
+            ManagedPhotoURL *managedPhotoURL = [NSEntityDescription insertNewObjectForEntityForName:@"PhotoURL"
+                                                                             inManagedObjectContext:context];
+            managedPhotoURL.text = photoUrl;
+            [tweet addPhotoURLsObject:managedPhotoURL];
+        }
+    }
     return tweet;
 }
 

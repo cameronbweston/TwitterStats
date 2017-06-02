@@ -8,8 +8,11 @@
 
 #import "PhotoURLTableViewController.h"
 #import "FetchedResultsDataProcessor.h"
+#import "ManagedPhotoURL+CoreDataProperties.h"
 
-@interface PhotoURLTableViewController ()
+@interface PhotoURLTableViewController () <CentralDataProcessorControllerDelegate, UITableViewDelegate>
+
+@property (strong, nonatomic) FetchedResultsDataProcessor *processor;
 
 @end
 
@@ -18,12 +21,30 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.processor = [[FetchedResultsDataProcessor alloc] initWithManagedObjectContext:self.context];
+    self.processor.delegate = self;
+    self.processor.resultSize = 10;
+    
+    self.tableView.dataSource = self;
+    self.tableView.alwaysBounceVertical = YES;
+}
+
+- (void)didUpdateTopItems {
+    [self.tableView reloadData];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [UITableViewCell new];
+    ManagedPhotoURL *photoURL = self.processor.topPhotoURLs[indexPath.row];
+    cell.textLabel.text = photoURL.text;
+    
+    return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.processor.topPhotoURLs.count;
 }
 
 @end

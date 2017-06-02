@@ -56,7 +56,7 @@
     if ([[jsonTweet valueForKeyPath:@"entities"] valueForKeyPath:@"media"] != [NSNull null]) {
         NSDictionary *subMediaDictionary = jsonTweet[@"entities"][@"media"];
         for (NSDictionary *mediaUrl in subMediaDictionary) {
-            NSString *mediaURLString = [mediaUrl valueForKeyPath:@"media_url"];
+            NSString *mediaURLString = [mediaUrl valueForKeyPath:@"expanded_url"];
             if (mediaURLString != nil) {
                 [self.photoUrls addObject:mediaURLString];
             }

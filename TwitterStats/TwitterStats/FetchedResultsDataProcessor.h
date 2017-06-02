@@ -8,25 +8,26 @@
 
 #import <UIKit/UIKit.h>
 @class ManagedURL;
+@class ManagedPhotoURL;
+@class ManagedHashtag;
 @class FetchedResultsDataProcessor;
 @import CoreData;
 
 @protocol CentralDataProcessorControllerDelegate <NSObject>
 
-- (void)didUpdateTopURLs;
+- (void)didUpdateTopItems;
 
 @end
 
 @interface FetchedResultsDataProcessor : NSObject
 
 @property (weak, nonatomic) id <CentralDataProcessorControllerDelegate> delegate;
-
 @property (strong, nonatomic, readonly) NSArray<ManagedURL *> *topURLs;
-
+@property (strong, nonatomic, readonly) NSArray<ManagedPhotoURL *> *topPhotoURLs;
+@property (strong, nonatomic, readonly) NSArray<ManagedHashtag *> *topHashtags;
 @property (assign, nonatomic) NSInteger resultSize;
 
 - (instancetype)init NS_UNAVAILABLE;
-
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)context NS_DESIGNATED_INITIALIZER;
 
 @end

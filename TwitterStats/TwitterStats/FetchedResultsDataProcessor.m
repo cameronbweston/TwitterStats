@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong, readwrite) NSArray<ManagedURL *> *topURLs;
+@property (nonatomic, strong, readwrite) NSArray<ManagedPhotoURL *> *topPhotoURLs;
+@property (nonatomic, strong, readwrite) NSArray<ManagedHashtag *> *topHashtags;
 
 @end
 
@@ -59,7 +61,10 @@
       newIndexPath:(NSIndexPath *)newIndexPath {
 
     self.topURLs = [self findTopURLs];
-    [self.delegate didUpdateTopURLs];
+    self.topPhotoURLs = [self findTopPhotoURLs];
+    self.topHashtags = [self findTopHashtags];
+    
+    [self.delegate didUpdateTopItems];
 }
 
 - (NSArray<ManagedURL*> *)findTopURLs {
@@ -84,6 +89,50 @@
     return allURLs;
 }
 
+- (NSArray<ManagedPhotoURL*> *)findTopPhotoURLs {
+    NSMutableArray *allPhotoURLs = [self allPhotoURLs];
+    
+    NSCountedSet * __block countedSet = [[NSCountedSet alloc] initWithArray:allPhotoURLs];
+    
+    [allPhotoURLs sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        NSUInteger obj1Count = [countedSet countForObject:obj1];
+        NSUInteger obj2Count = [countedSet countForObject:obj2];
+        
+        if (obj1Count > obj2Count) {
+            return NSOrderedAscending;
+        }
+        else if (obj1Count < obj2Count) {
+            return NSOrderedDescending;
+        }
+        else {
+            return NSOrderedSame;
+        }
+    }];
+    return allPhotoURLs;
+}
+
+- (NSArray<ManagedHashtag*> *)findTopHashtags {
+    NSMutableArray *allHashtags = [self allHashtags];
+    
+    NSCountedSet * __block countedSet = [[NSCountedSet alloc] initWithArray:allHashtags];
+    
+    [allHashtags sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        NSUInteger obj1Count = [countedSet countForObject:obj1];
+        NSUInteger obj2Count = [countedSet countForObject:obj2];
+        
+        if (obj1Count > obj2Count) {
+            return NSOrderedAscending;
+        }
+        else if (obj1Count < obj2Count) {
+            return NSOrderedDescending;
+        }
+        else {
+            return NSOrderedSame;
+        }
+    }];
+    return allHashtags;
+}
+
 - (NSMutableArray *)allURLs {
     NSArray *allTweets = self.fetchedResultsController.fetchedObjects;
     NSMutableArray *allURLs = [NSMutableArray new];
@@ -95,8 +144,38 @@
     return allURLs.copy;
 }
 
+- (NSMutableArray *)allPhotoURLs {
+    NSArray *allTweets = self.fetchedResultsController.fetchedObjects;
+    NSMutableArray *allPhotoURLs = [NSMutableArray new];
+    
+    for (ManagedTweet *tweet in allTweets) {
+        [allPhotoURLs addObjectsFromArray:tweet.photoURLs.allObjects];
+    }
+    
+    return allPhotoURLs.copy;
+}
+
+- (NSMutableArray *)allHashtags {
+    NSArray *allTweets = self.fetchedResultsController.fetchedObjects;
+    NSMutableArray *allHashtags = [NSMutableArray new];
+    
+    for (ManagedTweet *tweet in allTweets) {
+        [allHashtags addObjectsFromArray:tweet.hashtags.allObjects];
+    }
+    
+    return allHashtags.copy;
+}
+
 - (NSArray<ManagedURL *> *)topURLs {
     return [_topURLs subarrayWithRange:NSMakeRange(0, self.resultSize)];
+}
+
+- (NSArray<ManagedPhotoURL *> *)topPhotoURLs {
+    return [_topPhotoURLs subarrayWithRange:NSMakeRange(0, self.resultSize)];
+}
+
+- (NSArray<ManagedHashtag *> *)topHashtags {
+    return [_topHashtags subarrayWithRange:NSMakeRange(0, self.resultSize)];
 }
 
 @end

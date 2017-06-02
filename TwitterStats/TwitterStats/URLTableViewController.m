@@ -28,7 +28,7 @@
     self.tableView.alwaysBounceVertical = YES;
 }
 
-- (void)didUpdateTopURLs {
+- (void)didUpdateTopItems {
     [self.tableView reloadData];
 }
 
