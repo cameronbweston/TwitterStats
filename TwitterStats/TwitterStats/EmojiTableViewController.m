@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.processor = [[FetchedResultsDataProcessor alloc] initWithManagedObjectContext:self.context];
+    self.title = @"Top Emojis";
 }
 
 @end

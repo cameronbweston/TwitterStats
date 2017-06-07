@@ -9,23 +9,33 @@
 #import "PercentageTableViewController.h"
 #import "FetchedResultsDataProcessor.h"
 
-@interface PercentageTableViewController () 
+@interface PercentageTableViewController () <CentralDataProcessorControllerDelegate, UITableViewDelegate>
 
+@property (nonatomic, strong) FetchedResultsDataProcessor *processor;
 
 @end
 
 @implementation PercentageTableViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.processor = [[FetchedResultsDataProcessor alloc] initWithManagedObjectContext:self.context];
+    //self.processor.delegate = self;
+    //self.processor.resultSize = 10;
+    self.title = @"% of Tweets That...";
+    //self.tableView.dataSource = self;
+    self.tableView.alwaysBounceVertical = YES;
+}
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return 10;
+//}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

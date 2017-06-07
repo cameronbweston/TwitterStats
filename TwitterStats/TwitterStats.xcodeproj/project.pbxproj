@@ -180,6 +180,9 @@
 		13154CBA1EC62BF20089B3A7 /* Table View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1337AE7B1EBBB0C1004F93A2 /* PopUpViewController.h */,
+				1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */,
+				133866561EBBA9250029B4E0 /* PopUpViewController.xib */,
 				13D918DA1EBBC61F00FB9473 /* EmojiTableViewController.h */,
 				13D918DB1EBBC61F00FB9473 /* EmojiTableViewController.m */,
 				13D918DC1EBBC61F00FB9473 /* EmojiTableViewController.xib */,
@@ -200,6 +203,17 @@
 				13154CC41EC62C7F0089B3A7 /* URLTableViewController.xib */,
 			);
 			name = "Table View Controllers";
+			sourceTree = "<group>";
+		};
+		1373368E1EE8879E0097456D /* Webservices */ = {
+			isa = PBXGroup;
+			children = (
+				137A26551E97258C003E6ECA /* TweetHandler.h */,
+				137A26561E97258C003E6ECA /* TweetHandler.m */,
+				13B89E911E96013800866AC7 /* FetchTweetsWebService.h */,
+				13B89E921E96013800866AC7 /* FetchTweetsWebService.m */,
+			);
+			name = Webservices;
 			sourceTree = "<group>";
 		};
 		139F30F11E95C254007A85A5 = {
@@ -238,17 +252,11 @@
 				1397C0961EB3AEC300E88A91 /* CollectionViewCell.h */,
 				1397C0971EB3AEC300E88A91 /* CollectionViewCell.m */,
 				1397C0981EB3AEC300E88A91 /* CollectionViewCell.xib */,
-				13B89E911E96013800866AC7 /* FetchTweetsWebService.h */,
-				13B89E921E96013800866AC7 /* FetchTweetsWebService.m */,
-				137A26551E97258C003E6ECA /* TweetHandler.h */,
-				137A26561E97258C003E6ECA /* TweetHandler.m */,
+				1373368E1EE8879E0097456D /* Webservices */,
 				13F284731EAFB25D00D89B7F /* JSONTweetObject.h */,
 				13F284741EAFB25D00D89B7F /* JSONTweetObject.m */,
 				1318346D1E9E8AEC001D50DF /* PersistentStack.h */,
 				1318346E1E9E8AEC001D50DF /* PersistentStack.m */,
-				1337AE7B1EBBB0C1004F93A2 /* PopUpViewController.h */,
-				1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */,
-				133866561EBBA9250029B4E0 /* PopUpViewController.xib */,
 				139F31091E95C254007A85A5 /* Assets.xcassets */,
 				139F310E1E95C254007A85A5 /* Info.plist */,
 				139F30FD1E95C254007A85A5 /* Supporting Files */,
