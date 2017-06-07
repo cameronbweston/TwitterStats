@@ -35,6 +35,10 @@
 		1337AE7E1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */; };
 		133866581EBBA9250029B4E0 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133866561EBBA9250029B4E0 /* PopUpViewController.xib */; };
 		137029D01EB17AF70079585B /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137029CF1EB17AF70079585B /* CollectionViewController.xib */; };
+		137336A31EE89EA40097456D /* ManagedURL+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 137336A01EE89EA40097456D /* ManagedURL+CoreDataClass.m */; };
+		137336A41EE89EA40097456D /* ManagedURL+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 137336A01EE89EA40097456D /* ManagedURL+CoreDataClass.m */; };
+		137336A51EE89EA40097456D /* ManagedURL+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 137336A21EE89EA40097456D /* ManagedURL+CoreDataProperties.m */; };
+		137336A61EE89EA40097456D /* ManagedURL+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 137336A21EE89EA40097456D /* ManagedURL+CoreDataProperties.m */; };
 		137A26571E97258C003E6ECA /* TweetHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 137A26561E97258C003E6ECA /* TweetHandler.m */; };
 		137A26581E97258C003E6ECA /* TweetHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 137A26561E97258C003E6ECA /* TweetHandler.m */; };
 		1397C0991EB3AEC300E88A91 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1397C0971EB3AEC300E88A91 /* CollectionViewCell.m */; };
@@ -50,14 +54,10 @@
 		13B89E941E96013800866AC7 /* FetchTweetsWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B89E921E96013800866AC7 /* FetchTweetsWebService.m */; };
 		13D276501EE0C21600F0E064 /* ManagedPhotoURL+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AD803D1EE0BDB4001DCF0F /* ManagedPhotoURL+CoreDataClass.m */; };
 		13D276511EE0C21600F0E064 /* ManagedPhotoURL+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AD803F1EE0BDB4001DCF0F /* ManagedPhotoURL+CoreDataProperties.m */; };
-		13D276521EE0C21600F0E064 /* ManagedURL+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AD80411EE0BDB4001DCF0F /* ManagedURL+CoreDataClass.m */; };
-		13D276531EE0C21600F0E064 /* ManagedURL+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AD80431EE0BDB4001DCF0F /* ManagedURL+CoreDataProperties.m */; };
 		13D276541EE0C21600F0E064 /* ManagedHashtag+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AD80451EE0BDB4001DCF0F /* ManagedHashtag+CoreDataClass.m */; };
 		13D276551EE0C21600F0E064 /* ManagedHashtag+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AD80471EE0BDB4001DCF0F /* ManagedHashtag+CoreDataProperties.m */; };
 		13D276581EE0C21700F0E064 /* ManagedPhotoURL+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AD803D1EE0BDB4001DCF0F /* ManagedPhotoURL+CoreDataClass.m */; };
 		13D276591EE0C21700F0E064 /* ManagedPhotoURL+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AD803F1EE0BDB4001DCF0F /* ManagedPhotoURL+CoreDataProperties.m */; };
-		13D2765A1EE0C21700F0E064 /* ManagedURL+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AD80411EE0BDB4001DCF0F /* ManagedURL+CoreDataClass.m */; };
-		13D2765B1EE0C21700F0E064 /* ManagedURL+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AD80431EE0BDB4001DCF0F /* ManagedURL+CoreDataProperties.m */; };
 		13D2765C1EE0C21700F0E064 /* ManagedHashtag+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AD80451EE0BDB4001DCF0F /* ManagedHashtag+CoreDataClass.m */; };
 		13D2765D1EE0C21700F0E064 /* ManagedHashtag+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AD80471EE0BDB4001DCF0F /* ManagedHashtag+CoreDataProperties.m */; };
 		13D276641EE0C58900F0E064 /* ManagedTweet+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D276611EE0C58900F0E064 /* ManagedTweet+CoreDataClass.m */; };
@@ -109,6 +109,10 @@
 		1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpViewController.m; sourceTree = "<group>"; };
 		133866561EBBA9250029B4E0 /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
 		137029CF1EB17AF70079585B /* CollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
+		1373369F1EE89EA40097456D /* ManagedURL+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ManagedURL+CoreDataClass.h"; path = "Core Data/ManagedURL+CoreDataClass.h"; sourceTree = "<group>"; };
+		137336A01EE89EA40097456D /* ManagedURL+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ManagedURL+CoreDataClass.m"; path = "Core Data/ManagedURL+CoreDataClass.m"; sourceTree = "<group>"; };
+		137336A11EE89EA40097456D /* ManagedURL+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ManagedURL+CoreDataProperties.h"; path = "Core Data/ManagedURL+CoreDataProperties.h"; sourceTree = "<group>"; };
+		137336A21EE89EA40097456D /* ManagedURL+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ManagedURL+CoreDataProperties.m"; path = "Core Data/ManagedURL+CoreDataProperties.m"; sourceTree = "<group>"; };
 		137A26551E97258C003E6ECA /* TweetHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetHandler.h; sourceTree = "<group>"; };
 		137A26561E97258C003E6ECA /* TweetHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetHandler.m; sourceTree = "<group>"; };
 		1397C0961EB3AEC300E88A91 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
@@ -131,10 +135,6 @@
 		13AD803D1EE0BDB4001DCF0F /* ManagedPhotoURL+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ManagedPhotoURL+CoreDataClass.m"; path = "Core Data/ManagedPhotoURL+CoreDataClass.m"; sourceTree = "<group>"; };
 		13AD803E1EE0BDB4001DCF0F /* ManagedPhotoURL+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ManagedPhotoURL+CoreDataProperties.h"; path = "Core Data/ManagedPhotoURL+CoreDataProperties.h"; sourceTree = "<group>"; };
 		13AD803F1EE0BDB4001DCF0F /* ManagedPhotoURL+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ManagedPhotoURL+CoreDataProperties.m"; path = "Core Data/ManagedPhotoURL+CoreDataProperties.m"; sourceTree = "<group>"; };
-		13AD80401EE0BDB4001DCF0F /* ManagedURL+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ManagedURL+CoreDataClass.h"; path = "Core Data/ManagedURL+CoreDataClass.h"; sourceTree = "<group>"; };
-		13AD80411EE0BDB4001DCF0F /* ManagedURL+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ManagedURL+CoreDataClass.m"; path = "Core Data/ManagedURL+CoreDataClass.m"; sourceTree = "<group>"; };
-		13AD80421EE0BDB4001DCF0F /* ManagedURL+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ManagedURL+CoreDataProperties.h"; path = "Core Data/ManagedURL+CoreDataProperties.h"; sourceTree = "<group>"; };
-		13AD80431EE0BDB4001DCF0F /* ManagedURL+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ManagedURL+CoreDataProperties.m"; path = "Core Data/ManagedURL+CoreDataProperties.m"; sourceTree = "<group>"; };
 		13AD80441EE0BDB4001DCF0F /* ManagedHashtag+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ManagedHashtag+CoreDataClass.h"; path = "Core Data/ManagedHashtag+CoreDataClass.h"; sourceTree = "<group>"; };
 		13AD80451EE0BDB4001DCF0F /* ManagedHashtag+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ManagedHashtag+CoreDataClass.m"; path = "Core Data/ManagedHashtag+CoreDataClass.m"; sourceTree = "<group>"; };
 		13AD80461EE0BDB4001DCF0F /* ManagedHashtag+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ManagedHashtag+CoreDataProperties.h"; path = "Core Data/ManagedHashtag+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -284,6 +284,10 @@
 		13AD80381EE0BCE1001DCF0F /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				1373369F1EE89EA40097456D /* ManagedURL+CoreDataClass.h */,
+				137336A01EE89EA40097456D /* ManagedURL+CoreDataClass.m */,
+				137336A11EE89EA40097456D /* ManagedURL+CoreDataProperties.h */,
+				137336A21EE89EA40097456D /* ManagedURL+CoreDataProperties.m */,
 				13D276601EE0C58900F0E064 /* ManagedTweet+CoreDataClass.h */,
 				13D276611EE0C58900F0E064 /* ManagedTweet+CoreDataClass.m */,
 				13D276621EE0C58900F0E064 /* ManagedTweet+CoreDataProperties.h */,
@@ -292,10 +296,6 @@
 				13AD803D1EE0BDB4001DCF0F /* ManagedPhotoURL+CoreDataClass.m */,
 				13AD803E1EE0BDB4001DCF0F /* ManagedPhotoURL+CoreDataProperties.h */,
 				13AD803F1EE0BDB4001DCF0F /* ManagedPhotoURL+CoreDataProperties.m */,
-				13AD80401EE0BDB4001DCF0F /* ManagedURL+CoreDataClass.h */,
-				13AD80411EE0BDB4001DCF0F /* ManagedURL+CoreDataClass.m */,
-				13AD80421EE0BDB4001DCF0F /* ManagedURL+CoreDataProperties.h */,
-				13AD80431EE0BDB4001DCF0F /* ManagedURL+CoreDataProperties.m */,
 				13AD80441EE0BDB4001DCF0F /* ManagedHashtag+CoreDataClass.h */,
 				13AD80451EE0BDB4001DCF0F /* ManagedHashtag+CoreDataClass.m */,
 				13AD80461EE0BDB4001DCF0F /* ManagedHashtag+CoreDataProperties.h */,
@@ -544,12 +544,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				13D918DD1EBBC61F00FB9473 /* EmojiTableViewController.m in Sources */,
+				137336A31EE89EA40097456D /* ManagedURL+CoreDataClass.m in Sources */,
 				139F31051E95C254007A85A5 /* CollectionViewController.m in Sources */,
 				1333935C1EC256160025D31F /* FetchedResultsDataProcessor.m in Sources */,
 				139F31021E95C254007A85A5 /* AppDelegate.m in Sources */,
 				13154CC51EC62C7F0089B3A7 /* URLTableViewController.m in Sources */,
 				13F284751EAFB25D00D89B7F /* JSONTweetObject.m in Sources */,
 				13154CDA1EC62F1F0089B3A7 /* PercentageTableViewController.m in Sources */,
+				137336A51EE89EA40097456D /* ManagedURL+CoreDataProperties.m in Sources */,
 				1318346F1E9E8AEC001D50DF /* PersistentStack.m in Sources */,
 				137A26571E97258C003E6ECA /* TweetHandler.m in Sources */,
 				1397C0991EB3AEC300E88A91 /* CollectionViewCell.m in Sources */,
@@ -559,10 +561,8 @@
 				13154CD31EC62E3C0089B3A7 /* TweetsTodayTableViewController.m in Sources */,
 				13D276551EE0C21600F0E064 /* ManagedHashtag+CoreDataProperties.m in Sources */,
 				13154CBE1EC62C340089B3A7 /* HashtagTableViewController.m in Sources */,
-				13D276521EE0C21600F0E064 /* ManagedURL+CoreDataClass.m in Sources */,
 				13D276511EE0C21600F0E064 /* ManagedPhotoURL+CoreDataProperties.m in Sources */,
 				13D276641EE0C58900F0E064 /* ManagedTweet+CoreDataClass.m in Sources */,
-				13D276531EE0C21600F0E064 /* ManagedURL+CoreDataProperties.m in Sources */,
 				13154CCC1EC62CC00089B3A7 /* PhotoURLTableViewController.m in Sources */,
 				13D276501EE0C21600F0E064 /* ManagedPhotoURL+CoreDataClass.m in Sources */,
 				1337AE7D1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */,
@@ -582,15 +582,15 @@
 				13F284761EAFB25D00D89B7F /* JSONTweetObject.m in Sources */,
 				139F31181E95C254007A85A5 /* TwitterStatsTests.m in Sources */,
 				137A26581E97258C003E6ECA /* TweetHandler.m in Sources */,
-				13D2765B1EE0C21700F0E064 /* ManagedURL+CoreDataProperties.m in Sources */,
 				13154CBF1EC62C340089B3A7 /* HashtagTableViewController.m in Sources */,
 				13154CDB1EC62F1F0089B3A7 /* PercentageTableViewController.m in Sources */,
 				13D276671EE0C58900F0E064 /* ManagedTweet+CoreDataProperties.m in Sources */,
 				1337AE7E1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */,
-				13D2765A1EE0C21700F0E064 /* ManagedURL+CoreDataClass.m in Sources */,
 				13B89E941E96013800866AC7 /* FetchTweetsWebService.m in Sources */,
 				13D2765C1EE0C21700F0E064 /* ManagedHashtag+CoreDataClass.m in Sources */,
+				137336A41EE89EA40097456D /* ManagedURL+CoreDataClass.m in Sources */,
 				1333935D1EC256160025D31F /* FetchedResultsDataProcessor.m in Sources */,
+				137336A61EE89EA40097456D /* ManagedURL+CoreDataProperties.m in Sources */,
 				13154CCD1EC62CC00089B3A7 /* PhotoURLTableViewController.m in Sources */,
 				13154CD41EC62E3C0089B3A7 /* TweetsTodayTableViewController.m in Sources */,
 				13154CC61EC62C7F0089B3A7 /* URLTableViewController.m in Sources */,

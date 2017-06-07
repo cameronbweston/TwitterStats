@@ -31,9 +31,8 @@
     }
     for (NSString *url in jsonTweet.urls) {
         if (![url isEqual:[NSNull null]]) {
-            ManagedURL *managedURL = [NSEntityDescription insertNewObjectForEntityForName:@"URL"
-                                                                   inManagedObjectContext:context];
-            managedURL.text = url;
+            ManagedURL *managedURL = [ManagedURL findOrCreateURLWithText:url andContext:context];
+            managedURL.count += 1;
             [tweet addUrlsObject:managedURL];
         }
     }

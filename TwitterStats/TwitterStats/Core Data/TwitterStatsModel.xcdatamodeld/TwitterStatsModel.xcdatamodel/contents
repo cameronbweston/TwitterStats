@@ -17,13 +17,14 @@
         <relationship name="urls" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="URL" inverseName="relationship" inverseEntity="URL" syncable="YES"/>
     </entity>
     <entity name="URL" representedClassName="ManagedURL" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tweet" inverseName="urls" inverseEntity="Tweet" syncable="YES"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tweet" inverseName="urls" inverseEntity="Tweet" syncable="YES"/>
     </entity>
     <elements>
         <element name="Hashtag" positionX="-36" positionY="63" width="128" height="75"/>
         <element name="PhotoURL" positionX="-45" positionY="54" width="128" height="75"/>
         <element name="Tweet" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="URL" positionX="-63" positionY="27" width="128" height="75"/>
+        <element name="URL" positionX="-63" positionY="27" width="128" height="90"/>
     </elements>
 </model>
