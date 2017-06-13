@@ -23,7 +23,8 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hashtag"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"count" ascending:YES]];
     request.predicate = [NSPredicate predicateWithFormat:@"text != nil"];
-
+    request.fetchLimit = 10;
+    
     return request;
 }
 

@@ -26,6 +26,7 @@ static NSString *const reuseIdentifier = @"reuseIdentifier";
     [super viewDidLoad];
     
     [self configureFetchedResultsController];
+    [self configureTableView];
 }
 
 #pragma mark - Initialization
@@ -58,6 +59,7 @@ static NSString *const reuseIdentifier = @"reuseIdentifier";
 - (void)configureTableView {
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:reuseIdentifier];
     self.tableView.alwaysBounceVertical = YES;
+    self.tableView.dataSource = self;
 }
 
 #pragma mark - UITableView Data Source
