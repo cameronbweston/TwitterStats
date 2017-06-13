@@ -26,6 +26,7 @@
             ManagedHashtag *managedHashtag = [NSEntityDescription insertNewObjectForEntityForName:@"Hashtag"
                                                                            inManagedObjectContext:context];
             managedHashtag.text = hashtag;
+            managedHashtag.count += 1;
             [tweet addHashtagsObject:managedHashtag];
         }
     }
@@ -41,6 +42,7 @@
             ManagedPhotoURL *managedPhotoURL = [NSEntityDescription insertNewObjectForEntityForName:@"PhotoURL"
                                                                              inManagedObjectContext:context];
             managedPhotoURL.text = photoUrl;
+            managedPhotoURL.count += 1;
             [tweet addPhotoURLsObject:managedPhotoURL];
         }
     }

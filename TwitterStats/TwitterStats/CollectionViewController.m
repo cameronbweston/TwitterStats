@@ -101,38 +101,32 @@ static NSString *const identifier = @"CollectionViewCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     switch ([indexPath row]) {
         case 0:
-            self.emojiTableViewController = [EmojiTableViewController new];
-            self.emojiTableViewController.context = self.context;
+            self.emojiTableViewController = [[EmojiTableViewController alloc] initWithManagedObjectContext:self.context];
             [[self navigationController] pushViewController:self.emojiTableViewController animated:YES];
             [collectionView deselectItemAtIndexPath:indexPath animated:YES];
             break;
         case 1:
-            self.hashtagTableViewController = [HashtagTableViewController new];
-            self.hashtagTableViewController.context = self.context;
+            self.hashtagTableViewController = [[HashtagTableViewController alloc] initWithManagedObjectContext:self.context];
             [[self navigationController] pushViewController:self.hashtagTableViewController animated:YES];
             [collectionView deselectItemAtIndexPath:indexPath animated:YES];
             break;
         case 2:
-            self.urlTableViewController = [URLTableViewController new];
-            self.urlTableViewController.context = self.context;
+            self.urlTableViewController = [[URLTableViewController alloc] initWithManagedObjectContext:self.context];
             [[self navigationController] pushViewController:self.urlTableViewController animated:YES];
             [collectionView deselectItemAtIndexPath:indexPath animated:YES];
             break;
         case 3:
-            self.photoURLTableViewController = [PhotoURLTableViewController new];
-            self.photoURLTableViewController.context = self.context;
+            self.photoURLTableViewController = [[PhotoURLTableViewController alloc] initWithManagedObjectContext:self.context];
             [[self navigationController] pushViewController:self.photoURLTableViewController animated:YES];
             [collectionView deselectItemAtIndexPath:indexPath animated:YES];
             break;
         case 4:
-            self.tweetsTodayTableViewController = [TweetsTodayTableViewController new];
-            self.tweetsTodayTableViewController.context = self.context;
+            self.tweetsTodayTableViewController = [[TweetsTodayTableViewController alloc] initWithManagedObjectContext:self.context];
             [[self navigationController] pushViewController:self.tweetsTodayTableViewController animated:YES];
             [collectionView deselectItemAtIndexPath:indexPath animated:YES];
             break;
         case 5:
-            self.percentageTableViewController = [PercentageTableViewController new];
-            self.percentageTableViewController.context = self.context;
+            self.percentageTableViewController = [[PercentageTableViewController alloc] initWithManagedObjectContext:self.context];
             [[self navigationController] pushViewController:self.percentageTableViewController animated:YES];
             [collectionView deselectItemAtIndexPath:indexPath animated:YES];
             break;

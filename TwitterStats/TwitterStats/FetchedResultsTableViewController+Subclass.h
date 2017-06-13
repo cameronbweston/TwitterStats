@@ -11,6 +11,8 @@
 
 @interface FetchedResultsTableViewController (SubclassInterface)
 
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
 - (NSFetchRequest *)fetchRequest;
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 

@@ -11,13 +11,7 @@
 @implementation TweetsTodayTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    self.processor = [[FetchedResultsDataProcessor alloc] initWithManagedObjectContext:self.context];
-    //self.processor.delegate = self;
-    //self.processor.resultSize = 10;
-    self.title = @"Tweets Today";
-    //self.tableView.dataSource = self;
-    self.tableView.alwaysBounceVertical = YES;
+
 }
 
 @end

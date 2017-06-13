@@ -10,8 +10,6 @@
 
 @implementation URLTableViewController
 
-static const NSInteger fetchCount = 10;
-
 #pragma mark - Overrides
 
 - (void)viewDidLoad {
