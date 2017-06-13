@@ -2,7 +2,7 @@
 //  ManagedHashtag+CoreDataClass.h
 //  TwitterStats
 //
-//  Created by Cameron Weston on 6/9/17.
+//  Created by Cameron Weston on 6/13/17.
 //  Copyright © 2017 cameron weston personal. All rights reserved.
 //
 
@@ -14,8 +14,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ManagedHashtag : NSManagedObject
-
-+ (ManagedHashtag *)findOrCreateHashtagWithText:(NSString *)text andContext:(NSManagedObjectContext *)context;
 
 @end
 

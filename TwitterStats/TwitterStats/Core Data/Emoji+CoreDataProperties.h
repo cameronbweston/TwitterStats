@@ -1,27 +1,27 @@
 //
-//  ManagedHashtag+CoreDataProperties.h
+//  Emoji+CoreDataProperties.h
 //  TwitterStats
 //
-//  Created by Cameron Weston on 6/9/17.
+//  Created by Cameron Weston on 6/13/17.
 //  Copyright © 2017 cameron weston personal. All rights reserved.
 //
 
-#import "ManagedHashtag+CoreDataClass.h"
+#import "Emoji+CoreDataClass.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ManagedHashtag (CoreDataProperties)
+@interface Emoji (CoreDataProperties)
 
-+ (NSFetchRequest<ManagedHashtag *> *)fetchRequest;
++ (NSFetchRequest<Emoji *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSString *text;
 @property (nonatomic) int64_t count;
+@property (nullable, nonatomic, copy) NSString *text;
 @property (nullable, nonatomic, retain) NSSet<ManagedTweet *> *tweet;
 
 @end
 
-@interface ManagedHashtag (CoreDataGeneratedAccessors)
+@interface Emoji (CoreDataGeneratedAccessors)
 
 - (void)addTweetObject:(ManagedTweet *)value;
 - (void)removeTweetObject:(ManagedTweet *)value;

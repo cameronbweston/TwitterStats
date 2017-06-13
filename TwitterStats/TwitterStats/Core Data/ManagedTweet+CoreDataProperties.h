@@ -2,7 +2,7 @@
 //  ManagedTweet+CoreDataProperties.h
 //  TwitterStats
 //
-//  Created by Cameron Weston on 6/1/17.
+//  Created by Cameron Weston on 6/13/17.
 //  Copyright © 2017 cameron weston personal. All rights reserved.
 //
 
@@ -20,7 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *tweetID;
 @property (nullable, nonatomic, retain) NSSet<ManagedHashtag *> *hashtags;
 @property (nullable, nonatomic, retain) NSSet<ManagedPhotoURL *> *photoURLs;
-@property (nullable, nonatomic, weak) NSSet<ManagedURL *> *urls;
+@property (nullable, nonatomic, retain) NSSet<ManagedURL *> *urls;
+@property (nullable, nonatomic, retain) NSSet<Emoji *> *emojis;
 
 @end
 
@@ -40,6 +41,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeUrlsObject:(ManagedURL *)value;
 - (void)addUrls:(NSSet<ManagedURL *> *)values;
 - (void)removeUrls:(NSSet<ManagedURL *> *)values;
+
+- (void)addEmojisObject:(Emoji *)value;
+- (void)removeEmojisObject:(Emoji *)value;
+- (void)addEmojis:(NSSet<Emoji *> *)values;
+- (void)removeEmojis:(NSSet<Emoji *> *)values;
 
 @end
 

@@ -2,11 +2,12 @@
 //  ManagedTweet+CoreDataClass.m
 //  TwitterStats
 //
-//  Created by Cameron Weston on 6/1/17.
+//  Created by Cameron Weston on 6/13/17.
 //  Copyright © 2017 cameron weston personal. All rights reserved.
 //
 
 #import "ManagedTweet+CoreDataClass.h"
+#import "Emoji+CoreDataClass.h"
 #import "ManagedHashtag+CoreDataClass.h"
 #import "ManagedPhotoURL+CoreDataClass.h"
 #import "ManagedURL+CoreDataClass.h"
@@ -17,7 +18,7 @@
 
 + (ManagedTweet *)loadFromJSONTweetObject:(JSONTweetObject *)jsonTweet context:(NSManagedObjectContext *)context {
     ManagedTweet *tweet = [NSEntityDescription insertNewObjectForEntityForName:@"Tweet"
-                                                 inManagedObjectContext:context];
+                                                        inManagedObjectContext:context];
     tweet.tweetID = jsonTweet.tweetID;
     tweet.dateCreated = jsonTweet.dateCreated;
     tweet.text = jsonTweet.text;

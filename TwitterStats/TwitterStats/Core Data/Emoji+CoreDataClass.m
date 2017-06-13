@@ -1,13 +1,14 @@
 //
-//  ManagedEmoji+CoreDataClass.m
+//  Emoji+CoreDataClass.m
 //  TwitterStats
 //
 //  Created by Cameron Weston on 6/13/17.
 //  Copyright © 2017 cameron weston personal. All rights reserved.
 //
 
-#import "ManagedEmoji+CoreDataClass.h"
+#import "Emoji+CoreDataClass.h"
+#import "ManagedTweet+CoreDataClass.h"
 
-@implementation ManagedEmoji
+@implementation Emoji
 
 @end
