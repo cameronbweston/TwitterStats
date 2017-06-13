@@ -6,10 +6,8 @@
 //  Copyright © 2017 cameron weston personal. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FetchedResultsTableViewController+Subclass.h"
 
-@interface URLTableViewController : UITableViewController
-
-@property (strong, nonatomic) NSManagedObjectContext *context;
+@interface URLTableViewController : FetchedResultsTableViewController
 
 @end

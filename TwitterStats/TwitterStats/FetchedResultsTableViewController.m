@@ -7,40 +7,44 @@
 //
 
 #import "FetchedResultsTableViewController.h"
-#import "ManagedTweet+CoreDataClass.h"
-#import "ManagedURL+CoreDataClass.h"
+#import <CoreData/CoreData.h>
 
-#include <unicode/utf8.h>
-
-@interface FetchedResultsTableViewController () <NSFetchedResultsControllerDelegate>
+@interface FetchedResultsTableViewController ()
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, strong, readwrite) NSArray<ManagedURL *> *topURLs;
-@property (nonatomic, strong, readwrite) NSArray<ManagedPhotoURL *> *topPhotoURLs;
-@property (nonatomic, strong, readwrite) NSArray<ManagedHashtag *> *topHashtags;
-@property (nonatomic, strong, readwrite) NSArray<ManagedTweet *> *topEmojis;
 
 @end
 
-@implementation FetchedResultsDataProcessor
+@implementation FetchedResultsTableViewController
 
-static const NSInteger fetchCount = 10;
+static NSString *const reuseIdentifier = @"reuseIdentifier";
+
+#pragma mark - Overrides 
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self configureFetchedResultsController];
+}
+
+#pragma mark - Initialization
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)context {
-    if (self = [super init]) {
+    if (self = [super initWithNibName:nil bundle:nil]) {
         self.managedObjectContext = context;
-        [self performFetch];
     }
+    
     return self;
 }
 
-- (void)performFetch {
+#pragma mark - Helpers
+
+- (void)configureFetchedResultsController {
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:self.fetchRequest
                                                                         managedObjectContext:self.managedObjectContext
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
-    self.fetchedResultsController.delegate = self;
     
     NSError * __autoreleasing error = nil;
     BOOL fetched = [self.fetchedResultsController performFetch:&error];
@@ -51,192 +55,28 @@ static const NSInteger fetchCount = 10;
     }
 }
 
-- (NSFetchRequest *)fetchRequest {
-    NSString *tweetEntityName = @"Tweet";
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:tweetEntityName];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"text" ascending:YES]];
-    request.predicate = [NSPredicate predicateWithFormat:@"text != nil"];
-    
-    return request;
+- (void)configureTableView {
+    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:reuseIdentifier];
+    self.tableView.alwaysBounceVertical = YES;
 }
 
-- (void)configureFetchedResultsControllerForEntityName:(NSString *)entity {
-    [self.managedObjectContext setStalenessInterval:0];
-    
-    NSFetchRequest *const fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entity];
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"count" ascending:NO]];
-    fetchRequest.fetchLimit = fetchCount;
-    
-    
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                                                        managedObjectContext:self.managedObjectContext
-                                                                          sectionNameKeyPath:nil
-                                                                                   cacheName:nil];
-    self.fetchedResultsController.delegate = self;
-    
-    
-    NSError * __autoreleasing error;
-    const BOOL fetched = [self.fetchedResultsController performFetch:&error];
-    if (!fetched) {
-        NSLog(@"Failed to preform fetch: %@", error.localizedDescription);
-    }
-}
-
-#pragma mark - FetchedResultsControler Delegate
-
-- (NSArray<ManagedTweet*> *)findTopEmojis {
-    NSMutableArray *allText = [self allText];
-    //NSMutableArray *allUnicode = [NSMutableArray new];
-    
-    return allText;
-}
-
-- (NSArray<ManagedURL*> *)findTopURLs {
-    NSMutableArray *allURLs = [self allURLs];
-
-    NSCountedSet * __block countedSet = [[NSCountedSet alloc] initWithArray:allURLs];
-    
-    [allURLs sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-        NSUInteger obj1Count = [countedSet countForObject:obj1];
-        NSUInteger obj2Count = [countedSet countForObject:obj2];
-        
-        if (obj1Count > obj2Count) {
-            return NSOrderedAscending;
-        }
-        else if (obj1Count < obj2Count) {
-            return NSOrderedDescending;
-        }
-        else {
-            return NSOrderedSame;
-        }
-    }];
-    return allURLs;
-}
-
-- (NSArray<ManagedPhotoURL*> *)findTopPhotoURLs {
-    NSMutableArray *allPhotoURLs = [self allPhotoURLs];
-    
-    NSCountedSet * __block countedSet = [[NSCountedSet alloc] initWithArray:allPhotoURLs];
-    
-    [allPhotoURLs sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-        NSUInteger obj1Count = [countedSet countForObject:obj1];
-        NSUInteger obj2Count = [countedSet countForObject:obj2];
-        
-        if (obj1Count > obj2Count) {
-            return NSOrderedAscending;
-        }
-        else if (obj1Count < obj2Count) {
-            return NSOrderedDescending;
-        }
-        else {
-            return NSOrderedSame;
-        }
-    }];
-    return allPhotoURLs;
-}
-
-- (NSArray<ManagedHashtag*> *)findTopHashtags {
-    NSMutableArray *allHashtags = [self allHashtags];
-    
-    NSCountedSet * __block countedSet = [[NSCountedSet alloc] initWithArray:allHashtags];
-    
-    [allHashtags sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-        NSUInteger obj1Count = [countedSet countForObject:obj1];
-        NSUInteger obj2Count = [countedSet countForObject:obj2];
-        
-        if (obj1Count > obj2Count) {
-            return NSOrderedAscending;
-        }
-        else if (obj1Count < obj2Count) {
-            return NSOrderedDescending;
-        }
-        else {
-            return NSOrderedSame;
-        }
-    }];
-    return allHashtags;
-}
-
-- (NSMutableArray *)allText {
-    NSArray *allTweets = self.fetchedResultsController.fetchedObjects;
-    NSMutableArray *allText = [NSMutableArray new];
-    
-    for (ManagedTweet *tweet in allTweets) {
-        [allText addObject:tweet.text];
-    }
-    
-    return allText.copy;
-}
-
-- (NSMutableArray *)allURLs {
-    NSArray *allTweets = self.fetchedResultsController.fetchedObjects;
-    NSMutableArray *allURLs = [NSMutableArray new];
-    
-    for (ManagedTweet *tweet in allTweets) {
-        [allURLs addObjectsFromArray:tweet.urls.allObjects];
-    }
-    
-    return allURLs.copy;
-}
-
-- (NSMutableArray *)allPhotoURLs {
-    NSArray *allTweets = self.fetchedResultsController.fetchedObjects;
-    NSMutableArray *allPhotoURLs = [NSMutableArray new];
-    
-    for (ManagedTweet *tweet in allTweets) {
-        [allPhotoURLs addObjectsFromArray:tweet.photoURLs.allObjects];
-    }
-    
-    return allPhotoURLs.copy;
-}
-
-- (NSMutableArray *)allHashtags {
-    NSArray *allTweets = self.fetchedResultsController.fetchedObjects;
-    NSMutableArray *allHashtags = [NSMutableArray new];
-    
-    for (ManagedTweet *tweet in allTweets) {
-        [allHashtags addObjectsFromArray:tweet.hashtags.allObjects];
-    }
-    
-    return allHashtags.copy;
-}
-
-- (NSArray<ManagedURL *> *)topURLs {
-    return [_topURLs subarrayWithRange:NSMakeRange(0, self.resultSize)];
-}
-
-- (NSArray<ManagedPhotoURL *> *)topPhotoURLs {
-    return [_topPhotoURLs subarrayWithRange:NSMakeRange(0, self.resultSize)];
-}
-
-- (NSArray<ManagedHashtag *> *)topHashtags {
-    return [_topHashtags subarrayWithRange:NSMakeRange(0, self.resultSize)];
-}
-
-#pragma mark - Helpers
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    ManagedURL *url = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:17.0];
-    
-    NSInteger rowNumber = indexPath.row + 1;
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@", rowNumber, url.text];
-}
+#pragma mark - UITableView Data Source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [UITableViewCell new];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
 }
 
-#pragma mark - UITableView Data Source
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return fetchCount;
+    const NSInteger fetchCount = self.fetchedResultsController.fetchedObjects.count;
+    const NSInteger fetchLimit = self.fetchedResultsController.fetchRequest.fetchLimit;
+    
+    if (fetchCount < fetchLimit) {
+        return fetchCount;
+    }
+    return fetchLimit;
 }
 
 #pragma mark - NSFetchedResultsController Delegate
@@ -274,6 +114,31 @@ static const NSInteger fetchCount = 10;
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
+}
+
+#pragma mark - Subclass
+
+- (NSFetchRequest *)fetchRequest {
+    NSAssert(NO, @"Call in subclass");
+//    NSString *tweetEntityName = @"Tweet";
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:tweetEntityName];
+//    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"text" ascending:YES]];
+//    request.predicate = [NSPredicate predicateWithFormat:@"text != nil"];
+//    
+//    return request;
+    return nil;
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    NSAssert(NO, @"Call in subclass");
+//    ManagedURL *url = [self.fetchedResultsController objectAtIndexPath:indexPath];
+//    
+//    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+//    cell.textLabel.numberOfLines = 0;
+//    cell.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:17.0];
+//    
+//    NSInteger rowNumber = indexPath.row + 1;
+//    cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@", rowNumber, url.text];
 }
 
 @end

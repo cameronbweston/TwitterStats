@@ -7,12 +7,6 @@
 //
 
 #import "EmojiTableViewController.h"
-#import "FetchedResultsDataProcessor.h"
-
-
-@interface EmojiTableViewController ()
-@property (strong, nonatomic) FetchedResultsDataProcessor *processor;
-@end
 
 @implementation EmojiTableViewController
 
@@ -20,7 +14,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.processor = [[FetchedResultsDataProcessor alloc] initWithManagedObjectContext:self.context];
     self.title = @"Top Emojis";
 }
 

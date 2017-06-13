@@ -7,11 +7,11 @@
 //
 
 #import "FetchedResultsTableViewController.h"
+@import CoreData;
 
 @interface FetchedResultsTableViewController (SubclassInterface)
 
 - (NSFetchRequest *)fetchRequest;
-- (NSInteger)fetchCount;
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @end

@@ -29,8 +29,6 @@
 		13154CDD1EC62F1F0089B3A7 /* PercentageTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13154CD91EC62F1F0089B3A7 /* PercentageTableViewController.xib */; };
 		1318346F1E9E8AEC001D50DF /* PersistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318346E1E9E8AEC001D50DF /* PersistentStack.m */; };
 		131834701E9E8AEC001D50DF /* PersistentStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318346E1E9E8AEC001D50DF /* PersistentStack.m */; };
-		1333935C1EC256160025D31F /* FetchedResultsDataProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1333935B1EC256160025D31F /* FetchedResultsDataProcessor.m */; };
-		1333935D1EC256160025D31F /* FetchedResultsDataProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1333935B1EC256160025D31F /* FetchedResultsDataProcessor.m */; };
 		1337AE7D1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */; };
 		1337AE7E1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */; };
 		133866581EBBA9250029B4E0 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133866561EBBA9250029B4E0 /* PopUpViewController.xib */; };
@@ -68,6 +66,7 @@
 		13D918DE1EBBC61F00FB9473 /* EmojiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D918DB1EBBC61F00FB9473 /* EmojiTableViewController.m */; };
 		13D918DF1EBBC61F00FB9473 /* EmojiTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D918DC1EBBC61F00FB9473 /* EmojiTableViewController.xib */; };
 		13D918E01EBBC61F00FB9473 /* EmojiTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D918DC1EBBC61F00FB9473 /* EmojiTableViewController.xib */; };
+		13F186371EF073DF00A80C4F /* FetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F186351EF073DF00A80C4F /* FetchedResultsTableViewController.m */; };
 		13F284751EAFB25D00D89B7F /* JSONTweetObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F284741EAFB25D00D89B7F /* JSONTweetObject.m */; };
 		13F284761EAFB25D00D89B7F /* JSONTweetObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F284741EAFB25D00D89B7F /* JSONTweetObject.m */; };
 		7B3934C4DA34157990CB15ED /* Pods_TwitterStats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EBB4EEF4F157A970EAAC8F /* Pods_TwitterStats.framework */; };
@@ -103,8 +102,6 @@
 		13154CD91EC62F1F0089B3A7 /* PercentageTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PercentageTableViewController.xib; sourceTree = "<group>"; };
 		1318346D1E9E8AEC001D50DF /* PersistentStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentStack.h; sourceTree = "<group>"; };
 		1318346E1E9E8AEC001D50DF /* PersistentStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentStack.m; sourceTree = "<group>"; };
-		1333935A1EC256160025D31F /* FetchedResultsDataProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsDataProcessor.h; sourceTree = "<group>"; };
-		1333935B1EC256160025D31F /* FetchedResultsDataProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataProcessor.m; sourceTree = "<group>"; };
 		1337AE7B1EBBB0C1004F93A2 /* PopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpViewController.h; sourceTree = "<group>"; };
 		1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpViewController.m; sourceTree = "<group>"; };
 		133866561EBBA9250029B4E0 /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
@@ -148,6 +145,9 @@
 		13D918DA1EBBC61F00FB9473 /* EmojiTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiTableViewController.h; sourceTree = "<group>"; };
 		13D918DB1EBBC61F00FB9473 /* EmojiTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiTableViewController.m; sourceTree = "<group>"; };
 		13D918DC1EBBC61F00FB9473 /* EmojiTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiTableViewController.xib; sourceTree = "<group>"; };
+		13F186341EF073DF00A80C4F /* FetchedResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsTableViewController.h; sourceTree = "<group>"; };
+		13F186351EF073DF00A80C4F /* FetchedResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsTableViewController.m; sourceTree = "<group>"; };
+		13F186361EF073DF00A80C4F /* FetchedResultsTableViewController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FetchedResultsTableViewController+Subclass.h"; sourceTree = "<group>"; };
 		13F284731EAFB25D00D89B7F /* JSONTweetObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTweetObject.h; sourceTree = "<group>"; };
 		13F284741EAFB25D00D89B7F /* JSONTweetObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTweetObject.m; sourceTree = "<group>"; };
 		273C39DAF9620BFED4C312C2 /* Pods-TwitterStatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterStatsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterStatsTests/Pods-TwitterStatsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +180,9 @@
 		13154CBA1EC62BF20089B3A7 /* Table View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				13F186361EF073DF00A80C4F /* FetchedResultsTableViewController+Subclass.h */,
+				13F186341EF073DF00A80C4F /* FetchedResultsTableViewController.h */,
+				13F186351EF073DF00A80C4F /* FetchedResultsTableViewController.m */,
 				1337AE7B1EBBB0C1004F93A2 /* PopUpViewController.h */,
 				1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */,
 				133866561EBBA9250029B4E0 /* PopUpViewController.xib */,
@@ -243,8 +246,6 @@
 				13AD80381EE0BCE1001DCF0F /* Core Data */,
 				139F31001E95C254007A85A5 /* AppDelegate.h */,
 				139F31011E95C254007A85A5 /* AppDelegate.m */,
-				1333935A1EC256160025D31F /* FetchedResultsDataProcessor.h */,
-				1333935B1EC256160025D31F /* FetchedResultsDataProcessor.m */,
 				13154CBA1EC62BF20089B3A7 /* Table View Controllers */,
 				139F31031E95C254007A85A5 /* CollectionViewController.h */,
 				139F31041E95C254007A85A5 /* CollectionViewController.m */,
@@ -546,7 +547,7 @@
 				13D918DD1EBBC61F00FB9473 /* EmojiTableViewController.m in Sources */,
 				137336A31EE89EA40097456D /* ManagedURL+CoreDataClass.m in Sources */,
 				139F31051E95C254007A85A5 /* CollectionViewController.m in Sources */,
-				1333935C1EC256160025D31F /* FetchedResultsDataProcessor.m in Sources */,
+				13F186371EF073DF00A80C4F /* FetchedResultsTableViewController.m in Sources */,
 				139F31021E95C254007A85A5 /* AppDelegate.m in Sources */,
 				13154CC51EC62C7F0089B3A7 /* URLTableViewController.m in Sources */,
 				13F284751EAFB25D00D89B7F /* JSONTweetObject.m in Sources */,
@@ -589,7 +590,6 @@
 				13B89E941E96013800866AC7 /* FetchTweetsWebService.m in Sources */,
 				13D2765C1EE0C21700F0E064 /* ManagedHashtag+CoreDataClass.m in Sources */,
 				137336A41EE89EA40097456D /* ManagedURL+CoreDataClass.m in Sources */,
-				1333935D1EC256160025D31F /* FetchedResultsDataProcessor.m in Sources */,
 				137336A61EE89EA40097456D /* ManagedURL+CoreDataProperties.m in Sources */,
 				13154CCD1EC62CC00089B3A7 /* PhotoURLTableViewController.m in Sources */,
 				13154CD41EC62E3C0089B3A7 /* TweetsTodayTableViewController.m in Sources */,
