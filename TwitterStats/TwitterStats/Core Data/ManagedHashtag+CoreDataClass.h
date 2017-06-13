@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ManagedHashtag : NSManagedObject
 
++ (ManagedHashtag *)findOrCreateHashtagWithText:(NSString *)text andContext:(NSManagedObjectContext *)context;
+
 @end
 
 NS_ASSUME_NONNULL_END

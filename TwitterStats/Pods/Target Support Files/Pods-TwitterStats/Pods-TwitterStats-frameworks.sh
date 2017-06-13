@@ -90,11 +90,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/FLKAutoLayout/FLKAutoLayout.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/NSString+Emoji/NSString_Emoji.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PromiseKit/PromiseKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/STTwitter/STTwitter.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/FLKAutoLayout/FLKAutoLayout.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/NSString+Emoji/NSString_Emoji.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PromiseKit/PromiseKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/STTwitter/STTwitter.framework"
 fi

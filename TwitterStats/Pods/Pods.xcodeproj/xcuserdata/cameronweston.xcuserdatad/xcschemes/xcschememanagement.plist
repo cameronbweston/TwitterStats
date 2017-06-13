@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NSString+Emoji.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TwitterStats.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,12 +37,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>546A41A4A781B87355CE235E4878B8C9</key>
+		<key>873AAFF7DD3345F3F448714EA458ADB5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>86EEFFEEDA4EB00BCAD20634BE559324</key>
+		<key>9BB8417C054BEE5CEE35E0E92032BEAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ADADC29B4CD33DEECE9008DEEA52088A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B6D3BB3FB40E2F5A9A85E15EC8B8C766</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -48,11 +63,6 @@
 			<true/>
 		</dict>
 		<key>D481F3E5E0C80C80F676A2570DD19EA6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FE1E0D7D09B79F1ED01D8FE1B09527B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ManagedPhotoURL : NSManagedObject
 
++ (ManagedPhotoURL *)findOrCreatePhotoURLWithText:(NSString *)text andContext:(NSManagedObjectContext *)context;
+
 @end
 
 NS_ASSUME_NONNULL_END

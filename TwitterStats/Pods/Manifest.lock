@@ -1,5 +1,6 @@
 PODS:
   - FLKAutoLayout (1.0.1)
+  - NSString+Emoji (0.2.0)
   - PromiseKit (4.1.7):
     - PromiseKit/Foundation (= 4.1.7)
     - PromiseKit/QuartzCore (= 4.1.7)
@@ -15,14 +16,16 @@ PODS:
 
 DEPENDENCIES:
   - FLKAutoLayout
+  - NSString+Emoji
   - PromiseKit (~> 4.0)
   - STTwitter
 
 SPEC CHECKSUMS:
   FLKAutoLayout: 37e1e09de6411dbee5526860d9f55d9063323ea8
+  NSString+Emoji: 127da93993ac7c01eadb2edbb039cda89a1369f4
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
   STTwitter: 30ee2f79eff78c3d633a1edc869e97db9c9ead59
 
-PODFILE CHECKSUM: a18c7059f35f4790f67e386902ccbf4b4695b34d
+PODFILE CHECKSUM: 54bf53e6c806bcc16048031be831fa34ad33f74a
 
 COCOAPODS: 1.2.1
