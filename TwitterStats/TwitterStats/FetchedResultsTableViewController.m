@@ -6,20 +6,26 @@
 //  Copyright © 2017 cameron weston personal. All rights reserved.
 //
 
-#import "FetchedResultsDataProcessor.h"
+#import "FetchedResultsTableViewController.h"
 #import "ManagedTweet+CoreDataClass.h"
+#import "ManagedURL+CoreDataClass.h"
 
-@interface FetchedResultsDataProcessor () <NSFetchedResultsControllerDelegate>
+#include <unicode/utf8.h>
+
+@interface FetchedResultsTableViewController () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong, readwrite) NSArray<ManagedURL *> *topURLs;
 @property (nonatomic, strong, readwrite) NSArray<ManagedPhotoURL *> *topPhotoURLs;
 @property (nonatomic, strong, readwrite) NSArray<ManagedHashtag *> *topHashtags;
+@property (nonatomic, strong, readwrite) NSArray<ManagedTweet *> *topEmojis;
 
 @end
 
 @implementation FetchedResultsDataProcessor
+
+static const NSInteger fetchCount = 10;
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)context {
     if (self = [super init]) {
@@ -54,17 +60,35 @@
     return request;
 }
 
-#pragma mark - FetchedResultsControler Delegate 
-
-- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
-       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
-      newIndexPath:(NSIndexPath *)newIndexPath {
-
-    self.topURLs = [self findTopURLs];
-    self.topPhotoURLs = [self findTopPhotoURLs];
-    self.topHashtags = [self findTopHashtags];
+- (void)configureFetchedResultsControllerForEntityName:(NSString *)entity {
+    [self.managedObjectContext setStalenessInterval:0];
     
-    [self.delegate didUpdateTopItems];
+    NSFetchRequest *const fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entity];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"count" ascending:NO]];
+    fetchRequest.fetchLimit = fetchCount;
+    
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                        managedObjectContext:self.managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+    self.fetchedResultsController.delegate = self;
+    
+    
+    NSError * __autoreleasing error;
+    const BOOL fetched = [self.fetchedResultsController performFetch:&error];
+    if (!fetched) {
+        NSLog(@"Failed to preform fetch: %@", error.localizedDescription);
+    }
+}
+
+#pragma mark - FetchedResultsControler Delegate
+
+- (NSArray<ManagedTweet*> *)findTopEmojis {
+    NSMutableArray *allText = [self allText];
+    //NSMutableArray *allUnicode = [NSMutableArray new];
+    
+    return allText;
 }
 
 - (NSArray<ManagedURL*> *)findTopURLs {
@@ -133,6 +157,17 @@
     return allHashtags;
 }
 
+- (NSMutableArray *)allText {
+    NSArray *allTweets = self.fetchedResultsController.fetchedObjects;
+    NSMutableArray *allText = [NSMutableArray new];
+    
+    for (ManagedTweet *tweet in allTweets) {
+        [allText addObject:tweet.text];
+    }
+    
+    return allText.copy;
+}
+
 - (NSMutableArray *)allURLs {
     NSArray *allTweets = self.fetchedResultsController.fetchedObjects;
     NSMutableArray *allURLs = [NSMutableArray new];
@@ -176,6 +211,69 @@
 
 - (NSArray<ManagedHashtag *> *)topHashtags {
     return [_topHashtags subarrayWithRange:NSMakeRange(0, self.resultSize)];
+}
+
+#pragma mark - Helpers
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    ManagedURL *url = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:17.0];
+    
+    NSInteger rowNumber = indexPath.row + 1;
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@", rowNumber, url.text];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [UITableViewCell new];
+    [self configureCell:cell atIndexPath:indexPath];
+    
+    return cell;
+}
+
+#pragma mark - UITableView Data Source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return fetchCount;
+}
+
+#pragma mark - NSFetchedResultsController Delegate
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:[NSArray
+                                               arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray
+                                               arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
 }
 
 @end

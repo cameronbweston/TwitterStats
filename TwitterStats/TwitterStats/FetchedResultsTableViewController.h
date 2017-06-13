@@ -10,7 +10,7 @@
 @class ManagedURL;
 @class ManagedPhotoURL;
 @class ManagedHashtag;
-@class FetchedResultsDataProcessor;
+@class FetchedResultsTableViewController;
 @import CoreData;
 
 @protocol CentralDataProcessorControllerDelegate <NSObject>
@@ -19,7 +19,7 @@
 
 @end
 
-@interface FetchedResultsDataProcessor : NSObject
+@interface FetchedResultsTableViewController : UITableViewController
 
 @property (weak, nonatomic) id <CentralDataProcessorControllerDelegate> delegate;
 @property (strong, nonatomic, readonly) NSArray<ManagedURL *> *topURLs;
@@ -29,5 +29,6 @@
 
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)context NS_DESIGNATED_INITIALIZER;
+- (void)configureFetchedResultsControllerForEntityName:(NSString *)entity;
 
 @end
