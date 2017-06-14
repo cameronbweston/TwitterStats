@@ -9,7 +9,7 @@
 #import "FetchedResultsTableViewController.h"
 #import <CoreData/CoreData.h>
 
-@interface FetchedResultsTableViewController ()
+@interface FetchedResultsTableViewController () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
@@ -46,6 +46,7 @@ static NSString *const reuseIdentifier = @"reuseIdentifier";
                                                                         managedObjectContext:self.managedObjectContext
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
+    self.fetchedResultsController.delegate = self;
     
     NSError * __autoreleasing error = nil;
     BOOL fetched = [self.fetchedResultsController performFetch:&error];
@@ -91,6 +92,7 @@ static NSString *const reuseIdentifier = @"reuseIdentifier";
     
     UITableView *tableView = self.tableView;
     
+    
     switch(type) {
             
         case NSFetchedResultsChangeInsert:
@@ -122,25 +124,11 @@ static NSString *const reuseIdentifier = @"reuseIdentifier";
 
 - (NSFetchRequest *)fetchRequest {
     NSAssert(NO, @"Call in subclass");
-//    NSString *tweetEntityName = @"Tweet";
-//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:tweetEntityName];
-//    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"text" ascending:YES]];
-//    request.predicate = [NSPredicate predicateWithFormat:@"text != nil"];
-//    
-//    return request;
     return nil;
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     NSAssert(NO, @"Call in subclass");
-//    ManagedURL *url = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//    
-//    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-//    cell.textLabel.numberOfLines = 0;
-//    cell.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:17.0];
-//    
-//    NSInteger rowNumber = indexPath.row + 1;
-//    cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@", rowNumber, url.text];
 }
 
 @end

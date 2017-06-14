@@ -10,6 +10,4 @@
 
 @interface HashtagTableViewController : FetchedResultsTableViewController
 
-@property (strong, nonatomic) NSManagedObjectContext *context;
-
 @end
