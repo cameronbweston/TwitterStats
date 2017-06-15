@@ -25,7 +25,7 @@
     tweet.text = jsonTweet.text;
     
     NSString *emojiString = [tweet.text stringByReplacingEmojiUnicodeWithCheatCodes];
-    NSString *regexString = @":[a-z_]+:"; //finds emojiCheats like :joy: and :smile:
+    NSString *regexString = @":[a-z_]+:";
     NSRange searchedRange = NSMakeRange(0, [emojiString length]);
     NSError *error = nil;
     
@@ -46,8 +46,7 @@
             [tweet addEmojisObject:managedEmoji];
         }
     }
-
-
+    
     for (NSString *hashtag in jsonTweet.hashtags) {
         if (![hashtag isEqual:[NSNull null]]) {
             ManagedHashtag *managedHashtag = [ManagedHashtag findOrCreateHashtagWithText:hashtag andContext:context];

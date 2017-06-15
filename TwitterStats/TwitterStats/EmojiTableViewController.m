@@ -8,6 +8,7 @@
 
 #import "EmojiTableViewController.h"
 #import "Emoji+CoreDataClass.h"
+#import "NSString+Emoji.h"
 
 @implementation EmojiTableViewController
 
@@ -30,13 +31,15 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Emoji *emoji = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSString *emojiImageString = [emoji.text stringByReplacingEmojiCheatCodesWithUnicode];
+    NSString *emojiName = [emoji.text stringByReplacingOccurrencesOfString:@":" withString:@""];
     
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:17.0];
     
     NSInteger rowNumber = indexPath.row + 1;
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@ count: %lld", rowNumber, emoji.text, emoji.count];
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@ %@ count: %lld", rowNumber, emojiImageString, emojiName, emoji.count];
 }
 
 @end
