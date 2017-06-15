@@ -11,4 +11,20 @@
 
 @implementation Emoji
 
++ (Emoji *)findOrCreateEmojiWithText:(NSString *)text andContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Emoji"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"text == %@", text];
+    
+    NSArray<Emoji *> *emojisArray = [context executeFetchRequest:fetchRequest error:nil];
+    
+    if (emojisArray.count >= 1) {
+        return emojisArray.firstObject;
+    }
+    
+    Emoji *singleEmoji =  [NSEntityDescription insertNewObjectForEntityForName:@"Emoji"
+                                                        inManagedObjectContext:context];
+    singleEmoji.text = text;
+    return singleEmoji;
+}
+
 @end

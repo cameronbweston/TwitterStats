@@ -11,6 +11,7 @@
 #import "ManagedHashtag+CoreDataClass.h"
 #import "ManagedPhotoURL+CoreDataClass.h"
 #import "ManagedURL+CoreDataClass.h"
+#import "Emoji+CoreDataClass.h"
 #import "JSONTweetObject.h"
 #import "NSString+Emoji.h"
 
@@ -25,24 +26,27 @@
     
     NSString *emojiString = [tweet.text stringByReplacingEmojiUnicodeWithCheatCodes];
     NSString *regexString = @":[a-z_]+:"; //finds emojiCheats like :joy: and :smile:
+    NSRange searchedRange = NSMakeRange(0, [emojiString length]);
+    NSError *error = nil;
     
-    NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:regexString options:NSRegularExpressionIgnoreMetacharacters error:nil];
+    NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:regexString options:0 error:&error];
+    NSArray <NSTextCheckingResult *> *matchesFound = [expression matchesInString:emojiString options:0 range:searchedRange];
     
-    NSArray <NSTextCheckingResult *> *result = [expression matchesInString:emojiString options:0 range:NSMakeRange(0, [emojiString length]) ];
-    if (result) {
-        NSLog(@"array: %@", result);
+    for (NSTextCheckingResult* match in matchesFound) {
+        NSLog(@"EMOJI STRING: %@", emojiString);                                                  //FOR TESTING
+        NSString *matchText = [emojiString substringWithRange:[match range]];       //FOR TESTING
+        NSLog(@"MATCH TEXT: %@", matchText);                                                    //FOR TESTING
+        NSRange group1 = [match rangeAtIndex:0];                                    //FOR TESTING
+        NSLog(@"SUBSTRING GROUP: %@", [emojiString substringWithRange:group1]);              //FOR TESTING
+        
+        if (match) {
+            Emoji *managedEmoji = [Emoji findOrCreateEmojiWithText:matchText andContext:context];
+            managedEmoji.count += 1;
+            managedEmoji.text = matchText;
+            [tweet addEmojisObject:managedEmoji];
+        }
     }
-    
-//    NSArray *wordArray = [emojiString componentsSeparatedByString:@" "];
-//    NSCharacterSet *charSet = [NSCharacterSet characterSetWithCharactersInString:@":"];
-//    
-//    for (NSString *word in wordArray) {
-//        NSRange range = [word rangeOfCharacterFromSet:charSet];
-//        if (range.location != NSNotFound) {
-//            // : is present
-//            NSLog(@"WORD: %@", word);
-//        }
-//    }
+
 
     for (NSString *hashtag in jsonTweet.hashtags) {
         if (![hashtag isEqual:[NSNull null]]) {

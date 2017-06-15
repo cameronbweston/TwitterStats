@@ -222,5 +222,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TwitterStats/Core Data/ManagedTweet+CoreDataClass.m"
+            timestampString = "519250634.357407"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "+loadFromJSONTweetObject:context:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[ManagedTweet loadFromJSONTweetObject:context:]"
+                  moduleName = "TwitterStats"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cameronweston/Documents/Project/TwitterStats/TwitterStats/Core%20Data/ManagedTweet+CoreDataClass.m"
+                  timestampString = "519250967.777584"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "1822">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[ManagedTweet loadFromJSONTweetObject:context:]"
+                  moduleName = "TwitterStats"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cameronweston/Documents/Project/TwitterStats/TwitterStats/Core%20Data/ManagedTweet+CoreDataClass.m"
+                  timestampString = "519250967.779992"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "1830">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

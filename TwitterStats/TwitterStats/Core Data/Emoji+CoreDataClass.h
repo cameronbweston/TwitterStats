@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Emoji : NSManagedObject
 
++ (Emoji *)findOrCreateEmojiWithText:(NSString *)text andContext:(NSManagedObjectContext *)context;
+
 @end
 
 NS_ASSUME_NONNULL_END
