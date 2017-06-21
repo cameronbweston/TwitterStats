@@ -16,6 +16,9 @@
         <relationship name="tweet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tweet" inverseName="photoURLs" inverseEntity="Tweet" syncable="YES"/>
     </entity>
     <entity name="Tweet" representedClassName="ManagedTweet" syncable="YES">
+        <attribute name="containsEmoji" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="containsPhotoURL" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="containsURL" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="dateCreated" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tweetID" optional="YES" attributeType="String" syncable="YES"/>
@@ -33,7 +36,7 @@
         <element name="Emoji" positionX="-54" positionY="54" width="128" height="90"/>
         <element name="Hashtag" positionX="-36" positionY="63" width="128" height="90"/>
         <element name="PhotoURL" positionX="-45" positionY="54" width="128" height="90"/>
-        <element name="Tweet" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Tweet" positionX="-63" positionY="-18" width="128" height="195"/>
         <element name="URL" positionX="-63" positionY="27" width="128" height="90"/>
     </elements>
 </model>

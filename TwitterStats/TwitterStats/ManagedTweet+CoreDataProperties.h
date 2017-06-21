@@ -2,7 +2,7 @@
 //  ManagedTweet+CoreDataProperties.h
 //  TwitterStats
 //
-//  Created by Cameron Weston on 6/13/17.
+//  Created by Cameron Weston on 6/20/17.
 //  Copyright © 2017 cameron weston personal. All rights reserved.
 //
 
@@ -18,14 +18,22 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *dateCreated;
 @property (nullable, nonatomic, copy) NSString *text;
 @property (nullable, nonatomic, copy) NSString *tweetID;
+@property (nonatomic) BOOL containsEmoji;
+@property (nonatomic) BOOL containsURL;
+@property (nonatomic) BOOL containsPhotoURL;
+@property (nullable, nonatomic, retain) NSSet<Emoji *> *emojis;
 @property (nullable, nonatomic, retain) NSSet<ManagedHashtag *> *hashtags;
 @property (nullable, nonatomic, retain) NSSet<ManagedPhotoURL *> *photoURLs;
 @property (nullable, nonatomic, retain) NSSet<ManagedURL *> *urls;
-@property (nullable, nonatomic, retain) NSSet<Emoji *> *emojis;
 
 @end
 
 @interface ManagedTweet (CoreDataGeneratedAccessors)
+
+- (void)addEmojisObject:(Emoji *)value;
+- (void)removeEmojisObject:(Emoji *)value;
+- (void)addEmojis:(NSSet<Emoji *> *)values;
+- (void)removeEmojis:(NSSet<Emoji *> *)values;
 
 - (void)addHashtagsObject:(ManagedHashtag *)value;
 - (void)removeHashtagsObject:(ManagedHashtag *)value;
@@ -41,11 +49,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeUrlsObject:(ManagedURL *)value;
 - (void)addUrls:(NSSet<ManagedURL *> *)values;
 - (void)removeUrls:(NSSet<ManagedURL *> *)values;
-
-- (void)addEmojisObject:(Emoji *)value;
-- (void)removeEmojisObject:(Emoji *)value;
-- (void)addEmojis:(NSSet<Emoji *> *)values;
-- (void)removeEmojis:(NSSet<Emoji *> *)values;
 
 @end
 

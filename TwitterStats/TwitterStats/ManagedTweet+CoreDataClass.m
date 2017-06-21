@@ -44,9 +44,10 @@
             managedEmoji.count += 1;
             managedEmoji.text = matchText;
             [tweet addEmojisObject:managedEmoji];
+            
+            tweet.containsEmoji = YES;
         }
     }
-    
     for (NSString *hashtag in jsonTweet.hashtags) {
         if (![hashtag isEqual:[NSNull null]]) {
             ManagedHashtag *managedHashtag = [ManagedHashtag findOrCreateHashtagWithText:hashtag andContext:context];
@@ -60,6 +61,7 @@
             ManagedURL *managedURL = [ManagedURL findOrCreateURLWithText:url andContext:context];
             managedURL.count += 1;
             [tweet addUrlsObject:managedURL];
+            tweet.containsURL = YES;
         }
     }
     for (NSString *photoUrl in jsonTweet.photoUrls) {
@@ -68,6 +70,7 @@
             managedPhotoURL.count += 1;
             managedPhotoURL.text = photoUrl;
             [tweet addPhotoURLsObject:managedPhotoURL];
+            tweet.containsPhotoURL = YES;
         }
     }
     return tweet;

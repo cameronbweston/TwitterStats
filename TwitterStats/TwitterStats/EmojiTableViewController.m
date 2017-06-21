@@ -36,7 +36,7 @@
     
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.numberOfLines = 0;
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:17.0];
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:19.0];
     
     NSInteger rowNumber = indexPath.row + 1;
     cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@ %@ count: %lld", rowNumber, emojiImageString, emojiName, emoji.count];

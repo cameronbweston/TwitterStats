@@ -2,7 +2,7 @@
 //  ManagedTweet+CoreDataProperties.m
 //  TwitterStats
 //
-//  Created by Cameron Weston on 6/13/17.
+//  Created by Cameron Weston on 6/20/17.
 //  Copyright © 2017 cameron weston personal. All rights reserved.
 //
 
@@ -17,9 +17,12 @@
 @dynamic dateCreated;
 @dynamic text;
 @dynamic tweetID;
+@dynamic containsEmoji;
+@dynamic containsURL;
+@dynamic containsPhotoURL;
+@dynamic emojis;
 @dynamic hashtags;
 @dynamic photoURLs;
 @dynamic urls;
-@dynamic emojis;
 
 @end

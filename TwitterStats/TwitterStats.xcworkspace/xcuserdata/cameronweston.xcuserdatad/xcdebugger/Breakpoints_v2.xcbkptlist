@@ -159,11 +159,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwitterStats/ManagedTweet+CoreDataClass.m"
-            timestampString = "519080034.053923"
+            timestampString = "519682596.847868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53">
+            startingLineNumber = "116"
+            endingLineNumber = "116">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -173,13 +173,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwitterStats/ManagedTweet+CoreDataClass.m"
-            timestampString = "519074005.788079"
+            timestampString = "519682596.847868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "+loadFromJSONTweetObject:context:"
-            landmarkType = "7">
+            startingLineNumber = "88"
+            endingLineNumber = "88">
             <Actions>
                <BreakpointActionProxy
                   ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
