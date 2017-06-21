@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ManagedTweet : NSManagedObject
 
 + (ManagedTweet *)loadFromJSONTweetObject:(JSONTweetObject *)jsonTweet context:(NSManagedObjectContext *)context;
++ (NSString *)dateCreatedAttributeName;
 
 @end
 

@@ -9,9 +9,10 @@
 #import "FetchedResultsTableViewController.h"
 @import CoreData;
 
-@interface FetchedResultsTableViewController (SubclassInterface)
+@interface FetchedResultsTableViewController (SubclassInterface) <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 - (NSFetchRequest *)fetchRequest;
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;

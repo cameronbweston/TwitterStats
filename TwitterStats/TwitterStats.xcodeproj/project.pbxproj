@@ -48,6 +48,8 @@
 		13B7A80D1EF9B87D0044D590 /* ManagedTweet+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B7A8091EF9B87D0044D590 /* ManagedTweet+CoreDataClass.m */; };
 		13B7A80E1EF9B87D0044D590 /* ManagedTweet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B7A80B1EF9B87D0044D590 /* ManagedTweet+CoreDataProperties.m */; };
 		13B7A80F1EF9B87D0044D590 /* ManagedTweet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B7A80B1EF9B87D0044D590 /* ManagedTweet+CoreDataProperties.m */; };
+		13B7A8191EFB0F800044D590 /* TweetDataProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B7A8181EFB0F800044D590 /* TweetDataProcessor.m */; };
+		13B7A81A1EFB0F800044D590 /* TweetDataProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B7A8181EFB0F800044D590 /* TweetDataProcessor.m */; };
 		13B89E931E96013800866AC7 /* FetchTweetsWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B89E921E96013800866AC7 /* FetchTweetsWebService.m */; };
 		13B89E941E96013800866AC7 /* FetchTweetsWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B89E921E96013800866AC7 /* FetchTweetsWebService.m */; };
 		13D918DD1EBBC61F00FB9473 /* EmojiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D918DB1EBBC61F00FB9473 /* EmojiTableViewController.m */; };
@@ -132,6 +134,8 @@
 		13B7A8091EF9B87D0044D590 /* ManagedTweet+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ManagedTweet+CoreDataClass.m"; sourceTree = "<group>"; };
 		13B7A80A1EF9B87D0044D590 /* ManagedTweet+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ManagedTweet+CoreDataProperties.h"; sourceTree = "<group>"; };
 		13B7A80B1EF9B87D0044D590 /* ManagedTweet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ManagedTweet+CoreDataProperties.m"; sourceTree = "<group>"; };
+		13B7A8171EFB0F800044D590 /* TweetDataProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDataProcessor.h; sourceTree = "<group>"; };
+		13B7A8181EFB0F800044D590 /* TweetDataProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDataProcessor.m; sourceTree = "<group>"; };
 		13B89E911E96013800866AC7 /* FetchTweetsWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchTweetsWebService.h; sourceTree = "<group>"; };
 		13B89E921E96013800866AC7 /* FetchTweetsWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTweetsWebService.m; sourceTree = "<group>"; };
 		13D918DA1EBBC61F00FB9473 /* EmojiTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiTableViewController.h; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 		139F30FC1E95C254007A85A5 /* TwitterStats */ = {
 			isa = PBXGroup;
 			children = (
+				13B7A8171EFB0F800044D590 /* TweetDataProcessor.h */,
+				13B7A8181EFB0F800044D590 /* TweetDataProcessor.m */,
 				13AD80381EE0BCE1001DCF0F /* Core Data */,
 				139F31001E95C254007A85A5 /* AppDelegate.h */,
 				139F31011E95C254007A85A5 /* AppDelegate.m */,
@@ -578,6 +584,7 @@
 				13154CD31EC62E3C0089B3A7 /* TweetsTodayTableViewController.m in Sources */,
 				13154CBE1EC62C340089B3A7 /* HashtagTableViewController.m in Sources */,
 				13F186901EF08B2500A80C4F /* ManagedHashtag+CoreDataClass.m in Sources */,
+				13B7A8191EFB0F800044D590 /* TweetDataProcessor.m in Sources */,
 				13154CCC1EC62CC00089B3A7 /* PhotoURLTableViewController.m in Sources */,
 				1337AE7D1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */,
 				13F186861EF08B2500A80C4F /* Emoji+CoreDataProperties.m in Sources */,
@@ -608,6 +615,7 @@
 				13F186951EF08B2500A80C4F /* ManagedURL+CoreDataClass.m in Sources */,
 				13154CD41EC62E3C0089B3A7 /* TweetsTodayTableViewController.m in Sources */,
 				13F186931EF08B2500A80C4F /* ManagedHashtag+CoreDataProperties.m in Sources */,
+				13B7A81A1EFB0F800044D590 /* TweetDataProcessor.m in Sources */,
 				13154CC61EC62C7F0089B3A7 /* URLTableViewController.m in Sources */,
 				13F186851EF08B2500A80C4F /* Emoji+CoreDataClass.m in Sources */,
 				13F1868F1EF08B2500A80C4F /* ManagedPhotoURL+CoreDataProperties.m in Sources */,

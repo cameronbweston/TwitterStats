@@ -76,6 +76,10 @@
     return tweet;
 }
 
++ (NSString *)dateCreatedAttributeName {
+    return @"dateCreated";
+}
+
 - (void)dealloc {
     NSLog(@"WTF");
 }
