@@ -52,6 +52,14 @@
 		13B7A81A1EFB0F800044D590 /* TweetDataProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B7A8181EFB0F800044D590 /* TweetDataProcessor.m */; };
 		13B89E931E96013800866AC7 /* FetchTweetsWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B89E921E96013800866AC7 /* FetchTweetsWebService.m */; };
 		13B89E941E96013800866AC7 /* FetchTweetsWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B89E921E96013800866AC7 /* FetchTweetsWebService.m */; };
+		13B8B2791EFD6D3200BAE194 /* PercentageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B8B2771EFD6D3200BAE194 /* PercentageTableViewCell.m */; };
+		13B8B27A1EFD6D3200BAE194 /* PercentageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B8B2771EFD6D3200BAE194 /* PercentageTableViewCell.m */; };
+		13B8B27B1EFD6D3200BAE194 /* PercentageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B8B2781EFD6D3200BAE194 /* PercentageTableViewCell.xib */; };
+		13B8B27C1EFD6D3200BAE194 /* PercentageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B8B2781EFD6D3200BAE194 /* PercentageTableViewCell.xib */; };
+		13B8B2811EFD8B0300BAE194 /* TweetsTodayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B8B27F1EFD8B0300BAE194 /* TweetsTodayTableViewCell.m */; };
+		13B8B2821EFD8B0300BAE194 /* TweetsTodayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B8B27F1EFD8B0300BAE194 /* TweetsTodayTableViewCell.m */; };
+		13B8B2831EFD8B0300BAE194 /* TweetsTodayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B8B2801EFD8B0300BAE194 /* TweetsTodayTableViewCell.xib */; };
+		13B8B2841EFD8B0300BAE194 /* TweetsTodayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B8B2801EFD8B0300BAE194 /* TweetsTodayTableViewCell.xib */; };
 		13D918DD1EBBC61F00FB9473 /* EmojiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D918DB1EBBC61F00FB9473 /* EmojiTableViewController.m */; };
 		13D918DE1EBBC61F00FB9473 /* EmojiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D918DB1EBBC61F00FB9473 /* EmojiTableViewController.m */; };
 		13D918DF1EBBC61F00FB9473 /* EmojiTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D918DC1EBBC61F00FB9473 /* EmojiTableViewController.xib */; };
@@ -138,6 +146,12 @@
 		13B7A8181EFB0F800044D590 /* TweetDataProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDataProcessor.m; sourceTree = "<group>"; };
 		13B89E911E96013800866AC7 /* FetchTweetsWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchTweetsWebService.h; sourceTree = "<group>"; };
 		13B89E921E96013800866AC7 /* FetchTweetsWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTweetsWebService.m; sourceTree = "<group>"; };
+		13B8B2761EFD6D3200BAE194 /* PercentageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PercentageTableViewCell.h; sourceTree = "<group>"; };
+		13B8B2771EFD6D3200BAE194 /* PercentageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PercentageTableViewCell.m; sourceTree = "<group>"; };
+		13B8B2781EFD6D3200BAE194 /* PercentageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PercentageTableViewCell.xib; sourceTree = "<group>"; };
+		13B8B27E1EFD8B0300BAE194 /* TweetsTodayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsTodayTableViewCell.h; sourceTree = "<group>"; };
+		13B8B27F1EFD8B0300BAE194 /* TweetsTodayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsTodayTableViewCell.m; sourceTree = "<group>"; };
+		13B8B2801EFD8B0300BAE194 /* TweetsTodayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetsTodayTableViewCell.xib; sourceTree = "<group>"; };
 		13D918DA1EBBC61F00FB9473 /* EmojiTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiTableViewController.h; sourceTree = "<group>"; };
 		13D918DB1EBBC61F00FB9473 /* EmojiTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiTableViewController.m; sourceTree = "<group>"; };
 		13D918DC1EBBC61F00FB9473 /* EmojiTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiTableViewController.xib; sourceTree = "<group>"; };
@@ -192,6 +206,9 @@
 		13154CBA1EC62BF20089B3A7 /* Table View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				139F31031E95C254007A85A5 /* CollectionViewController.h */,
+				139F31041E95C254007A85A5 /* CollectionViewController.m */,
+				137029CF1EB17AF70079585B /* CollectionViewController.xib */,
 				13F186361EF073DF00A80C4F /* FetchedResultsTableViewController+Subclass.h */,
 				13F186341EF073DF00A80C4F /* FetchedResultsTableViewController.h */,
 				13F186351EF073DF00A80C4F /* FetchedResultsTableViewController.m */,
@@ -261,12 +278,7 @@
 				139F31001E95C254007A85A5 /* AppDelegate.h */,
 				139F31011E95C254007A85A5 /* AppDelegate.m */,
 				13154CBA1EC62BF20089B3A7 /* Table View Controllers */,
-				139F31031E95C254007A85A5 /* CollectionViewController.h */,
-				139F31041E95C254007A85A5 /* CollectionViewController.m */,
-				137029CF1EB17AF70079585B /* CollectionViewController.xib */,
-				1397C0961EB3AEC300E88A91 /* CollectionViewCell.h */,
-				1397C0971EB3AEC300E88A91 /* CollectionViewCell.m */,
-				1397C0981EB3AEC300E88A91 /* CollectionViewCell.xib */,
+				13B8B27D1EFD6DB600BAE194 /* Custom Cells */,
 				1373368E1EE8879E0097456D /* Webservices */,
 				13F284731EAFB25D00D89B7F /* JSONTweetObject.h */,
 				13F284741EAFB25D00D89B7F /* JSONTweetObject.m */,
@@ -322,6 +334,22 @@
 				13AD80391EE0BD69001DCF0F /* TwitterStatsModel.xcdatamodeld */,
 			);
 			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		13B8B27D1EFD6DB600BAE194 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1397C0961EB3AEC300E88A91 /* CollectionViewCell.h */,
+				1397C0971EB3AEC300E88A91 /* CollectionViewCell.m */,
+				1397C0981EB3AEC300E88A91 /* CollectionViewCell.xib */,
+				13B8B2761EFD6D3200BAE194 /* PercentageTableViewCell.h */,
+				13B8B2771EFD6D3200BAE194 /* PercentageTableViewCell.m */,
+				13B8B2781EFD6D3200BAE194 /* PercentageTableViewCell.xib */,
+				13B8B27E1EFD8B0300BAE194 /* TweetsTodayTableViewCell.h */,
+				13B8B27F1EFD8B0300BAE194 /* TweetsTodayTableViewCell.m */,
+				13B8B2801EFD8B0300BAE194 /* TweetsTodayTableViewCell.xib */,
+			);
+			name = "Custom Cells";
 			sourceTree = "<group>";
 		};
 		7509F36F3029524F786F9907 /* Frameworks */ = {
@@ -444,7 +472,9 @@
 				139F31231E95C286007A85A5 /* Default-568h@2x.png in Resources */,
 				1397C09A1EB3AEC300E88A91 /* CollectionViewCell.xib in Resources */,
 				13154CC71EC62C7F0089B3A7 /* URLTableViewController.xib in Resources */,
+				13B8B27B1EFD6D3200BAE194 /* PercentageTableViewCell.xib in Resources */,
 				13D918DF1EBBC61F00FB9473 /* EmojiTableViewController.xib in Resources */,
+				13B8B2831EFD8B0300BAE194 /* TweetsTodayTableViewCell.xib in Resources */,
 				137029D01EB17AF70079585B /* CollectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,10 +483,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13B8B27C1EFD6D3200BAE194 /* PercentageTableViewCell.xib in Resources */,
 				13154CCF1EC62CC00089B3A7 /* PhotoURLTableViewController.xib in Resources */,
 				13154CDD1EC62F1F0089B3A7 /* PercentageTableViewController.xib in Resources */,
 				13154CD61EC62E3C0089B3A7 /* TweetsTodayTableViewController.xib in Resources */,
 				13154CC81EC62C7F0089B3A7 /* URLTableViewController.xib in Resources */,
+				13B8B2841EFD8B0300BAE194 /* TweetsTodayTableViewCell.xib in Resources */,
 				13154CC11EC62C340089B3A7 /* HashtagTableViewController.xib in Resources */,
 				13D918E01EBBC61F00FB9473 /* EmojiTableViewController.xib in Resources */,
 			);
@@ -579,6 +611,7 @@
 				1318346F1E9E8AEC001D50DF /* PersistentStack.m in Sources */,
 				13F186841EF08B2500A80C4F /* Emoji+CoreDataClass.m in Sources */,
 				137A26571E97258C003E6ECA /* TweetHandler.m in Sources */,
+				13B8B2811EFD8B0300BAE194 /* TweetsTodayTableViewCell.m in Sources */,
 				1397C0991EB3AEC300E88A91 /* CollectionViewCell.m in Sources */,
 				139F30FF1E95C254007A85A5 /* main.m in Sources */,
 				13154CD31EC62E3C0089B3A7 /* TweetsTodayTableViewController.m in Sources */,
@@ -588,6 +621,7 @@
 				13154CCC1EC62CC00089B3A7 /* PhotoURLTableViewController.m in Sources */,
 				1337AE7D1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */,
 				13F186861EF08B2500A80C4F /* Emoji+CoreDataProperties.m in Sources */,
+				13B8B2791EFD6D3200BAE194 /* PercentageTableViewCell.m in Sources */,
 				13B89E931E96013800866AC7 /* FetchTweetsWebService.m in Sources */,
 				13AD803B1EE0BD69001DCF0F /* TwitterStatsModel.xcdatamodeld in Sources */,
 			);
@@ -602,6 +636,7 @@
 				13B7A80D1EF9B87D0044D590 /* ManagedTweet+CoreDataClass.m in Sources */,
 				13D918DE1EBBC61F00FB9473 /* EmojiTableViewController.m in Sources */,
 				13F284761EAFB25D00D89B7F /* JSONTweetObject.m in Sources */,
+				13B8B27A1EFD6D3200BAE194 /* PercentageTableViewCell.m in Sources */,
 				13F1868D1EF08B2500A80C4F /* ManagedPhotoURL+CoreDataClass.m in Sources */,
 				13F186971EF08B2500A80C4F /* ManagedURL+CoreDataProperties.m in Sources */,
 				139F31181E95C254007A85A5 /* TwitterStatsTests.m in Sources */,
@@ -613,6 +648,7 @@
 				13B89E941E96013800866AC7 /* FetchTweetsWebService.m in Sources */,
 				13154CCD1EC62CC00089B3A7 /* PhotoURLTableViewController.m in Sources */,
 				13F186951EF08B2500A80C4F /* ManagedURL+CoreDataClass.m in Sources */,
+				13B8B2821EFD8B0300BAE194 /* TweetsTodayTableViewCell.m in Sources */,
 				13154CD41EC62E3C0089B3A7 /* TweetsTodayTableViewController.m in Sources */,
 				13F186931EF08B2500A80C4F /* ManagedHashtag+CoreDataProperties.m in Sources */,
 				13B7A81A1EFB0F800044D590 /* TweetDataProcessor.m in Sources */,

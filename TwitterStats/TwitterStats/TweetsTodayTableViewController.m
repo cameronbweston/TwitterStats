@@ -9,6 +9,7 @@
 #import "TweetsTodayTableViewController.h"
 #import "ManagedTweet+CoreDataClass.h"
 #import "TweetDataProcessor.h"
+#import "TweetsTodayTableViewCell.h"
 
 @interface TweetsTodayTableViewController ()<NSFetchedResultsControllerDelegate>
 
@@ -19,16 +20,18 @@
 
 @implementation TweetsTodayTableViewController
 
-static NSString *const reuseIdentifier = @"reuseIdentifier";
+static NSString *const reuseIdentifier = @"tweetsTodayCell";
 
 #pragma mark - Overrides
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Tweets Today";
     [self configureFetchedResultsController];
     [self configureTableView];
 }
+
 
 #pragma mark - Initialization
 
@@ -58,26 +61,25 @@ static NSString *const reuseIdentifier = @"reuseIdentifier";
     }
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(TweetsTodayTableViewCell *)customCell atIndexPath:(NSIndexPath *)indexPath {
     TweetDataProcessor *tweetDataProcessor = [[TweetDataProcessor alloc] initWithTweets:self.fetchedResultsController.fetchedObjects];
-    
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:17.0];
-    cell.textLabel.text = [NSString stringWithFormat:@"Filler text"];
     
     switch (indexPath.row) {
         case 0: {
-            cell.textLabel.text = [NSString stringWithFormat:@"Total number of tweets collected: %lu", self.fetchedResultsController.fetchedObjects.count];
+            customCell.customCellTextLabel.text = [NSString stringWithFormat:@"Total number of tweets collected"];
+            customCell.numbersLabel.text = [NSString stringWithFormat:@"%lu", self.fetchedResultsController.fetchedObjects.count];
         } break;
         case 1: {
-            cell.textLabel.text = [NSString stringWithFormat:@"Average tweets per second: %.0f", tweetDataProcessor.averageTweetsPerSecond];
+            customCell.customCellTextLabel.text = [NSString stringWithFormat:@"Average tweets per second"];
+            customCell.numbersLabel.text = [NSString stringWithFormat:@"%.0f", tweetDataProcessor.averageTweetsPerSecond];
         } break;
         case 2: {
-            cell.textLabel.text = [NSString stringWithFormat:@"Average tweets per minute: %.0f", tweetDataProcessor.averageTweetsPerMinute];
+            customCell.customCellTextLabel.text = [NSString stringWithFormat:@"Average tweets per minute"];
+            customCell.numbersLabel.text = [NSString stringWithFormat:@"%.0f", tweetDataProcessor.averageTweetsPerMinute];
         } break;
         case 3: {
-            cell.textLabel.text = [NSString stringWithFormat:@"Average tweets per hour: %.0f", tweetDataProcessor.averageTweetsPerHour];
+            customCell.customCellTextLabel.text = [NSString stringWithFormat:@"Average tweets per hour"];
+            customCell.numbersLabel.text = [NSString stringWithFormat:@"%.0f", tweetDataProcessor.averageTweetsPerHour];
         } break;
         default:
             break;
@@ -93,7 +95,8 @@ static NSString *const reuseIdentifier = @"reuseIdentifier";
 }
 
 - (void)configureTableView {
-    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:reuseIdentifier];
+    UINib *nib = [UINib nibWithNibName:@"TweetsTodayTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:reuseIdentifier];
     self.tableView.alwaysBounceVertical = YES;
     self.tableView.dataSource = self;
 }
@@ -101,10 +104,10 @@ static NSString *const reuseIdentifier = @"reuseIdentifier";
 #pragma mark - UITableView Data Source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-    [self configureCell:cell atIndexPath:indexPath];
+    TweetsTodayTableViewCell *customCell = [self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    [self configureCell:customCell atIndexPath:indexPath];
     
-    return cell;
+    return customCell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -113,6 +116,10 @@ static NSString *const reuseIdentifier = @"reuseIdentifier";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
 }
 
 #pragma mark - NSFetchedResultsController Delegate
