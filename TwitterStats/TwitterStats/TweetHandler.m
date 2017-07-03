@@ -38,7 +38,6 @@
         [self.tweetWebService fetchTweetsWithProgressBlock:^(NSDictionary *json, STTwitterStreamJSONType type) {
 
                 if (type == STTwitterStreamJSONTypeTweet) {
-                    NSLog(@"Fetched tweets: %@", json);
                     JSONTweetObject *jsonTweet = [[JSONTweetObject alloc] initWithJSONObject:json];
                     [ManagedTweet loadFromJSONTweetObject:jsonTweet context:self.context];
                 }

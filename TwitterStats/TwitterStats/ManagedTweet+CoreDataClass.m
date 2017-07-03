@@ -33,18 +33,12 @@
     NSArray <NSTextCheckingResult *> *matchesFound = [expression matchesInString:emojiString options:0 range:searchedRange];
     
     for (NSTextCheckingResult* match in matchesFound) {
-        NSLog(@"EMOJI STRING: %@", emojiString);                                                  //FOR TESTING
-        NSString *matchText = [emojiString substringWithRange:[match range]];       //FOR TESTING
-        NSLog(@"MATCH TEXT: %@", matchText);                                                    //FOR TESTING
-        NSRange group1 = [match rangeAtIndex:0];                                    //FOR TESTING
-        NSLog(@"SUBSTRING GROUP: %@", [emojiString substringWithRange:group1]);              //FOR TESTING
-        
+        NSString *matchText = [emojiString substringWithRange:[match range]];
         if (match) {
             Emoji *managedEmoji = [Emoji findOrCreateEmojiWithText:matchText andContext:context];
             managedEmoji.count += 1;
             managedEmoji.text = matchText;
             [tweet addEmojisObject:managedEmoji];
-            
             tweet.containsEmoji = YES;
         }
     }
@@ -81,7 +75,7 @@
 }
 
 - (void)dealloc {
-    NSLog(@"WTF");
+    NSLog(@"Managed Tweet is being deallocated");
 }
 
 @end
