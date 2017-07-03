@@ -38,17 +38,17 @@ static NSString *const reuseIdentifier = @"percentageCell";
     switch (indexPath.row) {
         case 0: {
             double percentageOfTweetsWithEmoji = [tweetDataProcessor percentageOfTweetsContainingEmoji];
-            customCell.tweetContainsTextLabel.text = [NSString stringWithFormat:@"Tweets that contain Emoji"];
+            customCell.tweetContainsTextLabel.text = [NSString stringWithFormat:@"Tweets that contain Emoji:"];
             customCell.percentageTextLabel.text = [NSString stringWithFormat:@"%.2f %%", percentageOfTweetsWithEmoji];
         } break;
         case 1: {
             double percentageOfTweetsWithURL = [tweetDataProcessor percentageOfTweetsContainingURL];
-            customCell.tweetContainsTextLabel.text = [NSString stringWithFormat:@"Tweets that contain URL"];
+            customCell.tweetContainsTextLabel.text = [NSString stringWithFormat:@"Tweets that contain URL:"];
             customCell.percentageTextLabel.text = [NSString stringWithFormat:@"%.2f %%", percentageOfTweetsWithURL];
         } break;
         case 2: {
             double percentageOfTweetsWithPhotoURL = [tweetDataProcessor percentageOfTweetsContainingPhotoURL];
-            customCell.tweetContainsTextLabel.text = [NSString stringWithFormat:@"Tweets that contain Photo"];
+            customCell.tweetContainsTextLabel.text = [NSString stringWithFormat:@"Tweets that contain Photo:"];
             customCell.percentageTextLabel.text = [NSString stringWithFormat:@"%.2f %%", percentageOfTweetsWithPhotoURL];
         } break;
         default:
