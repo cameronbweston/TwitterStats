@@ -43,7 +43,7 @@ static NSString *const reuseIdentifier = @"hashtagCell";
     customCell.hashtagTextLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:17.0];
 
     NSInteger rowNumber = indexPath.row + 1;
-    customCell.rowNumberTextLabel.text = [NSString stringWithFormat:@"%ld.", rowNumber];
+    customCell.rowNumberTextLabel.text = [NSString stringWithFormat:@"%ld.", (long)rowNumber];
     customCell.hashtagTextLabel.text = [NSString stringWithFormat:@"%@", hashtag.text];
 }
 
