@@ -13,10 +13,13 @@
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
 @implementation FetchedResultsTableViewController
+
+@dynamic refreshControl;
 
 static NSString *const reuseIdentifier = @"reuseIdentifier";
 
@@ -92,9 +95,7 @@ static NSString *const reuseIdentifier = @"reuseIdentifier";
     
     UITableView *tableView = self.tableView;
     
-    
     switch(type) {
-            
         case NSFetchedResultsChangeInsert:
             [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
@@ -117,7 +118,7 @@ static NSString *const reuseIdentifier = @"reuseIdentifier";
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    [self.tableView endUpdates];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Subclass
