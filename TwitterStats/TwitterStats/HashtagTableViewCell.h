@@ -10,4 +10,7 @@
 
 @interface HashtagTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *hashtagTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rowNumberTextLabel;
+
 @end

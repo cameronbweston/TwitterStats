@@ -8,8 +8,11 @@
 
 #import "HashtagTableViewController.h"
 #import "ManagedHashtag+CoreDataClass.h"
+#import "HashtagTableViewCell.h"
 
 @implementation HashtagTableViewController
+
+static NSString *const reuseIdentifier = @"hashtagCell";
 
 #pragma mark - Override 
 
@@ -17,6 +20,9 @@
     [super viewDidLoad];
 
     self.title = @"Top Hashtags";
+    
+    UINib *nib = [UINib nibWithNibName:@"HashtagTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:reuseIdentifier];
 }
 
 - (NSFetchRequest *)fetchRequest {
@@ -30,13 +36,15 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     ManagedHashtag *hashtag = [self.fetchedResultsController objectAtIndexPath:indexPath];
-
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:17.0];
+    HashtagTableViewCell *customCell = [self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    
+    customCell.hashtagTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    customCell.hashtagTextLabel.numberOfLines = 0;
+    customCell.hashtagTextLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:17.0];
 
     NSInteger rowNumber = indexPath.row + 1;
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@", rowNumber, hashtag.text];
+    customCell.rowNumberTextLabel.text = [NSString stringWithFormat:@"%ld.", rowNumber];
+    customCell.hashtagTextLabel.text = [NSString stringWithFormat:@"%@", hashtag.text];
 }
 
 @end

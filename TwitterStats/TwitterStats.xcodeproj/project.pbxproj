@@ -32,6 +32,8 @@
 		1337AE7D1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */; };
 		1337AE7E1EBBB0C1004F93A2 /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */; };
 		133866581EBBA9250029B4E0 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133866561EBBA9250029B4E0 /* PopUpViewController.xib */; };
+		136C3BFD1F0D81E50094BC86 /* HashtagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 136C3BFB1F0D81E50094BC86 /* HashtagTableViewCell.m */; };
+		136C3BFE1F0D81E50094BC86 /* HashtagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 136C3BFC1F0D81E50094BC86 /* HashtagTableViewCell.xib */; };
 		137029D01EB17AF70079585B /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137029CF1EB17AF70079585B /* CollectionViewController.xib */; };
 		137A26571E97258C003E6ECA /* TweetHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 137A26561E97258C003E6ECA /* TweetHandler.m */; };
 		137A26581E97258C003E6ECA /* TweetHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 137A26561E97258C003E6ECA /* TweetHandler.m */; };
@@ -119,6 +121,9 @@
 		1337AE7B1EBBB0C1004F93A2 /* PopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpViewController.h; sourceTree = "<group>"; };
 		1337AE7C1EBBB0C1004F93A2 /* PopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpViewController.m; sourceTree = "<group>"; };
 		133866561EBBA9250029B4E0 /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
+		136C3BFA1F0D81E50094BC86 /* HashtagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashtagTableViewCell.h; sourceTree = "<group>"; };
+		136C3BFB1F0D81E50094BC86 /* HashtagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HashtagTableViewCell.m; sourceTree = "<group>"; };
+		136C3BFC1F0D81E50094BC86 /* HashtagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HashtagTableViewCell.xib; sourceTree = "<group>"; };
 		137029CF1EB17AF70079585B /* CollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
 		137A26551E97258C003E6ECA /* TweetHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetHandler.h; sourceTree = "<group>"; };
 		137A26561E97258C003E6ECA /* TweetHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetHandler.m; sourceTree = "<group>"; };
@@ -342,6 +347,9 @@
 				1397C0961EB3AEC300E88A91 /* CollectionViewCell.h */,
 				1397C0971EB3AEC300E88A91 /* CollectionViewCell.m */,
 				1397C0981EB3AEC300E88A91 /* CollectionViewCell.xib */,
+				136C3BFA1F0D81E50094BC86 /* HashtagTableViewCell.h */,
+				136C3BFB1F0D81E50094BC86 /* HashtagTableViewCell.m */,
+				136C3BFC1F0D81E50094BC86 /* HashtagTableViewCell.xib */,
 				13B8B2761EFD6D3200BAE194 /* PercentageTableViewCell.h */,
 				13B8B2771EFD6D3200BAE194 /* PercentageTableViewCell.m */,
 				13B8B2781EFD6D3200BAE194 /* PercentageTableViewCell.xib */,
@@ -467,6 +475,7 @@
 				139F310A1E95C254007A85A5 /* Assets.xcassets in Resources */,
 				13154CD51EC62E3C0089B3A7 /* TweetsTodayTableViewController.xib in Resources */,
 				133866581EBBA9250029B4E0 /* PopUpViewController.xib in Resources */,
+				136C3BFE1F0D81E50094BC86 /* HashtagTableViewCell.xib in Resources */,
 				13154CCE1EC62CC00089B3A7 /* PhotoURLTableViewController.xib in Resources */,
 				13154CC01EC62C340089B3A7 /* HashtagTableViewController.xib in Resources */,
 				139F31231E95C286007A85A5 /* Default-568h@2x.png in Resources */,
@@ -601,6 +610,7 @@
 				13F186921EF08B2500A80C4F /* ManagedHashtag+CoreDataProperties.m in Sources */,
 				13F186371EF073DF00A80C4F /* FetchedResultsTableViewController.m in Sources */,
 				139F31021E95C254007A85A5 /* AppDelegate.m in Sources */,
+				136C3BFD1F0D81E50094BC86 /* HashtagTableViewCell.m in Sources */,
 				13154CC51EC62C7F0089B3A7 /* URLTableViewController.m in Sources */,
 				13F186961EF08B2500A80C4F /* ManagedURL+CoreDataProperties.m in Sources */,
 				13F1868E1EF08B2500A80C4F /* ManagedPhotoURL+CoreDataProperties.m in Sources */,

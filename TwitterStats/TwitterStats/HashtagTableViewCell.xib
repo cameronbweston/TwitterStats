@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,9 +16,37 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wE-yP-QDO">
+                        <rect key="frame" x="8" y="11" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xa8-oS-xgS">
+                        <rect key="frame" x="50" y="11" width="262" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Xa8-oS-xgS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="0GM-k9-nJG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Xa8-oS-xgS" secondAttribute="trailing" id="TaB-ph-bHg"/>
+                    <constraint firstItem="0wE-yP-QDO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="Yks-l7-d0I"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="0wE-yP-QDO" secondAttribute="leading" id="Zo8-PQ-iwS"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Xa8-oS-xgS" secondAttribute="bottom" constant="3.5" id="fwk-Py-10t"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0wE-yP-QDO" secondAttribute="trailing" constant="262" id="mZ0-Yj-Prd"/>
+                    <constraint firstItem="Xa8-oS-xgS" firstAttribute="leading" secondItem="0wE-yP-QDO" secondAttribute="trailing" id="q2y-9k-dIw"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="0wE-yP-QDO" secondAttribute="bottom" constant="3.5" id="yub-mD-zdT"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="hashtagTextLabel" destination="Xa8-oS-xgS" id="wNz-X9-1QM"/>
+                <outlet property="rowNumberTextLabel" destination="0wE-yP-QDO" id="9v9-Cb-eX9"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
