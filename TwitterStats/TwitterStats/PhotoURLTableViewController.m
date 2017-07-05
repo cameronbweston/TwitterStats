@@ -36,7 +36,7 @@
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:17.0];
     
     NSInteger rowNumber = indexPath.row + 1;
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@ count: %lld", rowNumber, photoURL.text, photoURL.count];
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld. %@ count: %lld", (long)rowNumber, photoURL.text, photoURL.count];
 }
 
 @end
