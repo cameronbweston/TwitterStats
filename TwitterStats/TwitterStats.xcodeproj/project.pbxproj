@@ -245,6 +245,8 @@
 		1373368E1EE8879E0097456D /* Webservices */ = {
 			isa = PBXGroup;
 			children = (
+				13B7A8171EFB0F800044D590 /* TweetDataProcessor.h */,
+				13B7A8181EFB0F800044D590 /* TweetDataProcessor.m */,
 				137A26551E97258C003E6ECA /* TweetHandler.h */,
 				137A26561E97258C003E6ECA /* TweetHandler.m */,
 				13B89E911E96013800866AC7 /* FetchTweetsWebService.h */,
@@ -277,8 +279,6 @@
 		139F30FC1E95C254007A85A5 /* TwitterStats */ = {
 			isa = PBXGroup;
 			children = (
-				13B7A8171EFB0F800044D590 /* TweetDataProcessor.h */,
-				13B7A8181EFB0F800044D590 /* TweetDataProcessor.m */,
 				13AD80381EE0BCE1001DCF0F /* Core Data */,
 				139F31001E95C254007A85A5 /* AppDelegate.h */,
 				139F31011E95C254007A85A5 /* AppDelegate.m */,
