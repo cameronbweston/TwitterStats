@@ -5,7 +5,7 @@ This project connects to the Twitter Streaming API and processes incoming tweets
 
 ## Title Screen
 
-Access all of the apps different features from this screen
+Access all of the different features in the app from this screen
 
 ![Alt text](/titleScreen.png?raw=true "Title Screen")
 
